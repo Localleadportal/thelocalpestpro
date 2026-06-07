@@ -1,8 +1,14 @@
 <%
-  const title = `Pest Control Directory | Find Local Exterminators Near You`;
+  // Branded <title> for the SERP (58 chars). og:title / twitter:title keep the
+  // descriptive "directory" framing below — it reads better on social cards.
+  const title = `Pest Control & Exterminators Near You | The Local Pest Pro`;
+  const socialTitle = `Pest Control Directory | Find Local Exterminators Near You`;
   const metaDesc = 'Nationwide pest control directory. Find licensed local exterminators for ants, roaches, termites, bed bugs, rodents, mosquitoes, and more — same-day, pet-safe service.';
   const canonical = '/';
-  const ogImage = `${SITE.DOMAIN}/images/og-default.jpg`;
+  // No branded 1200x630 social card exists yet, so point og:image / twitter:image
+  // at the favicon (a real file that returns 200) instead of a 404. Swap this for
+  // a proper Open Graph card when one is designed.
+  const ogImage = `${SITE.DOMAIN}/favicon.png`;
   const schemaPhone = SITE.PHONE_TEL.replace(/^\+1(\d{3})(\d{3})(\d{4})$/, '+1-$1-$2-$3');
 
   const schema = JSON.stringify({
@@ -13,54 +19,24 @@
         "@id": `${SITE.DOMAIN}/#organization`,
         "name": SITE.NAME,
         "url": `${SITE.DOMAIN}/`,
-        "description": "Nationwide directory of licensed pest control contractors. Connecting homeowners with local exterminators for ants, roaches, termites, bed bugs, rodents, mosquitoes, and more.",
-        "areaServed": { "@type": "Country", "name": "United States" },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": schemaPhone,
-          "contactType": "customer service",
-          "areaServed": "US",
-          "availableLanguage": "English"
-        }
+        "logo": `${SITE.DOMAIN}/favicon.png`,
+        "telephone": schemaPhone,
+        "areaServed": { "@type": "Country", "name": "US" }
       },
       {
         "@type": "WebSite",
         "@id": `${SITE.DOMAIN}/#website`,
         "url": `${SITE.DOMAIN}/`,
         "name": SITE.NAME,
-        "description": "Find licensed pest control contractors near you.",
         "publisher": { "@id": `${SITE.DOMAIN}/#organization` }
-      },
-      {
-        "@type": "Service",
-        "@id": `${SITE.DOMAIN}/#service`,
-        "name": "Pest Control Directory Services",
-        "serviceType": "Pest Control",
-        "provider": { "@id": `${SITE.DOMAIN}/#organization` },
-        "areaServed": { "@type": "Country", "name": "United States" },
-        "description": "Connect with licensed pest control contractors for ant control, cockroach control, termite treatment, bed bug treatment, rodent control, mosquito control, and more across all 50 states.",
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Pest Control Services",
-          "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ant Control" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cockroach Control" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite Treatment" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bed Bug Treatment" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rodent Control" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mosquito Control" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Spider Control" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wasp & Hornet Removal" } }
-          ]
-        }
       },
       {
         "@type": "FAQPage",
         "@id": `${SITE.DOMAIN}/#faq`,
         "mainEntity": [
-          { "@type": "Question", "name": "How does the pest control directory work?", "acceptedAnswer": { "@type": "Answer", "text": "Click your state on the map, then drill down to your area to find the licensed pest control contractor serving your county. One call connects you directly with a local exterminator who knows your area's pest pressure and the fastest, safest treatment options." } },
-          { "@type": "Question", "name": "How much does pest control cost?", "acceptedAnswer": { "@type": "Answer", "text": "Most residential pest control jobs run between $100 and $300 for a single general treatment, with recurring quarterly plans often $40 to $80 per visit. Specialty work like termite treatment or bed bug heat remediation runs higher — termite jobs commonly $500 to $2,500+ depending on the home and method. Each contractor in our directory provides free property-specific estimates." } },
-          { "@type": "Question", "name": "How do I find a licensed exterminator near me?", "acceptedAnswer": { "@type": "Answer", "text": "Click your state on the map above, then select your area. The contractor listed is a licensed pest control professional serving your county, verified to operate legally in your service area." } },
+          { "@type": "Question", "name": "How does the pest control directory work?", "acceptedAnswer": { "@type": "Answer", "text": "Click your state on the map, then drill down to your area to find the licensed pest control contractor serving your area. One call connects you directly with a local exterminator who knows your area's pest pressure and the fastest, safest treatment options." } },
+          { "@type": "Question", "name": "How much does pest control cost?", "acceptedAnswer": { "@type": "Answer", "text": "Pest control pricing depends on the pest, how severe the infestation is, the size of your property, and whether you need a one-time treatment or a recurring plan. General pest treatments are usually the most affordable, while specialty work like termite or bed bug remediation costs more because of the equipment and follow-up involved. Every contractor in our directory provides a free, property-specific estimate before any work begins, so you'll know your exact cost up front." } },
+          { "@type": "Question", "name": "How do I find a licensed exterminator near me?", "acceptedAnswer": { "@type": "Answer", "text": "Click your state on the map above, then select your area. The contractor listed is a licensed pest control professional serving your area, verified to operate legally in your service area." } },
           { "@type": "Question", "name": "Are the treatments safe for kids and pets?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — the contractors in this directory use EPA-registered products applied at label rates, and most offer family- and pet-safe or low-toxicity treatment options. Your technician will advise on any short re-entry intervals after an application." } },
           { "@type": "Question", "name": "What pests do these contractors handle?", "acceptedAnswer": { "@type": "Answer", "text": "The full range of household pests: ants, cockroaches, termites, bed bugs, rodents (mice and rats), mosquitoes, spiders, fleas and ticks, wasps and hornets, silverfish, earwigs, and more — plus recurring prevention plans." } }
         ]
@@ -73,11 +49,11 @@
     <meta property="og:site_name" content="${SITE.NAME}">
     <meta property="og:locale" content="en_US">
     <meta property="og:url" content="${SITE.DOMAIN}/">
-    <meta property="og:title" content="${title}">
+    <meta property="og:title" content="${socialTitle}">
     <meta property="og:description" content="${metaDesc}">
     <meta property="og:image" content="${ogImage}">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="${title}">
+    <meta name="twitter:title" content="${socialTitle}">
     <meta name="twitter:description" content="${metaDesc}">
     <meta name="twitter:image" content="${ogImage}">
     <meta name="robots" content="index, follow">
@@ -89,7 +65,7 @@
   <div class="container hero-content">
     <div class="hero-badge">Nationwide Pest Control Directory</div>
     <h1>Find Licensed Pest Control Near You</h1>
-    <p class="hero-sub">A nationwide directory of licensed local exterminators. Click your state on the map below to find a verified pest control pro in your county. One call, problem solved.</p>
+    <p class="hero-sub">A nationwide directory of licensed local exterminators. Click your state on the map below to find a verified pest control pro in your area. One call, problem solved.</p>
     <div class="hero-actions">
       <a href="#map-section" class="btn-primary">Find My Area</a>
       <a href="#services" class="btn-ghost">Browse Services</a>
@@ -130,13 +106,13 @@
   <div class="container">
     <div class="section-header">
       <h2>How It Works</h2>
-      <p>We connect homeowners directly with the best local pest control professionals in their county.</p>
+      <p>We connect homeowners directly with the best local pest control professionals in their area.</p>
     </div>
     <div class="features">
       <div class="feature">
         <span class="feature-icon">📍</span>
         <h3>Find Your Area</h3>
-        <p>Click your state on the map above, then select your area to find the licensed exterminator serving your county.</p>
+        <p>Click your state on the map above, then select your area to find the licensed exterminator serving your area.</p>
       </div>
       <div class="feature">
         <span class="feature-icon">📞</span>
@@ -146,7 +122,7 @@
       <div class="feature">
         <span class="feature-icon">✅</span>
         <h3>Problem Solved</h3>
-        <p>Licensed, insured professionals handle treatment, exclusion, and prevention — with a guarantee on their work.</p>
+        <p>Licensed, insured professionals handle treatment, exclusion, and prevention — and many back their work with a guarantee.</p>
       </div>
     </div>
   </div>
@@ -158,15 +134,15 @@
     <div style="display:flex;flex-direction:column;gap:16px;margin-top:16px;">
       <details style="border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;" open>
         <summary style="padding:16px 20px;font-weight:600;cursor:pointer;font-size:0.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;">How does the pest control directory work?<span style="font-size:1.2rem;flex-shrink:0;margin-left:12px;">+</span></summary>
-        <div style="padding:0 20px 16px;color:#374151;line-height:1.7;font-size:0.93rem;border-top:1px solid #f3f4f6;">Click your state on the map, then drill down to your area to find the licensed pest control contractor serving your county. One call connects you directly with a local exterminator who knows your area's pest pressure and the fastest, safest treatment options.</div>
+        <div style="padding:0 20px 16px;color:#374151;line-height:1.7;font-size:0.93rem;border-top:1px solid #f3f4f6;">Click your state on the map, then drill down to your area to find the licensed pest control contractor serving your area. One call connects you directly with a local exterminator who knows your area's pest pressure and the fastest, safest treatment options.</div>
       </details>
       <details style="border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;">
         <summary style="padding:16px 20px;font-weight:600;cursor:pointer;font-size:0.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;">How much does pest control cost?<span style="font-size:1.2rem;flex-shrink:0;margin-left:12px;">+</span></summary>
-        <div style="padding:0 20px 16px;color:#374151;line-height:1.7;font-size:0.93rem;border-top:1px solid #f3f4f6;">Most residential pest control jobs run between <strong>$100 and $300</strong> for a single general treatment, with recurring quarterly plans often $40 to $80 per visit. Specialty work like termite treatment or bed bug heat remediation runs higher — termite jobs commonly $500 to $2,500+ depending on the home and method. Each contractor in our directory provides free property-specific estimates.</div>
+        <div style="padding:0 20px 16px;color:#374151;line-height:1.7;font-size:0.93rem;border-top:1px solid #f3f4f6;">Pest control pricing depends on the pest, how severe the infestation is, the size of your property, and whether you need a one-time treatment or a recurring plan. General pest treatments are usually the most affordable, while specialty work like termite or bed bug remediation costs more because of the equipment and follow-up involved. Every contractor in our directory provides a free, property-specific estimate before any work begins, so you'll know your exact cost up front.</div>
       </details>
       <details style="border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;">
         <summary style="padding:16px 20px;font-weight:600;cursor:pointer;font-size:0.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;">How do I find a licensed exterminator near me?<span style="font-size:1.2rem;flex-shrink:0;margin-left:12px;">+</span></summary>
-        <div style="padding:0 20px 16px;color:#374151;line-height:1.7;font-size:0.93rem;border-top:1px solid #f3f4f6;">Click your state on the map above, then select your area. The contractor listed is a licensed pest control professional serving your county, verified to operate legally in your service area.</div>
+        <div style="padding:0 20px 16px;color:#374151;line-height:1.7;font-size:0.93rem;border-top:1px solid #f3f4f6;">Click your state on the map above, then select your area. The contractor listed is a licensed pest control professional serving your area, verified to operate legally in your service area.</div>
       </details>
       <details style="border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;">
         <summary style="padding:16px 20px;font-weight:600;cursor:pointer;font-size:0.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;">Are the treatments safe for kids and pets?<span style="font-size:1.2rem;flex-shrink:0;margin-left:12px;">+</span></summary>
