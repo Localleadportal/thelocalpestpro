@@ -21,6 +21,7 @@ const us = require('us');
 const { SITE } = require('./data/site');
 const { statesAndCounties, stateSlugToName, countySlugToName, toSlug } = require('./data/locations');
 const { getService } = require('./data/services');
+const { getStatePage } = require('./data/states');
 const { getContractor } = require('./lib/contractor');
 const { formatPhone, toTitleCase, normalizeStateRegion, normalizeUrl } = require('./lib/format');
 
@@ -124,7 +125,27 @@ app.get('/:serviceSlug', (req, res, next) => {
   res.redirect(301, `/${req.params.serviceSlug}/`);
 });
 
-// 404 — anything not yet built (state / city pages are added one at a time).
+// ── State hub pages ──────────────────────────────────────────────────────────
+// One consumer-focused, SEO page per built-out state (data/states.js) covering
+// every pest in that state and linking out to the national /<service>/ pages.
+// Reached from the homepage map (which links each state to /<slug>/). Only
+// states with authored content render; the rest fall through to the 404 handler,
+// so the map's other states stay "coming soon" until built. State pages always
+// show the shared (844) directory number — county/city contractor routing lives
+// on deeper pages. No state slug collides with a service slug, so this sits
+// safely after the service routes above.
+app.get('/:stateSlug/', (req, res, next) => {
+  const state = getStatePage(req.params.stateSlug);
+  if (!state) return next();
+  res.render('state', { state });
+});
+// Trailing-slash redirect — only for built states, so unknown slugs still 404.
+app.get('/:stateSlug', (req, res, next) => {
+  if (!getStatePage(req.params.stateSlug)) return next();
+  res.redirect(301, `/${req.params.stateSlug}/`);
+});
+
+// 404 — anything not yet built (city pages are added one at a time).
 app.use((req, res) => res.status(404).render('404', { message: 'Page not found.' }));
 
 app.listen(PORT, () => console.log(`${SITE.NAME} running on port ${PORT}`));
