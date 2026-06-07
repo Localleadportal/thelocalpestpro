@@ -1,0 +1,23 @@
+<%
+  const title = `Page Not Found | ${SITE.NAME}`;
+  const metaDesc = 'The page you are looking for could not be found.';
+  const canonical = '/';
+  const noindex = true;
+%>
+<%- include('layout', { title, metaDesc, canonical, noindex, body: `
+<section class="page-hero">
+  <div class="container">
+    <h1>Page Not Found</h1>
+    <p>${typeof message !== 'undefined' ? message : 'The page you are looking for could not be found.'}</p>
+  </div>
+</section>
+<section class="county-content">
+  <div class="container" style="text-align:center;padding:48px 0;">
+    <p style="margin-bottom:24px;color:var(--muted);">Find a licensed pest control pro in your area, or call us directly.</p>
+    <div class="hero-actions" style="justify-content:center;">
+      <a href="/#map-section" class="btn-primary">Find My Area</a>
+      <a href="tel:${SITE.PHONE_TEL}" class="btn-ghost">${SITE.PHONE_DISPLAY}</a>
+    </div>
+  </div>
+</section>
+` }) %>

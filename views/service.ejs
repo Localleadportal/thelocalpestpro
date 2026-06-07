@@ -1,0 +1,21 @@
+<%
+  // Dedicated service page. Indexable by default — pages are published with real
+  // content as they are added. To hold a single page back, set `noindex: true`
+  // on its entry in data/services.js; otherwise it is indexed.
+  const title = `${service.h1} | ${SITE.NAME}`;
+  const metaDesc = service.metaDesc;
+  const canonical = `/${service.slug}/`;
+  const noindex = service.noindex === true;
+%>
+<%- include('layout', { title, metaDesc, canonical, noindex, body: `
+<section class="page-hero">
+  <div class="container">
+    <h1>${service.h1}</h1>
+    <p>${service.intro}</p>
+    <div class="hero-actions" style="justify-content:center;margin-top:26px;">
+      <a href="/#map-section" class="btn-primary">Find My Area</a>
+      <a href="tel:${SITE.PHONE_TEL}" class="btn-ghost">📞 ${SITE.PHONE_DISPLAY}</a>
+    </div>
+  </div>
+</section>
+` }) %>
