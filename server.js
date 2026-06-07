@@ -72,6 +72,17 @@ function assetHash(relPath) {
 }
 app.locals.cssVersion = assetHash('css/style.css');
 
+// HSTS — once a browser sees this over HTTPS it refuses plain-http requests to
+// the domain for a year, so the apex's http hop never downgrades a repeat
+// visitor (and stale "Not secure" tab state can't recur). Sent only on secure
+// requests; `trust proxy` (set above) makes req.secure reflect Railway's
+// X-Forwarded-Proto. `preload` is intentionally omitted — the apex is served by
+// GoDaddy forwarding, which can't emit HSTS, so the domain isn't preload-eligible.
+app.use((req, res, next) => {
+  if (req.secure) res.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+  next();
+});
+
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: '1y', immutable: true }));
 app.use((req, res, next) => { res.set('Cache-Control', 'no-cache'); next(); });
 app.use(express.urlencoded({ extended: true }));
