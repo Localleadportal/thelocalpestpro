@@ -87,8 +87,8 @@ module.exports = {
       heading: 'How It Works',
       cards: [
         { name: '1. Call for your free quote', text: "One call connects you with a licensed, insured exterminator who serves Holly Springs and the surrounding Cherokee County area — no obligation, no pressure." },
-        { name: '2. Get a local inspection', text: "Your pro inspects the property, identifies the pest and how far it has spread, and recommends the right treatment for your Holly Springs home and lot — one-time or recurring." },
-        { name: '3. Problem solved', text: "Licensed technicians treat, seal out, and prevent using EPA-registered products applied at label rates, with family- and pet-safe options — and most stand behind the work with a guarantee." },
+        { name: '2. Get an on-site inspection', text: "Your pro inspects the property, identifies the pest and how far it has spread, and recommends the right treatment for your Holly Springs home and lot — one-time or recurring." },
+        { name: '3. Pests handled for good', text: "Licensed technicians treat, seal out, and prevent using EPA-registered products applied at label rates, with family- and pet-safe options — and most stand behind the work with a guarantee." },
       ],
     },
     {
@@ -174,7 +174,7 @@ module.exports = {
             { name: 'Soil-applied liquid barrier', text: "A non-repellent liquid termiticide is worked into the soil around and beneath the foundation, forming an unbroken treated zone that kills subterranean termites as they tunnel through it. A strong fit for the slab and crawlspace construction common across Holly Springs." },
             { name: 'In-ground baiting system', text: "Monitored stations ringed around the home use a slow-acting bait that foragers carry back to collapse the colony at its source. A clean choice for landscaped or wooded lots where digging a trench isn't practical." },
             { name: 'New-construction & wood treatments', text: "Borate treatments on exposed framing during a build or repair — routine in Holly Springs' growing subdivisions — guard bare lumber against termites and decay fungi for the life of the wood." },
-            { name: 'Annual renewal & warranty', text: "A renewable termite bond with yearly re-inspections keeps protection live in a county where outside pressure never eases, so any fresh activity is caught and re-treated early." },
+            { name: 'Ongoing bond & yearly checks', text: "A renewable termite bond with yearly re-inspections keeps protection live in a county where outside pressure never eases, so any fresh activity is caught and re-treated early." },
           ],
         },
         {
@@ -346,6 +346,218 @@ module.exports = {
         { q: 'Is a recurring plan safe to use around kids and pets?', a: "Yes. Holly Springs pros apply EPA-registered products at label rates and offer family- and pet-safe options, concentrating treatment on the exterior, entry points, and cracks and crevices rather than across your living space. Your technician notes any brief re-entry time, usually just until things dry." },
       ],
       finalCtaHeading: 'Get Year-Round Pest Protection in Holly Springs',
+    },
+
+    'cockroach-control': {
+      cardBlurb: "German roaches breeding indoors (a real townhome concern) and 'palmetto bugs' from the mulch and crawlspaces — gel baiting, crack-and-crevice work, and sanitation that keeps them gone.",
+      metaTitle: 'Cockroach Control in Holly Springs, GA | The Local Pest Pro',
+      metaDesc: "Cockroach control in Holly Springs, GA — German roaches indoors, 'palmetto bugs' outside. Gel baiting, crack-and-crevice work & sanitation, guaranteed. Free quote.",
+      h1: 'Cockroach Control in Holly Springs, GA',
+      breadcrumbName: 'Cockroach Control',
+      heroSub: "Holly Springs' humidity keeps roaches in play all year — German roaches breeding indoors (a real concern in townhomes and attached housing) and the big 'palmetto bugs' that wander in from mulch beds and crawlspaces. A licensed local pro clears them out and keeps them gone, usually with a guarantee.",
+      sections: [
+        {
+          heading: 'Two Very Different Roach Problems in Holly Springs',
+          paras: [
+            "Roaches in Holly Springs fall into two camps that call for opposite strategies. The German cockroach is a small, indoor breeder that settles into kitchens and bathrooms, multiplies fast, and almost never arrives from outside — so finding them usually points to an established infestation. The big reddish-brown roaches people call 'palmetto bugs' — the smokybrown and American cockroach — are outdoor insects that live in mulch, leaf litter, gutters, and crawlspaces and wander in, which is why you can spot a large roach even in a spotless home. Damp basements and crawlspaces can also harbor the darker Oriental cockroach, frequently mistaken for a 'water bug.'",
+          ],
+        },
+        {
+          heading: 'Why Townhomes and Attached Homes See More Roaches',
+          paras: [
+            "Holly Springs' rapid growth has brought a wave of townhomes and attached housing, much of it around the developing Town Center near Holly Springs Parkway and Hickory Road — and that style of construction gives German cockroaches an opening. Shared walls, common plumbing chases, and adjoining utility lines let an infestation in one unit migrate to the next, so a roach problem isn't always 'yours' to begin with. Treating a single attached unit in isolation rarely holds; durable control means addressing harborage and entry points along the shared structure.",
+          ],
+        },
+        {
+          heading: 'Why Roaches Thrive in the Holly Springs Climate',
+          paras: [
+            "Roaches want warmth, moisture, and food, and Holly Springs' humid subtropical weather hands them the first two in abundance for most of the year. Outdoors, pine straw, mulch beds, woodpiles, gutters, and crawlspaces give the smokybrown and American 'palmetto bugs' cool, damp harborage right against the foundation, and they follow moisture and light indoors after dark. Inside, kitchen grease, crumbs, pet food, cardboard, and the dampness under sinks keep German cockroaches fed and breeding around the calendar.",
+          ],
+        },
+        {
+          heading: 'How the Pros Clear Roaches Here',
+          paras: [
+            "Because the two roach problems are so different, a licensed pro tailors the treatment to the species:",
+          ],
+          cards: [
+            { name: 'German roaches indoors', text: "Precise gel baiting tucked into cracks and crevices, insect growth regulators that shut down breeding, monitoring, and practical sanitation guidance. DIY foggers tend to scatter a German infestation and make it worse." },
+            { name: 'Palmetto bugs outdoors', text: "An exterior perimeter treatment, attention to harborage like mulch, gutters, woodpiles, and crawlspaces, and sealing the gaps around doors, pipes, and the foundation where the big roaches slip in." },
+            { name: 'Attached-housing approach', text: "In townhomes and duplexes, treatment concentrates on shared walls, plumbing penetrations, and the routes between units a German infestation uses to spread, paired with monitoring to confirm it's truly gone." },
+            { name: 'Ongoing protection', text: "Because the outdoor roach pressure in Holly Springs never really lets up, most homeowners follow an initial cleanout with recurring quarterly service, typically backed by a re-treat guarantee between visits." },
+          ],
+        },
+        {
+          heading: 'Roaches Are a Health Issue, Not Just a Nuisance',
+          paras: [
+            "There's a real reason to move quickly. German cockroach droppings and shed skins are a recognized trigger for asthma and allergy flare-ups, particularly in children, and roaches travel from drains and garbage onto counters and dishes, where they can spread bacteria. In an attached home, an unchecked infestation next door becomes a shared health problem. Clearing roaches out is as much about your family's health as your comfort.",
+          ],
+        },
+        {
+          heading: 'What Cockroach Control Costs Here',
+          paras: [
+            "There's no single price. A German cockroach cleanout may take an initial treatment plus a follow-up or two to break the breeding cycle, while outdoor 'palmetto bug' control is often folded into a recurring perimeter plan, and attached homes sometimes need coordination across units. The pros in our directory inspect, identify the species, and give you a free, written quote before any work begins — and most guarantee the result.",
+          ],
+        },
+      ],
+      faqs: [
+        { q: 'Why do I see big roaches in my clean Holly Springs home?', a: "Those large reddish-brown roaches are almost always 'palmetto bugs' — smokybrown or American cockroaches — that live outdoors in mulch, gutters, woodpiles, and crawlspaces and wander inside. They aren't a sign of poor housekeeping; in Holly Springs' humid climate they're right up against the house. An exterior barrier plus sealing entry points is what keeps them out." },
+        { q: 'I live in a Holly Springs townhome — why do roaches keep coming back?', a: "Attached housing shares walls, plumbing chases, and utility lines, so a German cockroach infestation can travel between units. Treating your unit alone often won't hold if the source is next door. A pro focuses on the shared structure and the entry points between units and monitors to confirm the problem is fully gone — sometimes coordinating across units." },
+        { q: 'Are palmetto bugs the same as cockroaches?', a: "Yes — 'palmetto bug' is simply a Southern nickname for large roaches, mainly the smokybrown and American cockroach. The meaningful split is indoor versus outdoor: German cockroaches breed indoors and signal an infestation, while palmetto bugs are outdoor roaches coming in from the yard, and the two are treated very differently." },
+        { q: 'Will one treatment get rid of my roaches?', a: "It depends on the type. An outdoor 'palmetto bug' problem is usually managed with a recurring perimeter plan, while a German cockroach infestation typically needs an initial treatment plus one or two follow-ups to interrupt the breeding cycle. Your pro will lay out a realistic timeline after inspecting." },
+        { q: 'Is roach treatment safe around kids and pets?', a: "Yes. Holly Springs pros rely on targeted gel baits and EPA-registered products placed into cracks, crevices, and exterior harborage rather than sprayed across living areas — safer and far more effective than store-bought foggers. Your technician will mention any short precautions." },
+      ],
+      finalCtaHeading: 'Clear the Roaches From Your Holly Springs Home',
+    },
+
+    'rodent-control': {
+      cardBlurb: "When the nights cool, roof rats and mice slip into attics and walls through gaps in older homes and new builds alike. Trapping, exclusion that seals them out, and monitoring.",
+      metaTitle: 'Rodent Control in Holly Springs, GA | The Local Pest Pro',
+      metaDesc: "Rodent control in Holly Springs, GA — roof rats & mice push into attics as nights cool. Trapping, exclusion, and monitoring that keeps them out. Free inspection.",
+      h1: 'Rodent Control in Holly Springs, GA',
+      breadcrumbName: 'Rodent Control',
+      heroSub: "When Holly Springs nights turn cool, roof rats, Norway rats, and house mice look for a warm way inside — and the city's mix of established homes and brand-new construction gives them plenty of gaps to use. A licensed local pro traps what's there and seals the entry points so they can't return.",
+      sections: [
+        {
+          heading: 'Why Rodents Head Indoors Across Holly Springs',
+          paras: [
+            "Rodent calls in Holly Springs climb in the fall. As nights cool, the roof rats, Norway rats, and house mice that spent summer outdoors start hunting for warmth, food, and a dry place to nest — and a heated house is the obvious target. The city's wooded, suburban setting feeds the problem: tree-lined lots and landscaped yards give rodents cover and a route to the structure, and the area's mild winters let them stay active even after they move in.",
+            "Holly Springs' housing mix offers them options at every age. Older homes carry decades of small gaps, worn weatherstripping, and settled cracks, while the city's many new subdivisions hand rodents fresh openings around utility penetrations, garage doors, and where new framing meets the foundation. Either way it usually takes only a small gap to get in — a mouse can fit through a hole the size of a dime.",
+          ],
+        },
+        {
+          heading: "Holly Springs' Common Rodents",
+          cards: [
+            { name: 'Roof rats', text: "Agile climbers that use tree limbs, fences, and downspouts to reach the roofline, then nest in attics and soffits. The scratching or scampering you hear overhead after dark is most often a roof rat." },
+            { name: 'Norway rats', text: "Heavier, ground-dwelling rats that burrow and favor crawlspaces, garages, and the spaces under sheds and woodpiles, gnawing in low on the structure and around utility lines." },
+            { name: 'House mice', text: "The most common indoor rodent and a quick breeder. Slipping through a dime-sized gap, a mouse contaminates far more food than it eats — often first noticed as droppings in the pantry or under a sink." },
+          ],
+        },
+        {
+          heading: 'The Signs You Have a Rodent Problem',
+          paras: [
+            "Rodents are most active at night, so you'll usually spot the evidence before the animal itself:",
+          ],
+          bullets: [
+            "Scratching, gnawing, or scurrying overhead or inside the walls after dark",
+            "Droppings in the pantry, the garage, under sinks, or along baseboards",
+            "Chew marks on food packaging, stored boxes, wood, or electrical wiring",
+            "Greasy smudge marks where rodents run the same routes along walls and beams",
+            "Shredded insulation, paper, or fabric pulled together into nests",
+            "A musky odor, or a pet that keeps fixating on one wall or appliance",
+          ],
+        },
+        {
+          heading: 'Why Exclusion — Not Just Bait — Is the Real Fix',
+          paras: [
+            "Scattering poison around a rodent problem rarely settles it. Bait alone can leave rodents to die inside walls — and the smell that follows — and it does nothing to stop the next ones from using the same opening. The durable fix in Holly Springs is exclusion: finding and sealing every entry point so rodents physically can't get back in. A licensed pro builds the whole job around that idea:",
+          ],
+          cards: [
+            { name: 'On-site inspection', text: "A full sweep of the roofline, soffits, foundation, crawlspace, garage, and utility penetrations to confirm the species and map every way they're getting in." },
+            { name: 'Trap-out & removal', text: "Targeted trapping clears the active rodents quickly and cleanly, without leaning on poisons inside your living space." },
+            { name: 'Exclusion — the lasting fix', text: "Gaps, vents, roofline openings, and utility chases are sealed with rodent-proof materials so rats and mice can't return. This is the step that makes the result hold." },
+            { name: 'Monitoring & sanitizing', text: "Exterior tamper-resistant stations catch new pressure, and contaminated nesting and droppings are removed and sanitized to clear health hazards and scent trails." },
+          ],
+        },
+        {
+          heading: 'Keep Rodents Out of Your Holly Springs Home',
+          bullets: [
+            "Trim tree limbs and shrubs back from the roof and walls — roof rats cross them like bridges",
+            "Seal gaps around pipes, vents, and the foundation, and check where new construction meets the slab",
+            "Add door sweeps and replace worn weatherstripping on entry and garage doors",
+            "Store food and pet food in sealed containers and wipe up spills promptly",
+            "Keep firewood, yard debris, and clutter away from the house and up off the ground",
+          ],
+        },
+        {
+          heading: 'Why Rodents Are Worth Acting On Fast',
+          paras: [
+            "Rodents are far more than a nuisance. They gnaw constantly — including on electrical wiring, a recognized fire risk — and they contaminate food and surfaces with droppings and urine that can spread illness. They also bring fleas, ticks, and mites indoors, and their nesting tears up insulation and ductwork. Because they breed quickly, a couple of mice in October can become a much bigger problem by deep winter, so an early call keeps a small issue from turning costly.",
+          ],
+        },
+        {
+          heading: 'What Rodent Control Costs Here',
+          paras: [
+            "There's no flat rate. The price depends on the rodent, how far the problem has spread, and how much exclusion work your home needs — sealing a couple of roofline gaps is very different from rodent-proofing an older house. Many Holly Springs homeowners pair an initial cleanout with recurring exterior monitoring. The pros in our directory inspect first, then hand you a free, written quote before any work begins, so you know the plan and the price up front.",
+          ],
+        },
+      ],
+      faqs: [
+        { q: "What's making that scratching sound in my attic at night?", a: "In Holly Springs that's most often a roof rat — an agile climber that nests in attics and soffits and is busiest after dark. Squirrels are possible too, but they tend to be active in daylight. A licensed inspector can confirm the species and find the roofline openings being used." },
+        { q: 'How are rodents getting into my home?', a: "Roof rats enter high, through soffit and roofline gaps they reach via tree limbs and downspouts, while Norway rats and mice come in low — through foundation and utility-line gaps, garage doors, and crawlspace vents. A mouse needs only a dime-sized hole. A pro's inspection pinpoints the specific entry points so they can be sealed." },
+        { q: 'Is trapping better than using poison?', a: "For rodents already inside, yes — trapping removes them cleanly and avoids animals dying in your walls. Just as important is exclusion, which poison can't do: sealing the openings so new rodents can't replace the old ones. Exterior bait stations have a place around the perimeter, but keeping rodents out is the real solution." },
+        { q: 'Do new-construction homes in Holly Springs get rodents?', a: "They can. New builds often have gaps around utility penetrations, garage doors, and where framing meets the foundation that rodents exploit just like the worn spots in older homes. If you're hearing or seeing rodents in a newer Holly Springs home, an inspection and exclusion are the answer." },
+        { q: 'Will the rodents come back after treatment?', a: "Preventing that is the whole point of exclusion. Once the active rodents are trapped out and the entry points are sealed with rodent-proof materials, they can't simply return through the same gaps. Ongoing exterior monitoring adds insurance against new pressure drifting in from the surrounding wooded lots." },
+      ],
+      finalCtaHeading: 'Get Rodents Out of Your Holly Springs Home',
+    },
+
+    'bed-bug-treatment': {
+      cardBlurb: "Bed bugs ride home from travel up and down the I-575 corridor and spread fast. Whole-room heat or a residual program clears every life stage, with follow-up verification.",
+      metaTitle: 'Bed Bug Treatment in Holly Springs, GA | The Local Pest Pro',
+      metaDesc: "Bed bug treatment in Holly Springs, GA — discreet whole-room heat or residual programs that kill bed bugs at every life stage. Free local inspection today.",
+      h1: 'Bed Bug Treatment in Holly Springs, GA',
+      breadcrumbName: 'Bed Bug Treatment',
+      heroSub: "Bed bugs are hitchhikers — they ride home from travel, hotels, and secondhand furniture, and they spread fast once inside. A licensed Holly Springs pro can wipe them out at every life stage with whole-room heat or a targeted residual program, discreetly and with follow-up verification.",
+      sections: [
+        {
+          heading: 'How Bed Bugs End Up in Holly Springs Homes',
+          paras: [
+            "Bed bugs don't care how clean or new a home is — they travel on people and belongings, which makes a commuter suburb like Holly Springs an easy place for them to land. The city sits about 35 miles up the I-575 corridor from Atlanta, and the daily flow of travel and commuting to and from the metro gives bed bugs steady opportunities to hitch a ride home on luggage, bags, or clothing after a hotel stay, a trip, or time in a shared space.",
+            "Once they arrive, a few sources keep them moving: secondhand furniture and mattresses, moving boxes, and — in the townhomes, apartments, and rentals that have grown with the city around the Town Center area — spread between attached units. A handful of bed bugs can build into an infestation within weeks, because a single female lays hundreds of eggs, so catching them early makes treatment faster and simpler.",
+          ],
+        },
+        {
+          heading: 'Telltale Signs of Bed Bugs',
+          paras: [
+            "Bed bugs are roughly the size of an apple seed, flat, and reddish-brown, and they hide within a few feet of where you sleep. The signs to look for:",
+          ],
+          bullets: [
+            "Small, itchy welts in rows or clusters on skin left uncovered during sleep",
+            "Rust- or blood-colored smears on sheets, pillowcases, and mattress seams",
+            "Dark, pepper-like specks (droppings) along seams, the box spring, and the headboard",
+            "Pale, translucent shed skins, and in heavier cases a sweet, musty smell",
+            "Live bugs tucked into mattress seams, behind the headboard, and inside nightstands",
+          ],
+        },
+        {
+          heading: 'Why DIY Rarely Ends a Bed Bug Infestation',
+          paras: [
+            "Store-bought sprays and foggers are a leading reason bed bugs spread instead of disappearing. Many populations shrug off the common over-the-counter insecticides, foggers don't reach the tight cracks where bugs and eggs hide, and disturbing a cluster often just scatters it to the next room — or, in an attached Holly Springs townhome or apartment, the next unit. Professional treatment is built to reach the hiding spots and the eggs that DIY leaves behind.",
+          ],
+        },
+        {
+          heading: 'How the Pros Treat Bed Bugs Here',
+          paras: [
+            "A licensed Holly Springs pro confirms the infestation first, then matches the method to your home and how far it has spread:",
+          ],
+          cards: [
+            { name: 'Whole-room heat', text: "Specialized equipment raises the space to a temperature lethal to bed bugs and their eggs, clearing every life stage in a single treatment — including bugs buried deep in walls and furniture — with very little residue left behind." },
+            { name: 'Staged residual program', text: "A staged plan of EPA-registered residual products with scheduled follow-ups, often combined with steam and mattress encasements, that drives the population down and catches newly hatched bugs over the following weeks." },
+            { name: 'Inspection & confirmation', text: "Trained technicians — sometimes with K-9 detection — verify it's truly bed bugs, locate every harborage, and re-check after treatment so nothing survives unnoticed." },
+            { name: 'Prep & mattress encasements', text: "You'll get a clear prep checklist, and your pro may install mattress and box-spring encasements that trap any remaining bugs and make ongoing monitoring simple." },
+          ],
+        },
+        {
+          heading: 'Why Bed Bugs Take Every Life Stage to Beat',
+          paras: [
+            "Bed bugs are stubborn because of their life cycle. Eggs are tiny, cemented into cracks, and resistant to many products; nymphs stay hidden between feedings; and adults can survive long stretches without a meal. A treatment that kills the adults you can see but misses the eggs simply restarts the cycle. That's why effective programs are built around reaching every stage and verifying with follow-up — whether through the all-at-once kill of heat or the staged coverage of a residual plan.",
+          ],
+        },
+        {
+          heading: 'What Bed Bug Treatment Costs Here',
+          paras: [
+            "Bed bug pricing isn't one-size-fits-all. Cost depends on the size of the home, how many rooms are involved, and whether you choose heat or a residual program — and treating a single room caught early is far less involved than a whole-home infestation that's had months to spread, which is one more reason to act quickly. The pros in our directory offer a discreet inspection and a clear written quote before any work begins, and most stand behind their bed bug work with a guarantee.",
+          ],
+        },
+      ],
+      faqs: [
+        { q: "How do I know if it's really bed bugs?", a: "Look for itchy welts in rows, rust or blood-colored smears on bedding, dark pepper-like droppings along mattress seams and the headboard, pale shed skins, and live apple-seed-sized bugs near where you sleep. Because other insects get mistaken for them, a licensed pro — sometimes with a K-9 — can confirm it and find every harborage." },
+        { q: 'Will heat treatment get rid of every bed bug?', a: "Yes. Raising a room to a temperature bed bugs can't survive kills adults, nymphs, and eggs alike — including bugs hidden deep in walls and furniture — usually in a single treatment, and it leaves little residue behind. It's one of the most thorough options available." },
+        { q: 'Can I stay in my Holly Springs home during treatment?', a: "Usually, yes. You'll get a prep checklist and instructions on when to be out of the treated rooms (heat treatments require you to leave those rooms during the process) and when it's safe to return. Your provider will walk you through the specifics for your situation." },
+        { q: 'Do I need to throw away my mattress and furniture?', a: "Most of the time, no. Professional heat and residual treatments save the majority of mattresses and furniture, and encasements let you keep a treated mattress safely. Tossing items out can actually spread bed bugs through the home — check with your technician before discarding anything." },
+        { q: 'Why do bed bugs keep coming back in my townhome?', a: "In attached housing, bed bugs can travel between units through wall voids and shared spaces, so a unit treated on its own can be re-introduced from next door. A pro inspects the harborage and entry routes, treats thoroughly, and uses follow-up checks and encasements to confirm the infestation is truly gone." },
+      ],
+      finalCtaHeading: 'Get Rid of Bed Bugs in Holly Springs',
     },
   },
 };
