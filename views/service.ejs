@@ -1,21 +1,253 @@
 <%
-  // Dedicated service page. Indexable by default — pages are published with real
-  // content as they are added. To hold a single page back, set `noindex: true`
-  // on its entry in data/services.js; otherwise it is indexed.
-  const title = `${service.h1} | ${SITE.NAME}`;
-  const metaDesc = service.metaDesc;
-  const canonical = `/${service.slug}/`;
-  const noindex = service.noindex === true;
-%>
-<%- include('layout', { title, metaDesc, canonical, noindex, body: `
+  // Dedicated service ("national") page — e.g. /termite-control/. Data-driven:
+  // rich sections (overview, signs, types, treatments, cost, prevention, FAQ)
+  // render only when the service defines them in data/services.js, so a minimal
+  // service still produces a valid page (hero + quote CTA + cross-links).
+  // Indexable by default; set noindex:true on the service entry to hold it back.
+  //
+  // This is a directory / service hub, not a single business — no LocalBusiness
+  // node. Schema is WebPage + Service + BreadcrumbList (+ FAQPage when defined).
+  const svc = service;
+  const pageUrl = `${SITE.DOMAIN}/${svc.slug}/`;
+  const ogImage = `${SITE.DOMAIN}/favicon.png`;
+  const phoneTel = SITE.PHONE_TEL;
+  const phoneDisplay = SITE.PHONE_DISPLAY;
+
+  const title = svc.metaTitle || `${svc.h1} | ${SITE.NAME}`;
+  const metaDesc = svc.metaDesc;
+  const canonical = `/${svc.slug}/`;
+  const noindex = svc.noindex === true;
+
+  // ── Schema graph ──
+  const graph = [
+    {
+      "@type": "WebPage",
+      "@id": pageUrl + "#webpage",
+      "url": pageUrl,
+      "name": title,
+      "description": metaDesc,
+      "inLanguage": "en-US",
+      "isPartOf": { "@id": `${SITE.DOMAIN}/#website` },
+      "about": { "@type": "Thing", "name": svc.name },
+      "breadcrumb": { "@id": pageUrl + "#breadcrumb" }
+    },
+    {
+      "@type": "Service",
+      "@id": pageUrl + "#service",
+      "name": svc.name,
+      "serviceType": svc.name,
+      "description": metaDesc,
+      "provider": { "@id": `${SITE.DOMAIN}/#organization` },
+      "areaServed": { "@type": "Country", "name": "United States" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": pageUrl + "#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE.DOMAIN}/` },
+        { "@type": "ListItem", "position": 2, "name": svc.name }
+      ]
+    }
+  ];
+  if (svc.faqs && svc.faqs.length) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": pageUrl + "#faq",
+      "mainEntity": svc.faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a }
+      }))
+    });
+  }
+  const schema = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
+
+  const extraHead = `
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="${SITE.NAME}">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="${pageUrl}">
+    <meta property="og:title" content="${title}">
+    <meta property="og:description" content="${metaDesc}">
+    <meta property="og:image" content="${ogImage}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${title}">
+    <meta name="twitter:description" content="${metaDesc}">
+    <meta name="twitter:image" content="${ogImage}">
+    ${noindex ? '' : '<meta name="robots" content="index, follow">'}
+  `;
+
+  // ── Fragment helpers ──
+  const featureGrid = items => items.map(i =>
+    `<div class="feature"><h3>${i.name}</h3><p>${i.text}</p></div>`).join('');
+  const tipsList = items => `<ul class="tips-list">${items.map(s => `<li>${s}</li>`).join('')}</ul>`;
+
+  const overviewHtml = (svc.overview && svc.overview.length) ? `
+<section class="state-content">
+  <div class="container">
+    <h2>${svc.overviewHeading || `Understanding ${svc.name}`}</h2>
+    ${svc.overview.map(p => `<p>${p}</p>`).join('\n    ')}
+  </div>
+</section>` : '';
+
+  const signsHtml = (svc.signs && svc.signs.length) ? `
+<section class="county-content">
+  <div class="container">
+    <h2>${svc.signsHeading || 'Warning Signs'}</h2>
+    ${tipsList(svc.signs)}
+  </div>
+</section>` : '';
+
+  const typesHtml = (svc.types && svc.types.length) ? `
+<section class="about">
+  <div class="container">
+    <div class="section-header">
+      <h2>${svc.typesHeading || 'Types We Treat'}</h2>
+    </div>
+    <div class="features">${featureGrid(svc.types)}</div>
+  </div>
+</section>` : '';
+
+  const treatmentsHtml = (svc.treatments && svc.treatments.length) ? `
+<section class="county-content">
+  <div class="container">
+    <h2>${svc.treatmentsHeading || 'Treatment Options'}</h2>
+    <div class="features" style="margin-top:24px;">${featureGrid(svc.treatments)}</div>
+  </div>
+</section>` : '';
+
+  const costHtml = svc.costNote ? `
+<section class="state-content">
+  <div class="container">
+    <h2>${svc.costHeading || `How Much Does ${svc.name} Cost?`}</h2>
+    <p>${svc.costNote}</p>
+    ${(svc.prevention && svc.prevention.length) ? `<h3>${svc.preventionHeading || 'Prevention Tips'}</h3>${tipsList(svc.prevention)}` : ''}
+  </div>
+</section>` : '';
+
+  // Related services (cross-linking) — every other service in the catalog.
+  const related = (typeof SERVICES !== 'undefined' && SERVICES)
+    ? Object.values(SERVICES).filter(s => s.slug !== svc.slug) : [];
+  // Built state hubs (browse-by-state internal links).
+  const states = (typeof STATES !== 'undefined' && STATES) ? Object.values(STATES) : [];
+
+  const relatedHtml = related.length ? `
+<section class="counties-section" style="background:var(--green-light);border-top:1px solid var(--green-border);">
+  <div class="container">
+    <div class="section-header">
+      <h2>More Pest Control Services</h2>
+      <p>Every pro in our directory handles the full range of household pests.</p>
+    </div>
+    <ul class="counties-grid">
+      ${related.map(s => `<li><a href="/${s.slug}/">${s.name}</a></li>`).join('\n      ')}
+    </ul>
+    ${states.length ? `
+    <div class="section-header" style="margin-top:48px;">
+      <h2>Find ${svc.name} in Your State</h2>
+      <p>Browse our state directories, or use the <a href="/#map-section" style="color:var(--green);font-weight:600;">interactive map</a> to find a local pro.</p>
+    </div>
+    <ul class="counties-grid">
+      ${states.map(st => `<li><a href="/${st.slug}/">Pest Control in ${st.name}</a></li>`).join('\n      ')}
+    </ul>` : ''}
+  </div>
+</section>` : '';
+
+  const faqHtml = (svc.faqs && svc.faqs.length) ? `
+<section class="county-content">
+  <div class="container">
+    <h2>Frequently Asked Questions — ${svc.name}</h2>
+    <div style="display:flex;flex-direction:column;gap:16px;margin-top:16px;">
+      ${svc.faqs.map((f, i) => `<details style="border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;"${i === 0 ? ' open' : ''}><summary style="padding:16px 20px;font-weight:600;cursor:pointer;font-size:0.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;">${f.q}<span style="font-size:1.2rem;flex-shrink:0;margin-left:12px;">+</span></summary><div style="padding:0 20px 16px;color:#374151;line-height:1.7;font-size:0.93rem;border-top:1px solid #f3f4f6;">${f.a}</div></details>`).join('')}
+    </div>
+  </div>
+</section>` : '';
+
+  const body = `
+<nav class="breadcrumb">
+  <div class="container">
+    <a href="/">Home</a> &rsaquo; <span>${svc.name}</span>
+  </div>
+</nav>
+
 <section class="page-hero">
   <div class="container">
-    <h1>${service.h1}</h1>
-    <p>${service.intro}</p>
-    <div class="hero-actions" style="justify-content:center;margin-top:26px;">
-      <a href="/#map-section" class="btn-primary">Find My Area</a>
-      <a href="tel:${SITE.PHONE_TEL}" class="btn-ghost">📞 ${SITE.PHONE_DISPLAY}</a>
+    <h1>${svc.h1}</h1>
+    <p>${svc.intro}</p>
+    <div class="hero-actions" style="justify-content:center;margin-top:24px;">
+      <a href="tel:${phoneTel}" class="btn-primary">📞 ${phoneDisplay}</a>
+      <a href="/#map-section" class="btn-ghost">Find My Area</a>
     </div>
   </div>
 </section>
-` }) %>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Free ${svc.name} Quote</h2>
+      <p class="cta-sub">Connect with a licensed, insured local pro for a free inspection and a property-specific quote.</p>
+      <div class="phone-wrap">
+        <a class="phone-cta" href="tel:${phoneTel}">📞 ${phoneDisplay}</a>
+      </div>
+      <p class="cta-note">Same-day &amp; emergency service available · Free, no-obligation quote</p>
+      <div class="cta-badges">
+        <span class="cta-badge"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Licensed &amp; Insured</span>
+        <span class="cta-badge"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Pet &amp; Family Safe</span>
+        <span class="cta-badge"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Local Pros</span>
+      </div>
+    </div>
+  </div>
+</section>
+${overviewHtml}${signsHtml}${typesHtml}${treatmentsHtml}${costHtml}
+
+<section class="about" style="background:#fff;border-top:none;">
+  <div class="container">
+    <div class="section-header">
+      <h2>How It Works</h2>
+      <p>Three steps to a pest-free home.</p>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <span class="feature-icon">📞</span>
+        <h3>Call for a Free Quote</h3>
+        <p>One call to ${phoneDisplay} connects you with a licensed local pro serving your area.</p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">🛡️</span>
+        <h3>Get a Custom Plan</h3>
+        <p>Your pro inspects, identifies the problem, and quotes a treatment built for your home.</p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">✅</span>
+        <h3>Problem Solved</h3>
+        <p>Licensed, insured technicians treat, protect, and prevent — many backed by a guarantee.</p>
+      </div>
+    </div>
+  </div>
+</section>
+${relatedHtml}${faqHtml}
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Get Rid of Your Pest Problem Today</h2>
+      <p class="cta-sub">Free quote · Same-day &amp; emergency service · Licensed local pros</p>
+      <div class="phone-wrap">
+        <a class="phone-cta" href="tel:${phoneTel}">📞 ${phoneDisplay}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="mobile-call-cta-wrap">
+  <a class="mobile-call-cta" href="tel:${phoneTel}">
+    <span class="mobile-call-cta-icon">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    </span>
+    <span class="mobile-call-cta-text">
+      <span class="mobile-call-cta-label">Tap to Call — Free Quote</span>
+      <span class="mobile-call-cta-number">${phoneDisplay}</span>
+    </span>
+  </a>
+</div>`;
+%>
+<%- include('layout', { title, metaDesc, canonical, schema, extraHead, body, noindex }) %>

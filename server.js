@@ -20,8 +20,8 @@ const crypto = require('crypto');
 const us = require('us');
 const { SITE } = require('./data/site');
 const { statesAndCounties, stateSlugToName, countySlugToName, toSlug } = require('./data/locations');
-const { getService } = require('./data/services');
-const { getStatePage, DEFAULT_PESTS } = require('./data/states');
+const { SERVICES, getService } = require('./data/services');
+const { STATES, getStatePage, DEFAULT_PESTS } = require('./data/states');
 const { getContractor } = require('./lib/contractor');
 const { formatPhone, toTitleCase, normalizeStateRegion, normalizeUrl } = require('./lib/format');
 
@@ -38,8 +38,11 @@ app.locals.formatPhone = formatPhone;
 app.locals.toTitleCase = toTitleCase;
 app.locals.normalizeStateRegion = normalizeStateRegion;
 app.locals.normalizeUrl = normalizeUrl;
-// Canonical five-pest set every state page renders when it doesn't localize.
+// Canonical six-pest set every state page renders when it doesn't localize.
 app.locals.DEFAULT_PESTS = DEFAULT_PESTS;
+// Service + state catalogs for cross-linking (related services, browse-by-state).
+app.locals.SERVICES = SERVICES;
+app.locals.STATES = STATES;
 
 const PORT = process.env.PORT || 3000;
 
