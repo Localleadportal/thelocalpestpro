@@ -80,7 +80,7 @@ const GEORGIA = {
       name: 'Bed Bug Treatment',
       href: '/bed-bug-treatment/',
       blurb:
-        "Atlanta ranks high on national bed bug lists every year. Whole-room heat treatment and targeted residual programs eliminate bed bugs at every life stage, with follow-up verification.",
+        "Atlanta appears on national bed bug lists every year. Whole-room heat treatment and targeted residual programs eliminate bed bugs at every life stage, with follow-up verification.",
     },
     {
       emoji: '🐀',

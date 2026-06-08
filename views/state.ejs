@@ -10,42 +10,29 @@
   const ogImage = `${SITE.DOMAIN}/favicon.png`;
   const phoneTel = SITE.PHONE_TEL;
   const phoneDisplay = SITE.PHONE_DISPLAY;
-  const schemaPhone = phoneTel.replace(/^\+1(\d{3})(\d{3})(\d{4})$/, '+1-$1-$2-$3');
 
   const title = st.metaTitle || `Pest Control in ${name} | ${SITE.NAME}`;
   const metaDesc = st.metaDesc;
   const canonical = `/${slug}/`;
 
-  // ── Schema graph: directory Org + LocalBusiness (844) + state Service +
-  //    BreadcrumbList + FAQPage. ──
+  // ── Schema graph ──
+  // This is a STATE DIRECTORY HUB, not a single business — deliberately no
+  // LocalBusiness / PestControl node (no one address). WebPage anchors the page
+  // to the site's WebSite node (defined on the homepage), BreadcrumbList mirrors
+  // the visible "Home › Georgia" trail (still a rich result), and an optional
+  // FAQPage mirrors the visible Q&As (rich result retired 2026-05-07 — kept for
+  // machine-readability only).
   const graph = [
     {
-      "@type": "Organization",
-      "@id": `${SITE.DOMAIN}/#organization`,
-      "name": SITE.NAME,
-      "url": `${SITE.DOMAIN}/`,
-      "logo": `${SITE.DOMAIN}/favicon.png`
-    },
-    {
-      "@type": "LocalBusiness",
-      "@id": `${SITE.DOMAIN}/#localbusiness`,
-      "name": SITE.NAME,
-      "image": ogImage,
+      "@type": "WebPage",
+      "@id": pageUrl + "#webpage",
       "url": pageUrl,
-      "telephone": schemaPhone,
-      "priceRange": "$$",
-      "description": `Directory of licensed pest control contractors serving ${name}. Connect with local exterminators for termites, ants, roaches, mosquitoes, bed bugs, rodents, and more.`,
-      "address": { "@type": "PostalAddress", "addressRegion": st.abbr, "addressCountry": "US" },
-      "areaServed": { "@type": "State", "name": name }
-    },
-    {
-      "@type": "Service",
-      "@id": pageUrl + "#service",
       "name": `Pest Control in ${name}`,
-      "serviceType": SITE.SERVICE_TYPE,
       "description": metaDesc,
-      "provider": { "@id": `${SITE.DOMAIN}/#organization` },
-      "areaServed": { "@type": "State", "name": name, "containedInPlace": { "@type": "Country", "name": "United States" } }
+      "inLanguage": "en-US",
+      "isPartOf": { "@id": `${SITE.DOMAIN}/#website` },
+      "about": { "@type": "State", "name": name },
+      "breadcrumb": { "@id": pageUrl + "#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
