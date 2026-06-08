@@ -19,6 +19,54 @@
 // { name, href } once a dedicated city page exists. When the array is empty the
 // section renders a statewide fallback message instead of an empty grid.
 
+// ── Canonical pest set ───────────────────────────────────────────────────────
+// EVERY state page renders these same six pests, in this order — identical to
+// the six service categories on the homepage (views/index.ejs), each with a
+// dedicated national /<service>/ page (data/services.js). General Pest Control
+// is the catch-all that covers ants, spiders, wasps, fleas/ticks, etc. — so we
+// do NOT add separate cards for those. A state may override `pests` to localize
+// the blurb copy, but it must keep the same six categories, emojis, hrefs, and
+// order so the page stays consistent with the homepage. A state that omits
+// `pests` falls back to this set (see views/state.ejs).
+const DEFAULT_PESTS = [
+  {
+    emoji: '🐛',
+    name: 'Termite Treatment',
+    href: '/termite-control/',
+    blurb: "Liquid soil barriers, in-ground bait stations, and annual inspections stop subterranean and Formosan termites before they damage your home's structure.",
+  },
+  {
+    emoji: '🛏️',
+    name: 'Bed Bug Treatment',
+    href: '/bed-bug-treatment/',
+    blurb: "Whole-room heat treatment and targeted residual programs eliminate bed bugs at every life stage, with follow-up verification.",
+  },
+  {
+    emoji: '🪳',
+    name: 'Cockroach Control',
+    href: '/cockroach-control/',
+    blurb: "Gel baiting and crack-and-crevice treatment clear German roaches indoors and smokybrown/American 'palmetto bugs' outdoors — and keep them from returning.",
+  },
+  {
+    emoji: '🦟',
+    name: 'Mosquito Control',
+    href: '/mosquito-control/',
+    blurb: "Yard barrier treatments and standing-water larvicide knock down mosquitoes and make your outdoor space usable through the warm season.",
+  },
+  {
+    emoji: '🐀',
+    name: 'Rodent Control',
+    href: '/rodent-control/',
+    blurb: "Ongoing baiting, monitoring, and sealing entry points keeps roof rats, Norway rats, and house mice out as part of a recurring program.",
+  },
+  {
+    emoji: '🐌',
+    name: 'General Pest Control',
+    href: '/pest-control/',
+    blurb: "One recurring plan covers ants, spiders, wasps, fleas, silverfish, and the other common household pests — treating today's problem and preventing the next.",
+  },
+];
+
 const GEORGIA = {
   name: 'Georgia',
   slug: 'georgia',
@@ -43,9 +91,9 @@ const GEORGIA = {
   regulationNote:
     "Pest control in Georgia is licensed and regulated by the <strong>Georgia Department of Agriculture</strong> through the Structural Pest Control Commission. Every contractor in this directory is licensed to operate in the state and applies EPA-registered products at label rates.",
 
-  // The pests covered on this page. `href` points at the national service page
-  // (data/services.js) for that category; pests without a dedicated page route
-  // to general pest control. Order = rough search-volume / importance for GA.
+  // The canonical six pests (see DEFAULT_PESTS), with Georgia-localized blurbs.
+  // Keep the same six categories / order as DEFAULT_PESTS (and the homepage) —
+  // only the copy is localized here.
   pests: [
     {
       emoji: '🐛',
@@ -55,18 +103,11 @@ const GEORGIA = {
         "Georgia is a top-tier termite state. Liquid soil barriers, in-ground bait stations, and annual inspections stop subterranean and Formosan termites before they damage your home's structure.",
     },
     {
-      emoji: '🐜',
-      name: 'Ant & Fire Ant Control',
-      href: '/pest-control/',
+      emoji: '🛏️',
+      name: 'Bed Bug Treatment',
+      href: '/bed-bug-treatment/',
       blurb:
-        "Red imported fire ants, Argentine ants, odorous house ants, and carpenter ants are all common in Georgia. Recurring exterior treatment knocks down mounds and keeps trails out of the house.",
-    },
-    {
-      emoji: '🦟',
-      name: 'Mosquito Control',
-      href: '/mosquito-control/',
-      blurb:
-        "Metro Atlanta consistently ranks among the worst US cities for mosquitoes. Yard barrier treatments and standing-water larvicide make your outdoor space usable through Georgia's long season.",
+        "Atlanta appears on national bed bug lists every year. Whole-room heat treatment and targeted residual programs eliminate bed bugs at every life stage, with follow-up verification.",
     },
     {
       emoji: '🪳',
@@ -76,11 +117,11 @@ const GEORGIA = {
         "German roaches indoors and smokybrown/American 'palmetto bugs' outdoors thrive in Georgia's humidity. Gel baiting and crack-and-crevice treatment clear them and keep them from returning.",
     },
     {
-      emoji: '🛏️',
-      name: 'Bed Bug Treatment',
-      href: '/bed-bug-treatment/',
+      emoji: '🦟',
+      name: 'Mosquito Control',
+      href: '/mosquito-control/',
       blurb:
-        "Atlanta appears on national bed bug lists every year. Whole-room heat treatment and targeted residual programs eliminate bed bugs at every life stage, with follow-up verification.",
+        "Metro Atlanta consistently ranks among the worst US cities for mosquitoes. Yard barrier treatments and standing-water larvicide make your outdoor space usable through Georgia's long season.",
     },
     {
       emoji: '🐀',
@@ -90,25 +131,11 @@ const GEORGIA = {
         "Roof rats, Norway rats, and house mice push indoors as Georgia nights cool. Ongoing baiting, monitoring, and sealing entry points keeps them out as part of a recurring program.",
     },
     {
-      emoji: '🕷️',
-      name: 'Spider Control',
+      emoji: '🐌',
+      name: 'General Pest Control',
       href: '/pest-control/',
       blurb:
-        "Most Georgia spiders are harmless, but brown recluse and black & brown widow spiders warrant attention. Treatment targets harborage areas and the insects spiders feed on.",
-    },
-    {
-      emoji: '🐝',
-      name: 'Wasps, Hornets & Yellowjackets',
-      href: '/pest-control/',
-      blurb:
-        "Paper wasps, hornets, and ground-nesting yellowjackets peak in Georgia's late summer and fall. Pros remove active nests safely and treat to prevent rebuilding.",
-    },
-    {
-      emoji: '🐛',
-      name: 'Flea & Tick Control',
-      href: '/pest-control/',
-      blurb:
-        "Georgia's mild winters let fleas and ticks stay active for much of the year. Yard and interior treatment protects pets and family and breaks the breeding cycle.",
+        "One quarterly plan covers fire ants, spiders, wasps, fleas, silverfish, and the other common Georgia household pests — knocking down today's problem and preventing the next.",
     },
   ],
 
@@ -178,4 +205,4 @@ function getStatePage(slug) {
   return Object.prototype.hasOwnProperty.call(STATES, slug) ? STATES[slug] : null;
 }
 
-module.exports = { STATES, getStatePage };
+module.exports = { STATES, getStatePage, DEFAULT_PESTS };

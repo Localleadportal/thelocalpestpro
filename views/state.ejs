@@ -74,7 +74,12 @@
   // ── Fragments ──
   const overviewHtml = (st.overview || []).map(p => `<p>${p}</p>`).join('\n    ');
 
-  const pestCardsHtml = (st.pests || []).map(p => `
+  // Every state page renders the canonical six pests (same as the homepage). A
+  // state may localize the copy via st.pests (same six categories); otherwise
+  // fall back to the shared DEFAULT_PESTS set (exposed via app.locals) so all
+  // pages stay consistent.
+  const pests = (st.pests && st.pests.length) ? st.pests : DEFAULT_PESTS;
+  const pestCardsHtml = pests.map(p => `
       <a class="service-card" href="${p.href}" style="text-decoration:none;display:block;">
         <span class="card-icon">${p.emoji}</span>
         <h3>${p.name}</h3>
@@ -148,7 +153,7 @@
 <section class="services-section" id="pests">
   <div class="container">
     <h2>Pests We Treat Across ${name}</h2>
-    <p class="section-sub">From termites and fire ants to mosquitoes and rodents — tap any pest to learn how the pros handle it.</p>
+    <p class="section-sub">From termites and bed bugs to roaches, mosquitoes, rodents, and recurring general pest control — tap any pest to learn how the pros handle it.</p>
     <div class="service-cards">${pestCardsHtml}
     </div>
   </div>

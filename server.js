@@ -21,7 +21,7 @@ const us = require('us');
 const { SITE } = require('./data/site');
 const { statesAndCounties, stateSlugToName, countySlugToName, toSlug } = require('./data/locations');
 const { getService } = require('./data/services');
-const { getStatePage } = require('./data/states');
+const { getStatePage, DEFAULT_PESTS } = require('./data/states');
 const { getContractor } = require('./lib/contractor');
 const { formatPhone, toTitleCase, normalizeStateRegion, normalizeUrl } = require('./lib/format');
 
@@ -38,6 +38,8 @@ app.locals.formatPhone = formatPhone;
 app.locals.toTitleCase = toTitleCase;
 app.locals.normalizeStateRegion = normalizeStateRegion;
 app.locals.normalizeUrl = normalizeUrl;
+// Canonical five-pest set every state page renders when it doesn't localize.
+app.locals.DEFAULT_PESTS = DEFAULT_PESTS;
 
 const PORT = process.env.PORT || 3000;
 
