@@ -1,6 +1,8 @@
 'use strict';
 
 const woodstockGa = require('./cities/woodstock-ga');
+const cantonGa = require('./cities/canton-ga');
+const hollySpringsGa = require('./cities/holly-springs-ga');
 
 // ── State landing pages ──────────────────────────────────────────────────────
 // Each state hub is a single, consumer-focused, SEO page that covers every pest
@@ -582,12 +584,16 @@ const GEORGIA = {
   // Plain badge: { name, slug }. Linked: { name, slug, href: '/georgia/<slug>/' }.
   cities: [
     { name: 'Woodstock', slug: 'woodstock', href: '/georgia/woodstock/' },
+    { name: 'Canton', slug: 'canton', href: '/georgia/canton/' },
+    { name: 'Holly Springs', slug: 'holly-springs', href: '/georgia/holly-springs/' },
   ],
 
   // City pages (hub + per-pest), keyed by city slug. Rendered by views/city.ejs
   // and views/city-service.ejs; content lives in data/cities/<city>.js.
   cityPages: {
     [woodstockGa.slug]: woodstockGa,
+    [cantonGa.slug]: cantonGa,
+    [hollySpringsGa.slug]: hollySpringsGa,
   },
 
   // ── FAQ (GA-specific, SEO + FAQPage schema) ──

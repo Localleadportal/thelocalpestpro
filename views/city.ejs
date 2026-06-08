@@ -9,7 +9,10 @@
   const cityName = city.name;
   const pageUrl = `${SITE.DOMAIN}/${st.slug}/${city.slug}/`;
   const stateUrl = `${SITE.DOMAIN}/${st.slug}/`;
-  const ogImage = `${SITE.DOMAIN}/favicon.png`;
+  // Per-page OG card override (city.ogImage is root-relative). Cities that don't
+  // set one fall back to the favicon. TODO: create the real 1200×630 branded card
+  // at /images/og-default.jpg and make it the shared default here.
+  const ogImage = city.ogImage ? `${SITE.DOMAIN}${city.ogImage}` : `${SITE.DOMAIN}/favicon.png`;
 
   // Contractor (assigned local pro) vs. shared directory fallback.
   const assigned = !!(contractor && contractor.assigned && contractor.name && contractor.telephone);
@@ -105,19 +108,30 @@
   // ── Fragments ──
   const overviewHtml = (city.overview || []).map(p => `<p>${p}</p>`).join('\n    ');
 
-  // Pest cards in canonical order; only pests with a built city page render.
-  const pestCardsHtml = pestList.map(p => {
-    const ps = p.href.replace(/^\/+|\/+$/g, '');
-    const cp = city.pestPages && city.pestPages[ps];
-    if (!cp) return '';
-    return `
+  // Pest cards. Prefer an explicit city.pests array — this lets a hub render all
+  // its cards while the per-pest pages are still being authored one at a time
+  // (the card links 404 cleanly until each page exists). Otherwise derive cards
+  // from pestPages in canonical order (only pests with a built city page render).
+  const pestCardsHtml = (city.pests && city.pests.length)
+    ? city.pests.map(p => `
+      <a class="service-card" href="${p.href}" style="text-decoration:none;display:block;">
+        <span class="card-icon">${p.emoji}</span>
+        <h3>${p.name}</h3>
+        <p>${p.blurb}</p>
+        <span class="card-phone">Learn more &rsaquo;</span>
+      </a>`).join('')
+    : pestList.map(p => {
+        const ps = p.href.replace(/^\/+|\/+$/g, '');
+        const cp = city.pestPages && city.pestPages[ps];
+        if (!cp) return '';
+        return `
       <a class="service-card" href="/${st.slug}/${city.slug}/${ps}/" style="text-decoration:none;display:block;">
         <span class="card-icon">${p.emoji}</span>
         <h3>${p.name}</h3>
         <p>${cp.cardBlurb}</p>
         <span class="card-phone">Learn more &rsaquo;</span>
       </a>`;
-  }).join('');
+      }).join('');
 
   const areasGrid = (city.neighborhoods && city.neighborhoods.length)
     ? `<ul class="counties-grid" style="margin-top:8px;">
@@ -198,7 +212,7 @@ ${ctaBox}
 <section class="services-section" id="pests">
   <div class="container">
     <h2>Pest Control Services in ${cityName}</h2>
-    <p class="section-sub">Local treatment for the pests Woodstock homeowners deal with most — tap any for details.</p>
+    <p class="section-sub">Local treatment for the pests ${cityName} homeowners deal with most — tap any for details.</p>
     <div class="service-cards">${pestCardsHtml}
     </div>
   </div>
