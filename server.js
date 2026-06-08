@@ -107,6 +107,52 @@ app.get('/robots.txt', (req, res) => {
   res.send(`User-agent: *\nAllow: /\nSitemap: ${SITE.DOMAIN}/sitemap.xml\n`);
 });
 
+// ── sitemap.xml ──────────────────────────────────────────────────────────────
+// Generated dynamically from the live data on every request, so newly added
+// pages appear automatically with zero manual upkeep. It walks exactly what the
+// routes serve: the homepage, each national service page, each built state hub,
+// its state pest pages, its city hubs, and each city's per-pest pages. Anything
+// flagged `noindex` is skipped, so the sitemap never contradicts a page's robots
+// meta. `lastmod` is the modified date (W3C YYYY-MM-DD) of the data file backing
+// each URL, giving Search Console an accurate, per-page freshness signal that
+// updates whenever you edit that file and redeploy.
+const INDEX_FILE = path.join(__dirname, 'views', 'index.ejs');
+const SERVICES_FILE = path.join(__dirname, 'data', 'services.js');
+const STATES_FILE = path.join(__dirname, 'data', 'states.js');
+const cityFile = (citySlug, stateAbbr) =>
+  path.join(__dirname, 'data', 'cities', `${citySlug}-${String(stateAbbr || '').toLowerCase()}.js`);
+function fileLastmod(file) {
+  try { return fs.statSync(file).mtime.toISOString().slice(0, 10); } catch (e) { return null; }
+}
+const xmlEscape = s => String(s)
+  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+app.get('/sitemap.xml', (req, res) => {
+  const entries = [];
+  const add = (loc, src) => entries.push({ loc: SITE.DOMAIN + loc, mod: fileLastmod(src) });
+
+  add('/', INDEX_FILE);
+  Object.values(SERVICES).forEach(s => { if (!s.noindex) add(`/${s.slug}/`, SERVICES_FILE); });
+  Object.values(STATES).forEach(st => {
+    add(`/${st.slug}/`, STATES_FILE);
+    Object.keys(st.pestPages || {}).forEach(ps => add(`/${st.slug}/${ps}/`, STATES_FILE));
+    Object.values(st.cityPages || {}).forEach(city => {
+      const cf = cityFile(city.slug, st.abbr);
+      const src = fs.existsSync(cf) ? cf : STATES_FILE;
+      add(`/${st.slug}/${city.slug}/`, src);
+      Object.keys(city.pestPages || {}).forEach(ps => add(`/${st.slug}/${city.slug}/${ps}/`, src));
+    });
+  });
+
+  const body = entries.map(e =>
+    `  <url>\n    <loc>${xmlEscape(e.loc)}</loc>${e.mod ? `\n    <lastmod>${e.mod}</lastmod>` : ''}\n  </url>`
+  ).join('\n');
+  res.type('application/xml').send(
+    `<?xml version="1.0" encoding="UTF-8"?>\n` +
+    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`
+  );
+});
+
 // Homepage
 app.get('/', (req, res) => {
   res.render('index');
