@@ -15,7 +15,9 @@
 
   // Contractor (assigned local pro) vs. shared directory fallback.
   const assigned = !!(contractor && contractor.assigned && contractor.name && contractor.telephone);
-  const coName = assigned ? toTitleCase(contractor.name) : SITE.NAME;
+  // Business name comes from LeadPortal already correctly cased — display as-is.
+  // (toTitleCase is for messy signup addresses; it would mangle "McCardle's".)
+  const coName = assigned ? contractor.name : SITE.NAME;
   const coTel = assigned ? contractor.telephone : SITE.PHONE_TEL;
   const coDisp = assigned ? formatPhone(contractor.telephone) : SITE.PHONE_DISPLAY;
 
