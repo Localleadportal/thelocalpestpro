@@ -79,13 +79,19 @@
   // fall back to the shared DEFAULT_PESTS set (exposed via app.locals) so all
   // pages stay consistent.
   const pests = (st.pests && st.pests.length) ? st.pests : DEFAULT_PESTS;
-  const pestCardsHtml = pests.map(p => `
-      <a class="service-card" href="${p.href}" style="text-decoration:none;display:block;">
+  // Link each card to the state-specific pest page when one exists
+  // (st.pestPages[<slug>]); otherwise fall back to the national /<service>/ page.
+  const pestCardsHtml = pests.map(p => {
+    const pestSlug = p.href.replace(/^\/+|\/+$/g, '');
+    const href = (st.pestPages && st.pestPages[pestSlug]) ? `/${slug}/${pestSlug}/` : p.href;
+    return `
+      <a class="service-card" href="${href}" style="text-decoration:none;display:block;">
         <span class="card-icon">${p.emoji}</span>
         <h3>${p.name}</h3>
         <p>${p.blurb}</p>
         <span class="card-phone">Learn more &rsaquo;</span>
-      </a>`).join('');
+      </a>`;
+  }).join('');
 
   const seasonsHtml = (st.seasons || []).map(s => `
       <div class="feature">

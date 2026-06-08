@@ -1,0 +1,214 @@
+<%
+  // State-specific pest page — e.g. /georgia/termite-control/. Fully localized,
+  // unique content per (state, pest) supplied by state.pestPages[serviceSlug] in
+  // data/states.js. This is a directory hub for a state + pest, not a single
+  // business — schema is WebPage + Service (areaServed = the state) +
+  // BreadcrumbList (Home › State › Pest) + FAQPage. Always shows the shared
+  // (844) directory number.
+  const st = state;            // data/states.js state entry
+  const pg = page;             // st.pestPages[serviceSlug]
+  const name = st.name;        // e.g. "Georgia"
+  const slug = st.slug;        // e.g. "georgia"
+  const pageUrl = `${SITE.DOMAIN}/${slug}/${serviceSlug}/`;
+  const stateUrl = `${SITE.DOMAIN}/${slug}/`;
+  const ogImage = `${SITE.DOMAIN}/favicon.png`;
+  const phoneTel = SITE.PHONE_TEL;
+  const phoneDisplay = SITE.PHONE_DISPLAY;
+
+  const title = pg.metaTitle || `${pg.h1} | ${SITE.NAME}`;
+  const metaDesc = pg.metaDesc;
+  const canonical = `/${slug}/${serviceSlug}/`;
+  const crumb = pg.breadcrumbName || pg.h1;
+
+  // ── Schema graph ──
+  const graph = [
+    {
+      "@type": "WebPage",
+      "@id": pageUrl + "#webpage",
+      "url": pageUrl,
+      "name": title,
+      "description": metaDesc,
+      "inLanguage": "en-US",
+      "isPartOf": { "@id": `${SITE.DOMAIN}/#website` },
+      "about": { "@type": "Thing", "name": pg.h1 },
+      "breadcrumb": { "@id": pageUrl + "#breadcrumb" }
+    },
+    {
+      "@type": "Service",
+      "@id": pageUrl + "#service",
+      "name": pg.h1,
+      "serviceType": crumb,
+      "description": metaDesc,
+      "provider": { "@id": `${SITE.DOMAIN}/#organization` },
+      "areaServed": { "@type": "State", "name": name, "containedInPlace": { "@type": "Country", "name": "United States" } }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": pageUrl + "#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE.DOMAIN}/` },
+        { "@type": "ListItem", "position": 2, "name": name, "item": stateUrl },
+        { "@type": "ListItem", "position": 3, "name": crumb }
+      ]
+    }
+  ];
+  if (pg.faqs && pg.faqs.length) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": pageUrl + "#faq",
+      "mainEntity": pg.faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a }
+      }))
+    });
+  }
+  const schema = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
+
+  const extraHead = `
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="${SITE.NAME}">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="${pageUrl}">
+    <meta property="og:title" content="${title}">
+    <meta property="og:description" content="${metaDesc}">
+    <meta property="og:image" content="${ogImage}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${title}">
+    <meta name="twitter:description" content="${metaDesc}">
+    <meta name="twitter:image" content="${ogImage}">
+    <meta name="robots" content="index, follow">
+  `;
+
+  // ── Section renderer ──
+  // Each section: { heading, intro?, paras?[], bullets?[], cards?[{name,text}] }.
+  // Backgrounds alternate so adjacent sections separate visually.
+  const renderSection = (s, i) => {
+    const bg = i % 2 === 0 ? 'county-content' : 'state-content';
+    const paras = (s.paras || []).map(p => `<p>${p}</p>`).join('\n    ');
+    const bullets = (s.bullets && s.bullets.length)
+      ? `<ul class="tips-list">${s.bullets.map(b => `<li>${b}</li>`).join('')}</ul>` : '';
+    const cards = (s.cards && s.cards.length)
+      ? `<div class="features" style="margin-top:24px;">${s.cards.map(c => `<div class="feature"><h3>${c.name}</h3><p>${c.text}</p></div>`).join('')}</div>` : '';
+    return `
+<section class="${bg}">
+  <div class="container">
+    <h2>${s.heading}</h2>
+    ${paras}
+    ${bullets}
+    ${cards}
+  </div>
+</section>`;
+  };
+  const sectionsHtml = (pg.sections || []).map(renderSection).join('');
+
+  // Cities We Service (state-level) — local SEO + internal linking.
+  const citiesHtml = (st.cities && st.cities.length)
+    ? `<ul class="counties-grid">
+      ${st.cities.map(c => c.href
+        ? `<li><a href="${c.href}">${c.name}</a></li>`
+        : `<li><span style="display:block;padding:11px 16px;background:var(--green-light);border:1px solid var(--green-border);border-radius:var(--radius);color:var(--green);font-weight:600;font-size:0.92rem;">${c.name}</span></li>`).join('\n      ')}
+    </ul>`
+    : `<p style="text-align:center;color:var(--muted);max-width:640px;margin:0 auto;">We serve communities across ${name} and add service areas as we grow. Don't see your city? Call <a class="llp-phone" href="tel:${phoneTel}" style="color:var(--green);font-weight:700;">${phoneDisplay}</a> to connect with a licensed local pro.</p>`;
+
+  // Related pests in the same state (internal linking; keeps users on state pages).
+  // Only link pests that actually have a built state page (st.pestPages).
+  const related = (st.pests || [])
+    .map(p => ({ name: p.name, slug: p.href.replace(/^\/+|\/+$/g, '') }))
+    .filter(p => p.slug !== serviceSlug && st.pestPages && st.pestPages[p.slug]);
+  const relatedHtml = related.length ? `
+<section class="counties-section" style="background:var(--green-light);border-top:1px solid var(--green-border);">
+  <div class="container">
+    <div class="section-header">
+      <h2>More ${name} Pest Control</h2>
+      <p>Dealing with more than one pest? We handle them all across ${name}.</p>
+    </div>
+    <ul class="counties-grid">
+      ${related.map(p => `<li><a href="/${slug}/${p.slug}/">${p.name} in ${name}</a></li>`).join('\n      ')}
+    </ul>
+  </div>
+</section>` : '';
+
+  const faqHtml = (pg.faqs && pg.faqs.length) ? `
+<section class="county-content">
+  <div class="container">
+    <h2>${pg.faqHeading || `Frequently Asked Questions — ${crumb} in ${name}`}</h2>
+    <div style="display:flex;flex-direction:column;gap:16px;margin-top:16px;">
+      ${pg.faqs.map((f, i) => `<details style="border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;"${i === 0 ? ' open' : ''}><summary style="padding:16px 20px;font-weight:600;cursor:pointer;font-size:0.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;">${f.q}<span style="font-size:1.2rem;flex-shrink:0;margin-left:12px;">+</span></summary><div style="padding:0 20px 16px;color:#374151;line-height:1.7;font-size:0.93rem;border-top:1px solid #f3f4f6;">${f.a}</div></details>`).join('')}
+    </div>
+  </div>
+</section>` : '';
+
+  const body = `
+<nav class="breadcrumb">
+  <div class="container">
+    <a href="/">Home</a> &rsaquo; <a href="/${slug}/">${name}</a> &rsaquo; <span>${crumb}</span>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>${pg.h1}</h1>
+    <p>${pg.heroSub}</p>
+    <div class="hero-actions" style="justify-content:center;margin-top:24px;">
+      <a href="tel:${phoneTel}" class="btn-primary">📞 ${phoneDisplay}</a>
+      <a href="#faq" class="btn-ghost">Common Questions</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Free ${crumb} Quote in ${name}</h2>
+      <p class="cta-sub">Connect with a licensed, insured local pro who knows ${name} pests — free inspection, no obligation.</p>
+      <div class="phone-wrap">
+        <a class="phone-cta" href="tel:${phoneTel}">📞 ${phoneDisplay}</a>
+      </div>
+      <p class="cta-note">Same-day &amp; emergency service available · Free, no-obligation quote</p>
+      <div class="cta-badges">
+        <span class="cta-badge"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Licensed &amp; Insured</span>
+        <span class="cta-badge"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Pet &amp; Family Safe</span>
+        <span class="cta-badge"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Local ${name} Pros</span>
+      </div>
+    </div>
+  </div>
+</section>
+${sectionsHtml}
+
+<section class="counties-section" style="background:#fff;">
+  <div class="container">
+    <div class="section-header">
+      <h2>${crumb} Across ${name}</h2>
+      <p>Local coverage statewide — growing as we expand.</p>
+    </div>
+    ${citiesHtml}
+  </div>
+</section>
+${relatedHtml}${faqHtml}
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box">
+      <h2>${pg.finalCtaHeading || `Get Rid of Your Pest Problem in ${name}`}</h2>
+      <p class="cta-sub">Free quote · Same-day &amp; emergency service · Licensed local pros</p>
+      <div class="phone-wrap">
+        <a class="phone-cta" href="tel:${phoneTel}">📞 ${phoneDisplay}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="mobile-call-cta-wrap">
+  <a class="mobile-call-cta" href="tel:${phoneTel}">
+    <span class="mobile-call-cta-icon">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    </span>
+    <span class="mobile-call-cta-text">
+      <span class="mobile-call-cta-label">Tap to Call — Free Quote</span>
+      <span class="mobile-call-cta-number">${phoneDisplay}</span>
+    </span>
+  </a>
+</div>`;
+%>
+<%- include('layout', { title, metaDesc, canonical, schema, extraHead, body }) %>

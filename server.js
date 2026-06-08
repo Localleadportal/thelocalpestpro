@@ -150,6 +150,25 @@ app.get('/:stateSlug', (req, res, next) => {
   res.redirect(301, `/${req.params.stateSlug}/`);
 });
 
+// ── State + pest pages ───────────────────────────────────────────────────────
+// Fully localized, unique-content pest pages — e.g. /georgia/termite-control/.
+// Rendered only when the state is built AND defines pestPages[serviceSlug]
+// (data/states.js). Always shows the shared (844) number. Unknown combinations
+// fall through to 404.
+app.get('/:stateSlug/:serviceSlug/', (req, res, next) => {
+  const state = getStatePage(req.params.stateSlug);
+  if (!state || !state.pestPages) return next();
+  const page = state.pestPages[req.params.serviceSlug];
+  if (!page) return next();
+  res.render('state-service', { state, page, serviceSlug: req.params.serviceSlug });
+});
+// Trailing-slash redirect — only for built state+pest pages, so others 404.
+app.get('/:stateSlug/:serviceSlug', (req, res, next) => {
+  const state = getStatePage(req.params.stateSlug);
+  if (!state || !state.pestPages || !state.pestPages[req.params.serviceSlug]) return next();
+  res.redirect(301, `/${req.params.stateSlug}/${req.params.serviceSlug}/`);
+});
+
 // 404 — anything not yet built (city pages are added one at a time).
 app.use((req, res) => res.status(404).render('404', { message: 'Page not found.' }));
 

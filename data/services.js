@@ -356,9 +356,68 @@ const SERVICES = {
   'rodent-control': {
     slug: 'rodent-control',
     name: 'Rodent Control',
-    h1: 'Rodent Control',
-    intro: "Ongoing mouse and rat control built on tamper-resistant exterior bait stations, scheduled monitoring, and sealing the gaps pests slip through — managed as part of a recurring pest program, not a one-time job.",
-    metaDesc: 'Find a licensed rodent control pro near you. Recurring baiting, monitoring, and exclusion that keeps mice and rats out year-round as part of an ongoing pest program.',
+    h1: 'Rodent Control — Mouse & Rat Extermination',
+    metaTitle: 'Rodent Control Near You | Mouse & Rat Extermination',
+    intro: "Tamper-resistant rodenticide bait stations, interior trapping, and monthly monitoring that wipe out mice and rats and keep them out for good. Find a licensed local rodent control pro for a free quote.",
+    metaDesc: 'Find a licensed rodent control pro near you. Tamper-resistant rodenticide bait stations, interior trapping, and monthly monitoring that eliminate mice and rats and keep them gone. Free quote.',
+
+    overviewHeading: 'Why Rodents Need a Professional Program',
+    overview: [
+      "Mice and rats are among the fastest-multiplying pests a home or business can face. A single female house mouse can produce dozens of offspring a year, and those young breed within weeks — so a couple of mice behind the stove become a wall-to-wall infestation in a season. By the time droppings or scratching in the walls show up, the population is almost always larger than what you can see.",
+      "Rodents aren't just unsettling — they're a real hazard. They contaminate food and surfaces with droppings and urine, spread bacteria and disease, and chew constantly to keep their teeth filed down — including on electrical wiring, which is a documented cause of house fires. Their gnawing also damages insulation, drywall, and stored belongings. That's why getting ahead of a rodent problem is about protecting your property and your family's health, not just comfort.",
+      "Store-bought snap traps and a few hardware-store bait blocks rarely solve a real infestation: they catch a handful of rodents while the rest keep breeding, and the population rebounds from outside within weeks. Professional rodent control works as an ongoing program — secured rodenticide bait stations around the exterior intercepting rodents before they get in, targeted trapping and baiting indoors, and scheduled monthly monitoring that keeps pressure on the population year-round. Every pro in our directory is licensed and insured, uses EPA-registered rodenticides in tamper-resistant stations, and gives you a free, no-obligation quote before any work begins.",
+    ],
+
+    signsHeading: 'Signs of a Rodent Infestation',
+    signs: [
+      'Droppings — small dark pellets along walls, in cabinets, drawers, or under sinks',
+      'Gnaw marks on food packaging, baseboards, wiring, and stored items',
+      'Scratching, scurrying, or gnawing sounds in walls, ceilings, or the attic, especially at night',
+      'Greasy rub marks and dark smudges along baseboards and the routes rodents travel',
+      'Nests of shredded paper, fabric, or insulation tucked behind appliances or in storage',
+      'A musky, ammonia-like odor that grows stronger as the population builds',
+      'Pets fixating on a wall, appliance, or cabinet they suddenly can\'t leave alone',
+    ],
+
+    typesHeading: 'Rodents We Treat',
+    types: [
+      { name: 'House mouse', text: "The most common indoor rodent in the country. Small, curious, and a relentless breeder — it nests in walls, cabinets, and appliances and contaminates far more food than it eats. Controlled with interior trapping plus exterior bait stations to stop reinvasion." },
+      { name: 'Norway rat (brown/sewer rat)', text: "A large, burrowing rat that nests at ground level — in crawl spaces, basements, under slabs, and along foundations. Its powerful gnawing damages structures and wiring. Managed with tamper-resistant bait stations and burrow baiting around the perimeter." },
+      { name: 'Roof rat (black rat)', text: "An agile climber that travels overhead lines and tree limbs and nests up high in attics and upper walls. Common in warmer and coastal regions. Controlled with elevated bait stations, attic trapping, and exterior baiting along its runways." },
+      { name: 'Deer mouse & field mouse', text: "Rural and suburban invaders that push indoors as the weather cools, often into garages, sheds, and outbuildings. Treated with monitored bait stations and trapping — and taken seriously because they can carry hantavirus." },
+    ],
+
+    treatmentsHeading: 'How the Pros Eliminate Rodents',
+    treatments: [
+      { name: 'Inspection & activity mapping', text: "Your technician identifies the species, locates nests, runways, droppings, and entry points, and gauges how large the population is. That inspection drives where every bait station and trap goes." },
+      { name: 'Tamper-resistant exterior bait stations', text: "The foundation of a rodent program. Locked, weatherproof stations loaded with EPA-registered rodenticide are placed around the building's perimeter, intercepting and reducing the outdoor population before it ever gets inside. Safe around kids and pets because the bait is secured inside the station." },
+      { name: 'Interior trapping & targeted baiting', text: "Indoors, pros rely on snap and multi-catch traps plus tamper-resistant bait placements in voids and along runways — removing the active population quickly without leaving rodenticide out in living spaces." },
+      { name: 'Monthly monitoring & service', text: "Rodent pressure never really stops, so the stations are checked, cleaned, and refreshed on a recurring monthly (or quarterly) schedule. Ongoing monitoring catches new activity early and keeps the population suppressed year-round." },
+      { name: 'Sealing key entry points', text: "As part of the program, pros seal the obvious gaps rodents use — around utility lines, vents, and door sweeps — so baiting and trapping aren't fighting a constant flow of new rodents from outside." },
+    ],
+
+    costHeading: 'How Much Does Rodent Control Cost?',
+    costNote: "Rodent control cost depends on the severity of the infestation, the size and layout of your property, and whether you want a one-time knockdown or ongoing protection. Most homeowners choose a recurring program — an initial service to clear the active population followed by monthly or quarterly monitoring and bait-station service — because rodents constantly re-pressure a building from outside and ongoing baiting is what keeps them gone. Every contractor in our directory gives a free, property-specific quote before any work starts, so you'll know your exact cost up front.",
+
+    preventionHeading: 'How to Help Keep Rodents Out',
+    prevention: [
+      'Store food and pet food in sealed metal or hard-plastic containers, and never leave pet food out overnight',
+      'Clean up crumbs and spills promptly and take out trash regularly in tight-lidded bins',
+      'Seal gaps larger than a quarter-inch around pipes, vents, and utility lines, and add door sweeps',
+      'Cut back tree limbs and shrubs touching the roof or walls that give roof rats a path in',
+      'Clear yard clutter, woodpiles, and dense ground cover that give rodents harborage near the foundation',
+      'Keep an exterior bait-station program in place year-round to intercept rodents before they get indoors',
+    ],
+
+    faqs: [
+      { q: 'How much does rodent control cost?', a: "It depends on how severe the infestation is, your property's size, and whether you want a one-time treatment or an ongoing program. A single knockdown service for a small problem is the most affordable option, while most homeowners choose a recurring plan — an initial service plus monthly or quarterly bait-station monitoring — because that's what keeps rodents from coming back. Every contractor in our directory gives a free, property-specific quote before any work starts." },
+      { q: 'Why do I still have mice after setting traps myself?', a: "Because a few traps only remove the rodents currently active in one area, while the rest of the population keeps breeding out of sight — and new rodents push in from outside within weeks. Mice breed fast enough to outpace DIY trapping. A professional program combines interior trapping with exterior rodenticide bait stations and monthly monitoring, which is what actually drives the population down and keeps it there." },
+      { q: 'How does a rodent baiting program work?', a: "Licensed pros place EPA-registered rodenticide inside locked, tamper-resistant stations around the exterior of your building. Rodents feed on the bait as they forage, which reduces the outdoor population before it can get inside. Indoors, technicians typically use traps and secured placements instead of loose bait. The stations are serviced and refreshed on a recurring schedule so protection never lapses." },
+      { q: 'Is rodenticide safe around kids and pets?', a: "Yes, when it's applied by a licensed professional. The bait is locked inside tamper-resistant stations that children and pets can't open, and indoors most pros rely on traps rather than exposed bait. This is a major advantage over loose store-bought bait blocks, which can be reached by pets and wildlife. Your technician will place every station where it's effective and out of reach." },
+      { q: 'How long does it take to get rid of rats or mice?', a: "A typical infestation comes under control within a couple of weeks of starting professional service, with the active population dropping quickly once baiting and trapping are in place. Heavier infestations take longer and need follow-up visits. Because rodents continually re-pressure a property from outside, ongoing monthly monitoring is what keeps them from returning after the initial cleanup." },
+      { q: 'How often should rodent service be done?', a: "Most rodent programs run on a monthly or quarterly schedule. Exterior bait stations need to be checked, cleaned, and refreshed regularly to stay effective, and routine monitoring catches new activity before it becomes another infestation. Your pro will recommend a frequency based on your property and how much rodent pressure your area has." },
+      { q: 'Are rodents actually dangerous, or just a nuisance?', a: "They're a genuine hazard. Rodents contaminate food and surfaces with droppings and urine and can spread diseases such as salmonellosis and hantavirus. They also gnaw constantly — including on electrical wiring, which is a recognized cause of house fires — and damage insulation and structures. Controlling them protects both your health and your property." },
+    ],
   },
 };
 
