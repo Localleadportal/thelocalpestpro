@@ -33,8 +33,9 @@ module.exports = {
   // (Listed as service-area names only; no invented neighborhood specifics.)
   neighborhoods: ['Sixes', 'Hickory Flat', 'Holly Springs', 'Ball Ground', 'Waleska', 'Woodstock'],
 
-  // OG card override — point at the real branded card, never the favicon stopgap.
-  // TODO: the 1200×630 asset /images/og-default.jpg does not exist yet; create it.
+  // Uses the shared branded OG card (/images/og-default.jpg) by default; this
+  // explicit value just makes that intent obvious. Set a different path here to
+  // give Canton its own card later.
   ogImage: '/images/og-default.jpg',
 
   metaTitle: 'Pest Control in Canton, GA | The Local Pest Pro',

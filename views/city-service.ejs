@@ -10,10 +10,9 @@
   const pageUrl = `${SITE.DOMAIN}/${st.slug}/${city.slug}/${serviceSlug}/`;
   const cityUrl = `${SITE.DOMAIN}/${st.slug}/${city.slug}/`;
   const stateUrl = `${SITE.DOMAIN}/${st.slug}/`;
-  // Per-page OG card override (city.ogImage is root-relative); cities without one
-  // fall back to the favicon. TODO: create the real 1200×630 card at
-  // /images/og-default.jpg and make it the shared default.
-  const ogImage = city.ogImage ? `${SITE.DOMAIN}${city.ogImage}` : `${SITE.DOMAIN}/favicon.png`;
+  // OG card: the branded 1200×630 /images/og-default.jpg is the shared default;
+  // a city can override per-page with city.ogImage (root-relative).
+  const ogImage = `${SITE.DOMAIN}${city.ogImage || '/images/og-default.jpg'}`;
   const crumb = pg.breadcrumbName || pg.h1;
 
   const assigned = !!(contractor && contractor.assigned && contractor.name && contractor.telephone);
