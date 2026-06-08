@@ -218,9 +218,68 @@ const SERVICES = {
   'mosquito-control': {
     slug: 'mosquito-control',
     name: 'Mosquito Control',
-    h1: 'Mosquito Control',
-    intro: "Yard barrier treatments, larvicide for standing-water breeding sites, and recurring seasonal service that makes your outdoor space usable again.",
-    metaDesc: 'Find a licensed mosquito control pro near you. Yard barrier sprays, breeding-site treatment, and seasonal programs to reclaim your yard.',
+    h1: 'Mosquito Control & Yard Spraying',
+    metaTitle: 'Mosquito Control Near You | Yard Spraying & Treatment',
+    intro: "Barrier yard spraying, standing-water larvicide, and recurring seasonal service that knocks mosquitoes down and makes your outdoor space usable again. Find a licensed local mosquito control pro for a free quote.",
+    metaDesc: 'Find a licensed mosquito control pro near you. Barrier yard spraying, standing-water larvicide, and seasonal programs that reclaim your yard from mosquitoes. Free, property-specific quote.',
+
+    overviewHeading: 'Why Mosquito Control Is Worth It',
+    overview: [
+      "Mosquitoes are more than a backyard nuisance — they are the deadliest animals on earth, spreading diseases that affect both people and pets. Even where serious illness is rare, relentless biting can make a patio, garden, or play area unusable for months at a time. Professional mosquito control gives you back your outdoor space through the warm season.",
+      "Mosquitoes need only warmth and standing water to breed, and many of the worst backyard species lay eggs in water as small as a bottle cap — flowerpot saucers, clogged gutters, tarps, toys, and corrugated drainpipe. Because they breed in such tiny, hidden spots and re-infest from neighboring yards, store-bought sprays and foggers rarely keep up for long.",
+      "A professional program works on two fronts at once: it treats the shaded areas where adult mosquitoes rest during the day and the standing water where the next generation is developing. Repeated on a schedule through the season, that one-two approach is what actually keeps the population down — which is why recurring service, rather than a single spray, is the standard for lasting relief.",
+    ],
+
+    signsHeading: 'Diseases Mosquitoes Can Spread',
+    signs: [
+      'West Nile virus — the most common mosquito-borne illness in the continental US, carried by Culex mosquitoes',
+      'Eastern equine encephalitis (EEE) — rare but among the most severe mosquito-borne diseases, affecting people and horses',
+      'Zika, dengue & chikungunya — spread by Aedes mosquitoes; mostly travel-related but locally competent vectors are widespread',
+      'La Crosse encephalitis — found in wooded areas and most often affecting children',
+      'Dog heartworm — a serious, potentially fatal disease transmitted to dogs and cats by a single mosquito bite',
+      'Severe bite reactions — large welts, swelling, and secondary skin infections from scratching, especially in children',
+    ],
+
+    typesHeading: 'Common Mosquitoes the Pros Treat',
+    types: [
+      { name: 'Asian tiger mosquito (Aedes albopictus)', text: "The most notorious backyard biter across the South and East — black with white stripes and active all day. It breeds in tiny containers rather than ponds, which is why removing standing water around the home is so important." },
+      { name: 'Southern house mosquito (Culex)', text: "A dusk-and-night biter that breeds in stagnant, nutrient-rich water like ditches, catch basins, and neglected pools. Culex species are the primary carriers of West Nile virus." },
+      { name: 'Yellow fever mosquito (Aedes aegypti)', text: "A daytime, container-breeding species that stays close to homes and is the main vector for Zika, dengue, and chikungunya in the warmer parts of the country." },
+      { name: 'Floodwater & woodland mosquitoes (Psorophora, Aedes)', text: "Large, aggressive biters that hatch in big numbers after heavy rain fills ditches, low spots, and woodland pools — the cause of the sudden swarms that follow a wet stretch." },
+    ],
+
+    treatmentsHeading: 'How Professional Mosquito Control Works',
+    treatments: [
+      { name: 'Barrier yard spray', text: "The backbone of mosquito control. A residual treatment is applied to shaded foliage, shrubs, and the cool, damp spots where adult mosquitoes rest by day. It knocks down the current population and keeps killing mosquitoes that land for weeks — typically reapplied every two to three weeks in season." },
+      { name: 'Standing-water larvicide', text: "Mosquitoes are far easier to stop before they fly. Technicians treat the standing water they can't drain — catch basins, ditches, low spots, and water features — with larvicide such as Bti, a naturally derived bacterium that kills larvae without harming people, pets, fish, or beneficial insects." },
+      { name: 'Source reduction & yard inspection', text: "Your pro walks the property to find and eliminate the hidden breeding sites DIY misses — clogged gutters, plant saucers, tarps, toys, drainpipe, and neglected birdbaths. Removing standing water is the single most effective long-term step." },
+      { name: 'In2Care & misting systems', text: "For tough yards, automated in-ground misting systems or In2Care stations — which turn mosquitoes into carriers of a larvae-killing agent — add a layer of season-long control beyond the barrier spray." },
+      { name: 'Natural & botanical options', text: "Many companies offer essential-oil-based botanical treatments for homeowners who prefer a lower-toxicity option, applied on the same recurring schedule as a conventional barrier spray." },
+      { name: 'One-time event sprays', text: "A single pre-event treatment a day or two before a wedding, party, or cookout dramatically cuts mosquito activity for the gathering, even without an ongoing plan." },
+    ],
+
+    costHeading: 'How Much Does Mosquito Control Cost?',
+    costNote: "Mosquito control is usually priced per treatment or as a discounted seasonal package, and the cost depends mainly on the size of your yard and how much shaded vegetation and standing water it has. Recurring barrier service every two to three weeks through the season is the most popular option and the best value, while one-time treatments are available for a single event. Every pro in our directory starts with a free quote and gives you a written, property-specific price before any work begins.",
+
+    preventionHeading: 'How to Reduce Mosquitoes Around Your Home',
+    prevention: [
+      'Empty or remove anything that holds water — flowerpot saucers, buckets, toys, tarps, and old tires — at least once a week',
+      'Keep gutters clean and flowing so they don\'t pool water, a top breeding site in shaded yards',
+      'Change birdbath and pet-bowl water every few days, and keep pools and hot tubs chlorinated and circulating',
+      'Drop a Bti "mosquito dunk" into rain barrels, ponds, and water features you can\'t drain',
+      'Trim dense shrubs and tall grass to reduce the cool, shady resting spots adult mosquitoes favor',
+      'Fix dripping outdoor faucets and correct low spots in the yard where rainwater collects',
+    ],
+
+    faqs: [
+      { q: 'How does professional mosquito spraying work?', a: "A technician applies a residual barrier treatment to the shaded foliage and resting areas where adult mosquitoes spend the day, and treats any standing water they can't drain with larvicide to stop the next generation. The barrier keeps killing mosquitoes for weeks and is reapplied every two to three weeks during mosquito season." },
+      { q: 'How much does mosquito control cost?', a: "It's typically priced per treatment or as a seasonal package based on the size of your yard and how much shade and standing water it has. Recurring barrier service through the season is the most popular and best-value option, while one-time treatments are available for a specific event. Every contractor in our directory gives a free, property-specific quote before any work starts." },
+      { q: 'How often do I need mosquito treatments?', a: "Most barrier treatments last about two to three weeks, so recurring service on that cycle through the warm season gives the most consistent relief. Your pro will recommend a schedule based on your yard and how heavy the mosquito pressure is in your area." },
+      { q: 'Is mosquito control safe for kids and pets?', a: "Yes. Licensed technicians apply EPA-registered products at label rates, and the standing-water larvicides used (such as Bti) are naturally derived and target only mosquito larvae. It's best to keep kids and pets off the treated area until the application has dried — usually about 30 minutes — and many companies also offer botanical, lower-toxicity options." },
+      { q: 'When does mosquito season start?', a: "It depends on your climate, but mosquitoes generally become active once temperatures stay above about 50°F — often early spring in the South and late spring farther north — and build to a peak in mid to late summer. Starting a treatment program before that peak gets ahead of breeding and means far fewer mosquitoes when the season is at its worst." },
+      { q: 'Does mosquito spraying kill bees and other beneficial insects?', a: "Reputable companies apply barrier treatments to the shaded resting spots mosquitoes use — not to blooming flowers — and treat in the early morning or evening when pollinators are least active, which keeps the impact on bees and butterflies low. Bti larvicide used in standing water is specific to mosquito and fly larvae and does not harm bees." },
+      { q: 'Can I just treat mosquitoes myself?', a: "DIY foggers and store-bought sprays can offer brief relief, but they don't reach the shaded resting sites or the small hidden breeding spots, and yards quickly get re-infested from neighboring properties. A professional program treats both the adults and the breeding sources and is repeated on a schedule, which is what actually keeps a yard usable through the season." },
+    ],
   },
   'rodent-control': {
     slug: 'rodent-control',
