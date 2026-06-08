@@ -1,5 +1,7 @@
 'use strict';
 
+const woodstockGa = require('./cities/woodstock-ga');
+
 // ── State landing pages ──────────────────────────────────────────────────────
 // Each state hub is a single, consumer-focused, SEO page that covers every pest
 // in that state. We deliberately DO NOT build individual pest pages per state —
@@ -575,9 +577,18 @@ const GEORGIA = {
   ],
 
   // ── Cities We Service ──
-  // Grow this ONE AT A TIME as coverage expands. Plain badge: { name: 'Macon' }.
-  // Linked once a city page exists: { name: 'Macon', href: '/georgia/macon/' }.
-  cities: [],
+  // Grow this ONE AT A TIME as coverage expands. Each entry needs `slug` so the
+  // GA pest pages can deep-link to the matching city pest page when one exists.
+  // Plain badge: { name, slug }. Linked: { name, slug, href: '/georgia/<slug>/' }.
+  cities: [
+    { name: 'Woodstock', slug: 'woodstock', href: '/georgia/woodstock/' },
+  ],
+
+  // City pages (hub + per-pest), keyed by city slug. Rendered by views/city.ejs
+  // and views/city-service.ejs; content lives in data/cities/<city>.js.
+  cityPages: {
+    [woodstockGa.slug]: woodstockGa,
+  },
 
   // ── FAQ (GA-specific, SEO + FAQPage schema) ──
   faqs: [

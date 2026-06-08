@@ -150,26 +150,62 @@ app.get('/:stateSlug', (req, res, next) => {
   res.redirect(301, `/${req.params.stateSlug}/`);
 });
 
-// ── State + pest pages ───────────────────────────────────────────────────────
-// Fully localized, unique-content pest pages — e.g. /georgia/termite-control/.
-// Rendered only when the state is built AND defines pestPages[serviceSlug]
-// (data/states.js). Always shows the shared (844) number. Unknown combinations
-// fall through to 404.
-app.get('/:stateSlug/:serviceSlug/', (req, res, next) => {
+// ── /:state/:slug/ — state pest page OR city hub ─────────────────────────────
+// Two different pages share this shape: a state pest page (pestPages[slug], e.g.
+// /georgia/termite-control/) and a city hub (cityPages[slug], e.g.
+// /georgia/woodstock/). Pest pages are checked first. City hubs pull the
+// assigned LeadPortal contractor for the city's county so the page shows a local
+// pro (name, phone, LocalBusiness schema) — falling back to the (844) line when
+// none is assigned. Unknown slugs fall through to 404.
+app.get('/:stateSlug/:slug/', async (req, res, next) => {
   const state = getStatePage(req.params.stateSlug);
-  if (!state || !state.pestPages) return next();
-  const page = state.pestPages[req.params.serviceSlug];
-  if (!page) return next();
-  res.render('state-service', { state, page, serviceSlug: req.params.serviceSlug });
+  if (!state) return next();
+  const { slug } = req.params;
+  if (state.pestPages && state.pestPages[slug]) {
+    return res.render('state-service', { state, page: state.pestPages[slug], serviceSlug: slug });
+  }
+  const city = state.cityPages && state.cityPages[slug];
+  if (city) {
+    const contractor = await getContractor(state.name, city.county, SITE.SERVICE_TYPE);
+    return res.render('city', { state, city, contractor });
+  }
+  return next();
 });
-// Trailing-slash redirect — only for built state+pest pages, so others 404.
-app.get('/:stateSlug/:serviceSlug', (req, res, next) => {
+// Trailing-slash redirect — only for built state-pest or city pages.
+app.get('/:stateSlug/:slug', (req, res, next) => {
   const state = getStatePage(req.params.stateSlug);
-  if (!state || !state.pestPages || !state.pestPages[req.params.serviceSlug]) return next();
-  res.redirect(301, `/${req.params.stateSlug}/${req.params.serviceSlug}/`);
+  if (!state) return next();
+  const { slug } = req.params;
+  const exists = (state.pestPages && state.pestPages[slug]) || (state.cityPages && state.cityPages[slug]);
+  if (!exists) return next();
+  res.redirect(301, `/${req.params.stateSlug}/${slug}/`);
 });
 
-// 404 — anything not yet built (city pages are added one at a time).
+// ── /:state/:city/:pest/ — city + pest pages ─────────────────────────────────
+// Fully localized, unique-content city pest pages — e.g.
+// /georgia/woodstock/termite-control/. Shows the assigned local contractor for
+// the city's county (LocalBusiness schema) or the (844) fallback. Unknown
+// combinations fall through to 404.
+app.get('/:stateSlug/:citySlug/:serviceSlug/', async (req, res, next) => {
+  const state = getStatePage(req.params.stateSlug);
+  if (!state || !state.cityPages) return next();
+  const city = state.cityPages[req.params.citySlug];
+  if (!city || !city.pestPages) return next();
+  const page = city.pestPages[req.params.serviceSlug];
+  if (!page) return next();
+  const contractor = await getContractor(state.name, city.county, SITE.SERVICE_TYPE);
+  res.render('city-service', { state, city, page, serviceSlug: req.params.serviceSlug, contractor });
+});
+// Trailing-slash redirect — only for built city+pest pages, so others 404.
+app.get('/:stateSlug/:citySlug/:serviceSlug', (req, res, next) => {
+  const state = getStatePage(req.params.stateSlug);
+  if (!state || !state.cityPages) return next();
+  const city = state.cityPages[req.params.citySlug];
+  if (!city || !city.pestPages || !city.pestPages[req.params.serviceSlug]) return next();
+  res.redirect(301, `/${req.params.stateSlug}/${req.params.citySlug}/${req.params.serviceSlug}/`);
+});
+
+// 404 — anything not yet built.
 app.use((req, res) => res.status(404).render('404', { message: 'Page not found.' }));
 
 app.listen(PORT, () => console.log(`${SITE.NAME} running on port ${PORT}`));

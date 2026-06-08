@@ -102,12 +102,20 @@
   };
   const sectionsHtml = (pg.sections || []).map(renderSection).join('');
 
-  // Cities We Service (state-level) — local SEO + internal linking.
+  // Cities We Service (state-level) — local SEO + internal linking. Deep-link to
+  // the matching city PEST page when that city has one (e.g. the GA termite page
+  // links Woodstock -> /georgia/woodstock/termite-control/); otherwise link the
+  // city hub, or render a plain badge if the city has no page yet.
+  const cityHref = c => {
+    const cp = c.slug && st.cityPages && st.cityPages[c.slug];
+    if (cp && cp.pestPages && cp.pestPages[serviceSlug]) return `/${slug}/${c.slug}/${serviceSlug}/`;
+    return c.href || null;
+  };
   const citiesHtml = (st.cities && st.cities.length)
     ? `<ul class="counties-grid">
-      ${st.cities.map(c => c.href
-        ? `<li><a href="${c.href}">${c.name}</a></li>`
-        : `<li><span style="display:block;padding:11px 16px;background:var(--green-light);border:1px solid var(--green-border);border-radius:var(--radius);color:var(--green);font-weight:600;font-size:0.92rem;">${c.name}</span></li>`).join('\n      ')}
+      ${st.cities.map(c => { const h = cityHref(c); return h
+        ? `<li><a href="${h}">${crumb} in ${c.name}</a></li>`
+        : `<li><span style="display:block;padding:11px 16px;background:var(--green-light);border:1px solid var(--green-border);border-radius:var(--radius);color:var(--green);font-weight:600;font-size:0.92rem;">${c.name}</span></li>`; }).join('\n      ')}
     </ul>`
     : `<p style="text-align:center;color:var(--muted);max-width:640px;margin:0 auto;">We serve communities across ${name} and add service areas as we grow. Don't see your city? Call <a class="llp-phone" href="tel:${phoneTel}" style="color:var(--green);font-weight:700;">${phoneDisplay}</a> to connect with a licensed local pro.</p>`;
 
