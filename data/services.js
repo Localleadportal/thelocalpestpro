@@ -86,9 +86,67 @@ const SERVICES = {
   'bed-bug-treatment': {
     slug: 'bed-bug-treatment',
     name: 'Bed Bug Treatment',
-    h1: 'Bed Bug Treatment',
-    intro: "Whole-room heat treatment and targeted residual programs that eliminate bed bugs at every stage — eggs, nymphs, and adults — with follow-up verification.",
-    metaDesc: 'Find a licensed bed bug treatment pro near you. Heat treatment and targeted programs that eliminate bed bugs at every life stage.',
+    h1: 'Bed Bug Treatment & Extermination',
+    metaTitle: 'Bed Bug Treatment Near You | Heat & Chemical Extermination',
+    intro: "Bed bugs don't go away on their own, and store-bought sprays usually make them spread. A licensed local exterminator eliminates them at every life stage — eggs, nymphs, and adults — with professional heat treatment or a targeted residual program, then verifies they're gone.",
+    metaDesc: "Get rid of bed bugs for good. Find a licensed local bed bug exterminator for whole-home heat treatment and targeted programs that kill bed bugs at every life stage — eggs, nymphs, and adults. Free inspection & quote.",
+
+    overviewHeading: 'Why Bed Bugs Are So Hard to Get Rid Of',
+    overview: [
+      "Bed bugs are small, reddish-brown insects, about the size of an apple seed, that feed on human blood while you sleep. They hide during the day in the tiniest cracks — mattress seams, box springs, headboards, baseboards, and behind outlet covers — and emerge at night to bite, leaving itchy welts that are often the only proof you have a problem. They don't spread disease, but a population grows fast and is notoriously stubborn to eliminate.",
+      "The reason DIY almost always fails comes down to biology. A single female lays hundreds of eggs over her lifetime, and those eggs are cemented deep into cracks where sprays can't reach. On top of that, most bed bug populations are now resistant to the over-the-counter pyrethroid products sold for them. Miss a few eggs or a single hiding spot and the infestation simply rebuilds within weeks.",
+      "Worse, the wrong approach makes things worse. Foggers and 'bug bombs' don't penetrate the seams and voids where bed bugs hide — they scatter the survivors into adjoining rooms and neighboring units. Throwing out the mattress rarely helps either, because the bugs are already in the frame and furniture. The two things that reliably work — sustained lethal heat and professionally-applied residual products with growth regulators — are exactly what a licensed exterminator brings.",
+    ],
+
+    signsHeading: 'Signs You Have Bed Bugs',
+    signs: [
+      'Itchy red welts, often in a line or cluster, on skin you expose while sleeping — arms, shoulders, neck, and legs',
+      'Small rusty or reddish-brown blood spots on sheets, pillowcases, or the mattress',
+      'Dark, pepper-like fecal dots along mattress seams, the box spring, headboard, or baseboards',
+      'Pale, translucent shed skins and pinhead-sized white eggs in cracks and crevices',
+      'A musty, sweet odor in the room, which can accompany a heavier infestation',
+      'Live bugs — flat and apple-seed-sized — in mattress seams or behind the headboard',
+    ],
+
+    typesHeading: 'Where Bed Bugs Hide',
+    types: [
+      { name: 'In and around the bed', text: "Mattress seams and tags, the box spring, bed frame, headboard, and nightstands are ground zero — the bugs stay close to where you sleep so they can feed at night." },
+      { name: 'Furniture & upholstery', text: "Couches, recliners, and chairs (especially in bedrooms and living rooms) are common harborage points, which is why infestations spread beyond the bedroom if left untreated." },
+      { name: 'Cracks, baseboards & outlets', text: "Bed bugs squeeze into gaps in baseboards, wall trim, electrical outlets, and behind picture frames — hiding spots that sprays can't reach and DIY treatments routinely miss." },
+      { name: 'Luggage & secondhand items', text: "They're hitchhikers. Bed bugs travel home in luggage after a hotel stay, or inside used furniture and mattresses — the most common way an infestation starts in the first place." },
+    ],
+
+    treatmentsHeading: 'Bed Bug Treatment Options',
+    treatments: [
+      { name: 'Whole-room heat treatment', text: "Specialized equipment raises the room to roughly 120–135°F and holds it there — lethal to bed bugs at every stage, including the eggs that survive most sprays. Chemical-free, reaches into furniture and wall voids, and often clears an infestation in a single visit." },
+      { name: 'Targeted residual program', text: "EPA-registered insecticides and insect growth regulators applied precisely to harborage sites — seams, frames, baseboards, and voids. Usually two to three visits about two weeks apart to break the life cycle as new eggs hatch." },
+      { name: 'Inspection & K9 detection', text: "A thorough inspection — sometimes with a trained bed-bug detection dog — pinpoints exactly where they're hiding and how far they've spread, so treatment targets the whole infestation, not just the bedroom." },
+      { name: 'Follow-up & verification', text: "Bed bugs are hard to eliminate on the first try, so a reputable pro returns to confirm there's no remaining activity and re-treats any survivors — many back the work with a guarantee." },
+    ],
+
+    costHeading: 'How Much Does Bed Bug Treatment Cost?',
+    costNote: "There's no single flat price for bed bug treatment — it depends on how many rooms are affected, how severe the infestation is, your home's size, and whether you choose heat treatment (often one visit, higher per-visit cost) or a residual chemical program (lower per-visit, multiple visits). Every contractor in our directory provides a free, in-person inspection and a property-specific quote before any work begins, so you'll know your exact price up front with no surprises.",
+
+    preventionHeading: 'How to Prevent Bed Bugs (and Avoid Spreading Them)',
+    prevention: [
+      'Inspect hotel mattress seams and headboards before unpacking, and keep luggage off the bed and floor',
+      'Run clothing through a hot dryer for 30+ minutes after traveling — heat kills any hitchhikers',
+      'Examine secondhand furniture and mattresses closely before bringing them into your home',
+      'Use a zippered, bed-bug-proof encasement on your mattress and box spring',
+      "If you suspect bed bugs, do NOT start sleeping in another room — that's the most common way people spread them through the home",
+      'Reduce clutter near the bed so there are fewer places for them to hide',
+    ],
+
+    faqs: [
+      { q: 'How do I know if I have bed bugs?', a: "The most common signs are itchy bite welts in rows or clusters on skin you expose while sleeping, small rusty blood spots and dark pepper-like fecal dots along your mattress seams and box spring, pale shed skins, and pinhead-sized white eggs in cracks near the bed. A musty, sweet odor can accompany a heavier infestation. Because bed bugs are expert hiders, a professional inspection — sometimes with a detection dog — is the surest way to confirm them." },
+      { q: 'Does heat treatment actually kill bed bugs?', a: "Yes. Bed bugs and their eggs die at sustained temperatures of roughly 118–120°F and up, and professional heat treatment raises a room to about 120–135°F and holds it there long enough to penetrate mattresses, furniture, and wall voids. Because heat reaches the eggs that survive most sprays, it can clear an infestation in a single visit and uses no chemicals — which is why many homeowners prefer it." },
+      { q: "Why can't I just get rid of bed bugs myself?", a: "DIY almost always falls short for two reasons. First, bed bug eggs are cemented deep in cracks and crevices where over-the-counter sprays never reach, so survivors rebuild the population within weeks. Second, most bed bug populations are now resistant to the pyrethroid chemicals sold in stores. Worse, foggers and bug bombs scatter the survivors into other rooms. Sustained lethal heat or professionally-applied residual products with growth regulators are what reliably end an infestation." },
+      { q: 'How much does bed bug treatment cost?', a: "It varies with the number of rooms affected, the severity of the infestation, your home's size, and the method. Heat treatment is usually a single, higher-priced visit, while a residual chemical program costs less per visit but takes two or three visits to finish. Every contractor in our directory provides a free, property-specific quote before any work begins, so you'll know your exact price before committing." },
+      { q: 'How many treatments will I need?', a: "Professional heat treatment often eliminates an infestation in one visit because it kills every life stage at once, including eggs. A chemical residual program typically requires two to three visits spaced about two weeks apart, so each round catches newly-hatched nymphs before they can breed. Either way, a reputable exterminator includes a follow-up inspection to verify the bugs are gone." },
+      { q: 'Should I throw out my mattress?', a: "Usually no. By the time you find bed bugs they're rarely only in the mattress — they're also in the box spring, frame, baseboards, and nearby furniture — so discarding the mattress doesn't solve the problem, and a bagged, infested mattress can spread bugs to others. Professional treatment lets you keep your furniture; a zippered encasement on a treated mattress is far cheaper and more effective than replacing it." },
+      { q: 'How do I prepare for a bed bug treatment?', a: "Your exterminator will provide a specific prep checklist. In general, launder bedding and washable clothing on the hottest dryer setting and seal it in bags, reduce clutter so technicians can reach hiding spots, and — importantly — do not start sleeping in another room, since moving around the home is the most common way people accidentally spread bed bugs. Proper prep is critical to the treatment's success, so follow your pro's instructions exactly." },
+      { q: 'Are bed bug treatments safe for kids and pets?', a: "Yes, when handled by a licensed professional. Heat treatment uses no chemicals at all. Chemical programs use EPA-registered products applied at label rates, and your technician will give you a short re-entry window — typically just until the application dries — before it's safe to return to the treated rooms. Always follow the specific re-entry and prep guidance your exterminator provides." },
+    ],
   },
   'cockroach-control': {
     slug: 'cockroach-control',
