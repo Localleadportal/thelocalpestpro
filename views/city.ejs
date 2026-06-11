@@ -134,9 +134,23 @@
       </a>`;
       }).join('');
 
+  // Nearby-area badges. When a neighborhood has its own built city hub in this
+  // state (matched by name against st.cities, which carries the linkable href),
+  // render it as a real link; otherwise keep it as a plain, non-clickable badge.
+  // Never self-link the current city.
+  const nearbyHref = {};
+  (st.cities || []).forEach(c => {
+    if (c.href && c.slug !== city.slug) nearbyHref[c.name.toLowerCase()] = c.href;
+  });
+  const badgeStyle = 'display:block;padding:11px 16px;background:var(--green-light);border:1px solid var(--green-border);border-radius:var(--radius);color:var(--green);font-weight:600;font-size:0.92rem;';
   const areasGrid = (city.neighborhoods && city.neighborhoods.length)
     ? `<ul class="counties-grid" style="margin-top:8px;">
-      ${city.neighborhoods.map(n => `<li><span style="display:block;padding:11px 16px;background:var(--green-light);border:1px solid var(--green-border);border-radius:var(--radius);color:var(--green);font-weight:600;font-size:0.92rem;">${n}</span></li>`).join('\n      ')}
+      ${city.neighborhoods.map(n => {
+        const href = nearbyHref[n.toLowerCase()];
+        return href
+          ? `<li><a href="${href}" style="${badgeStyle}text-decoration:none;">${n}</a></li>`
+          : `<li><span style="${badgeStyle}">${n}</span></li>`;
+      }).join('\n      ')}
     </ul>
     ${city.zips && city.zips.length ? `<p style="text-align:center;color:var(--muted);margin-top:16px;">Serving ZIP codes ${city.zips.join(' &amp; ')} and all of ${city.county}.</p>` : ''}`
     : '';
