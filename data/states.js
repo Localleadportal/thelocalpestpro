@@ -6,13 +6,17 @@ const hollySpringsGa = require('./cities/holly-springs-ga');
 const cummingGa = require('./cities/cumming-ga');
 const duluthGa = require('./cities/duluth-ga');
 const lawrencevilleGa = require('./cities/lawrenceville-ga');
+const snellvilleGa = require('./cities/snellville-ga');
 const dunwoodyGa = require('./cities/dunwoody-ga');
 const mariettaGa = require('./cities/marietta-ga');
 const smyrnaGa = require('./cities/smyrna-ga');
+const kennesawGa = require('./cities/kennesaw-ga');
 const roswellGa = require('./cities/roswell-ga');
 const dallasGa = require('./cities/dallas-ga');
 const alpharettaGa = require('./cities/alpharetta-ga');
+const sandySpringsGa = require('./cities/sandy-springs-ga');
 const brookhavenGa = require('./cities/brookhaven-ga');
+const decaturGa = require('./cities/decatur-ga');
 
 // ── State landing pages ──────────────────────────────────────────────────────
 // Each state hub is a single, consumer-focused, SEO page that covers every pest
@@ -599,12 +603,16 @@ const GEORGIA = {
     { name: 'Cumming', slug: 'cumming', href: '/georgia/cumming/' },
     { name: 'Duluth', slug: 'duluth', href: '/georgia/duluth/' },
     { name: 'Lawrenceville', slug: 'lawrenceville', href: '/georgia/lawrenceville/' },
+    { name: 'Snellville', slug: 'snellville', href: '/georgia/snellville/' },
     { name: 'Dunwoody', slug: 'dunwoody', href: '/georgia/dunwoody/' },
     { name: 'Marietta', slug: 'marietta', href: '/georgia/marietta/' },
     { name: 'Smyrna', slug: 'smyrna', href: '/georgia/smyrna/' },
+    { name: 'Kennesaw', slug: 'kennesaw', href: '/georgia/kennesaw/' },
     { name: 'Roswell', slug: 'roswell', href: '/georgia/roswell/' },
     { name: 'Alpharetta', slug: 'alpharetta', href: '/georgia/alpharetta/' },
+    { name: 'Sandy Springs', slug: 'sandy-springs', href: '/georgia/sandy-springs/' },
     { name: 'Brookhaven', slug: 'brookhaven', href: '/georgia/brookhaven/' },
+    { name: 'Decatur', slug: 'decatur', href: '/georgia/decatur/' },
     { name: 'Dallas', slug: 'dallas', href: '/georgia/dallas/' },
   ],
 
@@ -617,12 +625,16 @@ const GEORGIA = {
     [cummingGa.slug]: cummingGa,
     [duluthGa.slug]: duluthGa,
     [lawrencevilleGa.slug]: lawrencevilleGa,
+    [snellvilleGa.slug]: snellvilleGa,
     [dunwoodyGa.slug]: dunwoodyGa,
     [mariettaGa.slug]: mariettaGa,
     [smyrnaGa.slug]: smyrnaGa,
+    [kennesawGa.slug]: kennesawGa,
     [roswellGa.slug]: roswellGa,
     [alpharettaGa.slug]: alpharettaGa,
+    [sandySpringsGa.slug]: sandySpringsGa,
     [brookhavenGa.slug]: brookhavenGa,
+    [decaturGa.slug]: decaturGa,
     [dallasGa.slug]: dallasGa,
   },
 
