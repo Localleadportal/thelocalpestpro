@@ -5,9 +5,14 @@ const cantonGa = require('./cities/canton-ga');
 const hollySpringsGa = require('./cities/holly-springs-ga');
 const cummingGa = require('./cities/cumming-ga');
 const duluthGa = require('./cities/duluth-ga');
+const lawrencevilleGa = require('./cities/lawrenceville-ga');
 const dunwoodyGa = require('./cities/dunwoody-ga');
 const mariettaGa = require('./cities/marietta-ga');
+const smyrnaGa = require('./cities/smyrna-ga');
 const roswellGa = require('./cities/roswell-ga');
+const dallasGa = require('./cities/dallas-ga');
+const alpharettaGa = require('./cities/alpharetta-ga');
+const brookhavenGa = require('./cities/brookhaven-ga');
 
 // ── State landing pages ──────────────────────────────────────────────────────
 // Each state hub is a single, consumer-focused, SEO page that covers every pest
@@ -593,9 +598,14 @@ const GEORGIA = {
     { name: 'Holly Springs', slug: 'holly-springs', href: '/georgia/holly-springs/' },
     { name: 'Cumming', slug: 'cumming', href: '/georgia/cumming/' },
     { name: 'Duluth', slug: 'duluth', href: '/georgia/duluth/' },
+    { name: 'Lawrenceville', slug: 'lawrenceville', href: '/georgia/lawrenceville/' },
     { name: 'Dunwoody', slug: 'dunwoody', href: '/georgia/dunwoody/' },
     { name: 'Marietta', slug: 'marietta', href: '/georgia/marietta/' },
+    { name: 'Smyrna', slug: 'smyrna', href: '/georgia/smyrna/' },
     { name: 'Roswell', slug: 'roswell', href: '/georgia/roswell/' },
+    { name: 'Alpharetta', slug: 'alpharetta', href: '/georgia/alpharetta/' },
+    { name: 'Brookhaven', slug: 'brookhaven', href: '/georgia/brookhaven/' },
+    { name: 'Dallas', slug: 'dallas', href: '/georgia/dallas/' },
   ],
 
   // City pages (hub + per-pest), keyed by city slug. Rendered by views/city.ejs
@@ -606,9 +616,14 @@ const GEORGIA = {
     [hollySpringsGa.slug]: hollySpringsGa,
     [cummingGa.slug]: cummingGa,
     [duluthGa.slug]: duluthGa,
+    [lawrencevilleGa.slug]: lawrencevilleGa,
     [dunwoodyGa.slug]: dunwoodyGa,
     [mariettaGa.slug]: mariettaGa,
+    [smyrnaGa.slug]: smyrnaGa,
     [roswellGa.slug]: roswellGa,
+    [alpharettaGa.slug]: alpharettaGa,
+    [brookhavenGa.slug]: brookhavenGa,
+    [dallasGa.slug]: dallasGa,
   },
 
   // ── FAQ (GA-specific, SEO + FAQPage schema) ──

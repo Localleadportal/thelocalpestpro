@@ -69,16 +69,22 @@
       "url": pageUrl,
       "image": contractor.image || ogImage,
       "telephone": coTel,
-      "priceRange": "$$",
       "areaServed": { "@type": "City", "name": cityName, "containedInPlace": { "@type": "State", "name": stateName } }
     };
-    const addr = {};
-    if (contractor.streetAddress) addr.streetAddress = toTitleCase(contractor.streetAddress);
-    addr.addressLocality = contractor.addressLocality ? toTitleCase(contractor.addressLocality) : cityName;
-    addr.addressRegion = normalizeStateRegion(contractor.addressRegion || st.abbr);
-    if (contractor.postalCode) addr.postalCode = contractor.postalCode;
-    addr.addressCountry = "US";
-    lb.address = Object.assign({ "@type": "PostalAddress" }, addr);
+    // Address comes ONLY from the contractor's real LeadPortal record — never
+    // synthesized from the page's city/state (that would be a fabricated-locality
+    // claim). A real address needs a street; without one we omit address entirely
+    // and let areaServed (page City + State) carry the coverage signal. The
+    // contractor's real HQ may sit in a different city than the page — that's
+    // honest, so we render it verbatim from their record.
+    if (contractor.streetAddress) {
+      const addr = { "@type": "PostalAddress", "streetAddress": toTitleCase(contractor.streetAddress) };
+      if (contractor.addressLocality) addr.addressLocality = toTitleCase(contractor.addressLocality);
+      if (contractor.addressRegion) addr.addressRegion = normalizeStateRegion(contractor.addressRegion);
+      if (contractor.postalCode) addr.postalCode = contractor.postalCode;
+      addr.addressCountry = "US";
+      lb.address = addr;
+    }
     if (contractor.licenseNumber) lb.hasCredential = `License ${contractor.licenseNumber}`;
     graph.push(lb);
   }
