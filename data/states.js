@@ -3,6 +3,11 @@
 const woodstockGa = require('./cities/woodstock-ga');
 const cantonGa = require('./cities/canton-ga');
 const hollySpringsGa = require('./cities/holly-springs-ga');
+const cummingGa = require('./cities/cumming-ga');
+const duluthGa = require('./cities/duluth-ga');
+const dunwoodyGa = require('./cities/dunwoody-ga');
+const mariettaGa = require('./cities/marietta-ga');
+const roswellGa = require('./cities/roswell-ga');
 
 // ── State landing pages ──────────────────────────────────────────────────────
 // Each state hub is a single, consumer-focused, SEO page that covers every pest
@@ -586,6 +591,11 @@ const GEORGIA = {
     { name: 'Woodstock', slug: 'woodstock', href: '/georgia/woodstock/' },
     { name: 'Canton', slug: 'canton', href: '/georgia/canton/' },
     { name: 'Holly Springs', slug: 'holly-springs', href: '/georgia/holly-springs/' },
+    { name: 'Cumming', slug: 'cumming', href: '/georgia/cumming/' },
+    { name: 'Duluth', slug: 'duluth', href: '/georgia/duluth/' },
+    { name: 'Dunwoody', slug: 'dunwoody', href: '/georgia/dunwoody/' },
+    { name: 'Marietta', slug: 'marietta', href: '/georgia/marietta/' },
+    { name: 'Roswell', slug: 'roswell', href: '/georgia/roswell/' },
   ],
 
   // City pages (hub + per-pest), keyed by city slug. Rendered by views/city.ejs
@@ -594,6 +604,11 @@ const GEORGIA = {
     [woodstockGa.slug]: woodstockGa,
     [cantonGa.slug]: cantonGa,
     [hollySpringsGa.slug]: hollySpringsGa,
+    [cummingGa.slug]: cummingGa,
+    [duluthGa.slug]: duluthGa,
+    [dunwoodyGa.slug]: dunwoodyGa,
+    [mariettaGa.slug]: mariettaGa,
+    [roswellGa.slug]: roswellGa,
   },
 
   // ── FAQ (GA-specific, SEO + FAQPage schema) ──

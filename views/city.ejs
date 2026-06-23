@@ -110,17 +110,30 @@
   const overviewHtml = (city.overview || []).map(p => `<p>${p}</p>`).join('\n    ');
 
   // Pest cards. Prefer an explicit city.pests array — this lets a hub render all
-  // its cards while the per-pest pages are still being authored one at a time
-  // (the card links 404 cleanly until each page exists). Otherwise derive cards
-  // from pestPages in canonical order (only pests with a built city page render).
+  // its cards while the per-pest pages are still being authored one at a time.
+  // A card is a LINK only when its per-pest spoke page actually exists in
+  // city.pestPages; otherwise it renders as a non-clickable <div>. That keeps the
+  // hub from emitting internal links to not-yet-built (404) spoke URLs — no soft
+  // 404s, no link equity bled into dead ends — and each card auto-upgrades to a
+  // link the moment its spoke is authored. Otherwise derive cards from pestPages
+  // in canonical order (only pests with a built city page render).
   const pestCardsHtml = (city.pests && city.pests.length)
-    ? city.pests.map(p => `
-      <a class="service-card" href="${p.href}" style="text-decoration:none;display:block;">
+    ? city.pests.map(p => {
+        const ps = (p.href || '').replace(/\/+$/, '').split('/').pop();
+        const built = !!(city.pestPages && city.pestPages[ps]);
+        const inner = `
         <span class="card-icon">${p.emoji}</span>
         <h3>${p.name}</h3>
         <p>${p.blurb}</p>
-        <span class="card-phone">Learn more &rsaquo;</span>
-      </a>`).join('')
+        ${built ? '<span class="card-phone">Learn more &rsaquo;</span>' : ''}`;
+        return built
+          ? `
+      <a class="service-card" href="${p.href}" style="text-decoration:none;display:block;">${inner}
+      </a>`
+          : `
+      <div class="service-card">${inner}
+      </div>`;
+      }).join('')
     : pestList.map(p => {
         const ps = p.href.replace(/^\/+|\/+$/g, '');
         const cp = city.pestPages && city.pestPages[ps];
