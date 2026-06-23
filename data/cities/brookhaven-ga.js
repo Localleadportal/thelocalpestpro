@@ -37,7 +37,7 @@
 // townhome construction filling in among them; ZIPs 30319/30329; nearby DeKalb
 // communities Chamblee, Doraville, Dunwoody, Tucker; humid subtropical climate
 // with long summers and mild winters; eastern subterranean termites dominant
-// statewide (aggressive Formosan termites established in parts of metro Atlanta);
+// statewide (Formosan termites rare in GA, not established in metro Atlanta);
 // red imported fire ants present statewide; metro Atlanta is a top-five U.S.
 // mosquito metro (Orkin 2025); structural pest control is regulated and licensed
 // by the Georgia Dept. of Agriculture's Structural Pest Control Commission. Trust
@@ -75,7 +75,7 @@ module.exports = {
     {
       heading: 'Why Do Brookhaven Homes Stay Under Pest Pressure Year-Round?',
       paras: [
-        "Georgia sits inside one of the heaviest termite-pressure regions in the country, and Brookhaven is no exception. Eastern subterranean termites are the dominant species across the state, foraging underground and pushing mud tubes up into sills, joists, and framing — and because the city's mild winters never force the colonies dormant, they keep feeding 12 months a year. Aggressive Formosan termites have also established in parts of metro Atlanta. Since termite damage typically isn't covered by homeowners insurance, steady protection costs far less than the structural repairs.",
+        "Georgia sits inside one of the heaviest termite-pressure regions in the country, and Brookhaven is no exception. Eastern subterranean termites are the dominant species across the state, foraging underground and pushing mud tubes up into sills, joists, and framing — and because the city's mild winters never force the colonies dormant, they keep feeding 12 months a year. Since termite damage typically isn't covered by homeowners insurance, steady protection costs far less than the structural repairs.",
         "Termites are only the opening act. Red imported fire ants are present statewide and raise painful mounds across Brookhaven lawns and common areas. The bigger seasonal story is mosquitoes: metro Atlanta consistently ranks among the worst U.S. metros for them — top five on Orkin's 2025 list — and Brookhaven's shaded, well-watered yards under the tree canopy hold exactly the standing water they breed in and the cool vegetation they rest in from spring into fall. Add the German roaches and 'palmetto bugs' that flourish in the metro humidity, the roof rats and mice that slip into attics and basements as nights cool, and the bed bugs that hitchhike home from travel, and most Brookhaven homes do better with a steady professional barrier than with reacting one infestation at a time.",
       ],
     },
@@ -142,7 +142,7 @@ module.exports = {
   // Blurbs are written fresh for Brookhaven.
   pests: [
     { emoji: '🐛', name: 'Termite Control', href: '/georgia/brookhaven/termite-control/',
-      blurb: "Georgia is one of the nation's heaviest termite zones — eastern subterranean termites feed underground all year in Brookhaven's mild winters, with Formosan termites established in parts of metro Atlanta. Liquid soil barriers, in-ground bait systems, and the Georgia termite letter for closings." },
+      blurb: "Georgia is one of the nation's heaviest termite zones — eastern subterranean termites feed underground all year in Brookhaven's mild winters. Liquid soil barriers, in-ground bait systems, and the Georgia termite letter for closings." },
     { emoji: '🛏️', name: 'Bed Bug Treatment', href: '/georgia/brookhaven/bed-bug-treatment/',
       blurb: "Bed bugs hitchhike home from travel and secondhand furniture and move quickly between Brookhaven's apartments, townhomes, and shared walls. Whole-room heat or a targeted residual program kills every life stage, with follow-up verification." },
     { emoji: '🪳', name: 'Cockroach Control', href: '/georgia/brookhaven/cockroach-control/',

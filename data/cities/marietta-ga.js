@@ -31,7 +31,7 @@
 // Cobb communities Kennesaw, Smyrna, Acworth, Powder Springs, Mableton, East
 // Cobb (service-area names only). REGIONAL truths: humid subtropical climate with
 // a long warm season; eastern subterranean termite is the dominant Georgia
-// termite (Formosan established in parts of metro Atlanta); red imported fire
+// termite (Formosan termites rare in GA, not established in metro Atlanta); red imported fire
 // ants established statewide; metro Atlanta is a top-five U.S. mosquito metro
 // (Orkin 2025); the Georgia Dept. of Agriculture's Structural Pest Control
 // Commission regulates/licenses. Do NOT name parks, schools, subdivisions,
@@ -69,7 +69,7 @@ module.exports = {
     {
       heading: 'Why Older Marietta Homes Need Year-Round Protection',
       paras: [
-        "Metro Atlanta sits inside one of the heaviest termite-pressure regions in the United States, and Marietta is squarely in it. Eastern subterranean termites — the dominant termite across Georgia — are active throughout the area, foraging up through the soil into sill plates, joists, and framing, and the aggressive Formosan termite has established in parts of metro Atlanta. Because winters here are mild, those colonies keep feeding underground all year instead of going dormant, so the slow, hidden damage to an older home never really pauses. Termite damage typically isn't covered by homeowners insurance, which makes steady protection the cost-effective choice.",
+        "Metro Atlanta sits inside one of the heaviest termite-pressure regions in the United States, and Marietta is squarely in it. Eastern subterranean termites — the dominant termite across Georgia — are active throughout the area, foraging up through the soil into sill plates, joists, and framing. Because winters here are mild, those colonies keep feeding underground all year instead of going dormant, so the slow, hidden damage to an older home never really pauses. Termite damage typically isn't covered by homeowners insurance, which makes steady protection the cost-effective choice.",
         "Termites are only the start. Red imported fire ants are established statewide and throw up painful mounds across Marietta lawns. Metro Atlanta ranks among the worst U.S. metros for mosquitoes — top five on Orkin's 2025 list — and the deep shade and standing water of Marietta's tree-canopied yards keep them breeding from spring into fall. Add the German roaches, outdoor 'palmetto bugs,' and roof rats that thrive in the humidity and use mature limbs to reach the roof, and a steady professional barrier from a licensed Marietta exterminator makes far more sense than chasing one infestation at a time.",
       ],
     },
@@ -79,7 +79,7 @@ module.exports = {
         "An older, tree-shaded Cobb County city sees a predictable cast of pests. Here's what the licensed pros in our directory treat most around Marietta:",
       ],
       cards: [
-        { name: 'Termites', text: "Eastern subterranean termites are the dominant termite in Georgia and a constant threat to Marietta's older wood-framed homes, with Formosan termites established in parts of metro Atlanta. Liquid soil barriers, in-ground bait systems, and the Georgia termite letter for closings — termite treatment Marietta GA homeowners can count on, backed by a renewable bond." },
+        { name: 'Termites', text: "Eastern subterranean termites are the dominant termite in Georgia and a constant threat to Marietta's older wood-framed homes. Liquid soil barriers, in-ground bait systems, and the Georgia termite letter for closings — termite treatment Marietta GA homeowners can count on, backed by a renewable bond." },
         { name: 'Fire Ants', text: "Red imported fire ants are established statewide, and their dome-shaped mounds erupt across Marietta lawns and common areas. A broadcast bait that workers carry underground to the queen, plus targeted mound treatment and a perimeter barrier, keeps a yard usable for kids and pets." },
         { name: 'Mosquitoes', text: "Metro Atlanta is a top-five U.S. mosquito metro, and Marietta's deep tree canopy gives adults the cool, shaded daytime harborage they crave. Yard barrier sprays and larviciding of standing water — mosquito control Marietta families use to take the backyard back from spring through fall." },
         { name: 'Cockroaches', text: "Two very different problems: German roaches that breed indoors in kitchens and baths, and the big outdoor 'palmetto bugs' (smokybrown and American roaches) that live in mulch, leaf litter, and crawlspaces and wander in. Gel baiting, crack-and-crevice work, and a perimeter barrier clear both." },
@@ -155,7 +155,7 @@ module.exports = {
   // Blurbs are written fresh for Marietta (no reuse from the sibling cities).
   pests: [
     { emoji: '🐛', name: 'Termite Control', href: '#pests-detail',
-      blurb: "Eastern subterranean termites — Georgia's dominant species — threaten Marietta's older wood-framed homes, with Formosan in parts of metro Atlanta. Soil barriers, bait systems, and the Georgia termite letter." },
+      blurb: "Eastern subterranean termites — Georgia's dominant species — threaten Marietta's older wood-framed homes. Soil barriers, bait systems, and the Georgia termite letter." },
     { emoji: '🛏️', name: 'Bed Bug Treatment', href: '#pests-detail',
       blurb: "Travel-driven bed bugs spread fast through Marietta homes, apartments, and rentals. Whole-room heat or a targeted residual program kills every life stage, with follow-up verification." },
     { emoji: '🪳', name: 'Cockroach Control', href: '#pests-detail',

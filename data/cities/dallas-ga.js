@@ -30,8 +30,8 @@
 // the Paulding communities New Hope, Yorkville, and Braswell; US-278 is the main
 // corridor through Dallas and Hiram (the ONLY road nameable); ZIPs 30132/30157;
 // area codes 770/678/470; humid subtropical climate; Georgia is a heavy
-// termite-pressure state (eastern subterranean active, Formosan in parts of metro
-// Atlanta); red imported fire ants present; metro Atlanta is a top-five U.S.
+// termite-pressure state (eastern subterranean active; Formosan termites rare in GA,
+// not established in metro Atlanta); red imported fire ants present; metro Atlanta is a top-five U.S.
 // mosquito metro (Orkin 2025); structural pest control is regulated by the
 // Georgia Dept. of Agriculture's Structural Pest Control Commission. Do NOT name
 // subdivisions, schools, parks, streets (other than US-278), or invent stats.
@@ -67,7 +67,7 @@ module.exports = {
     {
       heading: 'Why Dallas Homes Need Year-Round Protection',
       paras: [
-        "Georgia sits in one of the heaviest termite-pressure regions in the United States, and Paulding County is no exception. Eastern subterranean termites are active across the area, and aggressive Formosan termites have established in parts of metro Atlanta — both feed underground 12 months a year thanks to Dallas's mild winters, so the threat to your home's structure never really pauses. Termite damage typically isn't covered by homeowners insurance, which makes ongoing protection the cost-effective choice — especially across Paulding's many newer slabs and crawlspaces.",
+        "Georgia sits in one of the heaviest termite-pressure regions in the United States, and Paulding County is no exception. Eastern subterranean termites are active across the area and feed underground 12 months a year thanks to Dallas's mild winters, so the threat to your home's structure never really pauses. Termite damage typically isn't covered by homeowners insurance, which makes ongoing protection the cost-effective choice — especially across Paulding's many newer slabs and crawlspaces.",
         "It isn't only termites. Red imported fire ants are present throughout the Dallas area, building painful mounds across lawns and the open turf of new subdivisions. Metro Atlanta consistently ranks among the worst U.S. metros for mosquitoes — it landed in the top five on Orkin's 2025 list — and the shaded, wooded lots and standing water common across this transitional landscape keep them breeding from spring into fall. Add the German roaches, 'palmetto bugs,' and roof rats that thrive in the region's humidity, and most Dallas homes benefit from a steady, professional barrier rather than reacting one infestation at a time.",
       ],
     },

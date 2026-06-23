@@ -30,8 +30,9 @@
 // neighborhoods, newer multifamily housing, and dense commercial corridors;
 // nearby Gwinnett-area communities Suwanee, Berkeley Lake, Norcross, Peachtree
 // Corners, Lawrenceville; ZIPs 30096/30097; area codes 770/678/470; humid
-// subtropical climate; eastern subterranean termites dominant in GA (Formosan in
-// parts of metro Atlanta); red imported fire ants are present in all 159 GA
+// subtropical climate; eastern subterranean termites dominant in GA (Formosan
+// termites rare in GA, not established in metro Atlanta); red imported fire ants
+// are present in all 159 GA
 // counties; metro Atlanta is a top-five U.S. mosquito metro (Orkin 2025);
 // structural pest control is regulated/licensed by the Georgia Dept. of
 // Agriculture's Structural Pest Control Commission. (This is Duluth, GEORGIA —
@@ -72,14 +73,14 @@ module.exports = {
     {
       heading: 'Why Duluth, GA Homes Need Year-Round Pest Protection',
       paras: [
-        "Georgia sits in one of the heaviest termite-pressure regions in the country, and Gwinnett County is squarely in it. Eastern subterranean termites are active throughout the area, and aggressive Formosan termites have established in parts of metro Atlanta — and because Duluth's winters are mild, those colonies keep feeding underground all year instead of going dormant. Since termite damage typically isn't covered by homeowners insurance, steady protection costs far less than the structural repairs.",
+        "Georgia sits in one of the heaviest termite-pressure regions in the country, and Gwinnett County is squarely in it. Eastern subterranean termites are active throughout the area — and because Duluth's winters are mild, those colonies keep feeding underground all year instead of going dormant. Since termite damage typically isn't covered by homeowners insurance, steady protection costs far less than the structural repairs.",
         "Termites are only the start. Red imported fire ants are present in all 159 Georgia counties, throwing up painful mounds across Duluth lawns and common areas. Metro Atlanta consistently ranks among the worst U.S. metros for mosquitoes — it landed in the top five on Orkin's 2025 list — and the shaded yards and standing water that come with rapid suburban growth keep them breeding from spring into fall. Add the German roaches, outdoor 'palmetto bugs,' and roof rats that thrive in the humidity, and most Duluth homes benefit from a steady professional barrier rather than reacting one infestation at a time.",
       ],
     },
     {
       heading: '<span id="termite"></span>Are Termites a Year-Round Threat in Duluth, GA?',
       paras: [
-        "Yes — termites need warmth, moisture, and wood, and Duluth supplies all three nearly year-round. Eastern subterranean termites forage through the soil and build mud tubes up into sills, floor joists, and framing, and because Gwinnett County winters are mild, those colonies keep feeding 12 months a year. Aggressive Formosan termites have also established in parts of metro Atlanta, raising the stakes across the region. The first sign most homeowners see is a spring swarm — winged 'swarmers,' or little piles of discarded translucent wings on windowsills — which almost always means an active colony is already nearby.",
+        "Yes — termites need warmth, moisture, and wood, and Duluth supplies all three nearly year-round. Eastern subterranean termites forage through the soil and build mud tubes up into sills, floor joists, and framing, and because Gwinnett County winters are mild, those colonies keep feeding 12 months a year. The first sign most homeowners see is a spring swarm — winged 'swarmers,' or little piles of discarded translucent wings on windowsills — which almost always means an active colony is already nearby.",
         "Termite treatment in Duluth, GA is matched to your home by a licensed inspector: a non-repellent liquid termiticide trenched into the soil to create a continuous treated zone, in-ground bait stations that foragers carry back to collapse the colony, or a combination of both for Duluth's mix of slab and crawlspace homes. Buying or selling? Georgia closings almost always require the Official Georgia Wood Infestation Inspection Report — the 'termite letter' — which only a Georgia-licensed operator can issue, usually within 30 days of closing. The pros in our directory inspect, treat, and issue that report.",
       ],
     },
@@ -172,7 +173,7 @@ module.exports = {
   // General Pest Control (the #general section).
   pests: [
     { emoji: '🐛', name: 'Termite Control', href: '#termite',
-      blurb: "Georgia is one of the nation's heaviest termite zones — eastern subterranean termites plus Formosan in parts of metro Atlanta. Liquid soil barriers, in-ground bait stations, and the Georgia termite letter for closings." },
+      blurb: "Georgia is one of the nation's heaviest termite zones, with eastern subterranean termites the dominant wood-destroyer. Liquid soil barriers, in-ground bait stations, and the Georgia termite letter for closings." },
     { emoji: '🛏️', name: 'Bed Bug Treatment', href: '#bed-bug',
       blurb: "Travel- and multifamily-driven bed bugs spread fast through Duluth homes, apartments, and rentals. Whole-room heat or targeted residual treatment kills every life stage, with follow-up verification." },
     { emoji: '🪳', name: 'Cockroach Control', href: '#cockroach',

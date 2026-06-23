@@ -25,8 +25,8 @@
 // Center development near Holly Springs Parkway and Hickory Road (the ONLY roads
 // nameable); ZIPs 30115/30142/30188 (never mapped to specific streets); area
 // codes 770/678/470; humid subtropical climate; Cherokee County is a high
-// termite-pressure zone (eastern subterranean active, Formosan in parts of metro
-// Atlanta); red imported fire ants present; metro Atlanta is a top-five U.S.
+// termite-pressure zone (eastern subterranean active; Formosan termites rare in GA,
+// not established in metro Atlanta); red imported fire ants present; metro Atlanta is a top-five U.S.
 // mosquito metro (Orkin 2025); GA Dept. of Agriculture Structural Pest Control
 // Commission regulates/licenses. Do NOT name parks, schools, or subdivisions.
 
@@ -60,7 +60,7 @@ module.exports = {
     {
       heading: 'Why Holly Springs Homes Need Year-Round Protection',
       paras: [
-        "Cherokee County falls inside one of the highest termite-pressure zones in the United States, and Holly Springs is squarely in it. Eastern subterranean termites are active throughout the area, and aggressive Formosan termites have established in parts of metro Atlanta — and because winters here are mild, those colonies keep feeding underground all year instead of going dormant. Since termite damage typically isn't covered by homeowners insurance, steady protection costs far less than the repairs.",
+        "Cherokee County falls inside one of the highest termite-pressure zones in the United States, and Holly Springs is squarely in it. Eastern subterranean termites are active throughout the area — and because winters here are mild, those colonies keep feeding underground all year instead of going dormant. Since termite damage typically isn't covered by homeowners insurance, steady protection costs far less than the repairs.",
         "Termites are only the beginning. Red imported fire ants are present throughout Holly Springs, throwing up painful mounds across subdivision lawns and the city's parks. Metro Atlanta ranks among the worst U.S. metros for mosquitoes — top five on Orkin's 2025 list — and the shaded yards and standing water that come with rapid suburban growth keep them breeding from spring into fall. Add the German roaches, outdoor 'palmetto bugs,' and roof rats that flourish in the humidity, and a steady professional barrier makes more sense than chasing one infestation at a time.",
       ],
     },
@@ -118,7 +118,7 @@ module.exports = {
   // Blurbs are written fresh for Holly Springs (no reuse from Canton/Woodstock).
   pests: [
     { emoji: '🐛', name: 'Termite Control', href: '/georgia/holly-springs/termite-control/',
-      blurb: "Cherokee County is one of the nation's heaviest termite zones — eastern subterranean plus Formosan in parts of metro Atlanta. Soil barriers, in-ground bait systems, and the Georgia termite letter when you sell." },
+      blurb: "Cherokee County is one of the nation's heaviest termite zones, with eastern subterranean termites the dominant wood-destroyer. Soil barriers, in-ground bait systems, and the Georgia termite letter when you sell." },
     { emoji: '🛏️', name: 'Bed Bug Treatment', href: '/georgia/holly-springs/bed-bug-treatment/',
       blurb: "Bed bugs ride home from travel along the I-575 commute to Atlanta and spread fast. Whole-room heat or a targeted residual program clears every stage, with follow-up checks to confirm." },
     { emoji: '🪳', name: 'Cockroach Control', href: '/georgia/holly-springs/cockroach-control/',
@@ -148,7 +148,7 @@ module.exports = {
         {
           heading: 'Holly Springs Sits in a High-Risk Termite Zone',
           paras: [
-            "Cherokee County belongs to one of the most termite-prone regions in the United States, and Holly Springs feels the full brunt of it. Eastern subterranean termites work the soil throughout the area, foraging up through mud tubes into a home's sill plates, joists, and studs, while the aggressive Formosan termite has taken hold in parts of metro Atlanta. Mild winters are the catch: rather than going dormant, colonies here keep eating underground all twelve months, so the damage piles up quietly season after season.",
+            "Cherokee County belongs to one of the most termite-prone regions in the United States, and Holly Springs feels the full brunt of it. Eastern subterranean termites work the soil throughout the area, foraging up through mud tubes into a home's sill plates, joists, and studs. Mild winters are the catch: rather than going dormant, colonies here keep eating underground all twelve months, so the damage piles up quietly season after season.",
             "The city's building boom changes the math, too. Holly Springs has added thousands of homes along the I-575 corridor and around the Town Center area near Holly Springs Parkway and Hickory Road, and those newer slabs and crawlspaces sit on graded, moisture-holding soil that foraging colonies settle into easily — right next to older homes that have had decades for termites to find a way in. Since standard homeowners insurance almost never pays for termite damage, getting in front of it is the affordable move.",
           ],
         },
@@ -199,7 +199,7 @@ module.exports = {
         },
       ],
       faqs: [
-        { q: 'Are termites really that common in Holly Springs?', a: "Yes. Holly Springs is in Cherokee County, which sits inside one of the heaviest termite-pressure zones in the country. Eastern subterranean termites stay active across the area year-round thanks to the mild winters, and Formosan termites have established in parts of metro Atlanta. Most homes here benefit from either active treatment or a maintained termite bond." },
+        { q: 'Are termites really that common in Holly Springs?', a: "Yes. Holly Springs is in Cherokee County, which sits inside one of the heaviest termite-pressure zones in the country. Eastern subterranean termites stay active across the area year-round thanks to the mild winters. Most homes here benefit from either active treatment or a maintained termite bond." },
         { q: 'My Holly Springs home is brand new — could it already have termites?', a: "It can. New subdivisions are built on freshly graded soil that subterranean termites colonize with ease, and new framing is bare, untreated wood. Many builders apply a pre-treatment, but coverage varies and doesn't last forever. If you can't confirm documented, current termite protection on your newer home, an inspection is worth it." },
         { q: 'When should I watch for termite swarms in Holly Springs?', a: "Spring is prime swarm season — warm, humid days from roughly March through May, often right after rain. Swarmers indoors or shed wings on a windowsill almost always mean an active colony is nearby. That's the cue to schedule an inspection rather than wait it out." },
         { q: 'Do I need a termite letter to sell my Holly Springs home?', a: "It isn't required by state law, but lenders and closing attorneys nearly always ask for the Georgia Wood Infestation Inspection Report before a Cherokee County closing. A licensed local pro can run the inspection and issue the letter, usually near your closing date, so the sale keeps moving." },

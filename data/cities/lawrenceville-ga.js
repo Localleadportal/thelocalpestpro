@@ -32,8 +32,9 @@
 // historic downtown square; an older-housing-stock core alongside large newer
 // subdivisions on the city's edges; ZIPs 30043/30044/30045/30046; area codes
 // 770/678/470; humid subtropical climate; eastern subterranean termites dominant
-// in GA (Formosan in parts of metro Atlanta); red imported fire ants present in
-// all 159 GA counties; metro Atlanta is a top-five U.S. mosquito metro (Orkin
+// in GA (Formosan termites rare in GA, not established in metro Atlanta); red
+// imported fire ants present in all 159 GA counties; metro Atlanta is a top-five
+// U.S. mosquito metro (Orkin
 // 2025); structural pest control is regulated/licensed by the Georgia Dept. of
 // Agriculture's Structural Pest Control Commission. Nearby Gwinnett communities
 // served: Snellville, Grayson, Dacula, Lilburn, Sugar Hill.
@@ -72,14 +73,14 @@ module.exports = {
     {
       heading: 'Why Year-Round Pest Pressure Hits Lawrenceville Homes',
       paras: [
-        "Georgia ranks among the highest-pressure termite states in the country, and Gwinnett County sits right in the thick of it. Eastern subterranean termites work the soil across the area, and aggressive Formosan termites have taken hold in parts of metro Atlanta — and with Lawrenceville's winters staying mild, those colonies don't go dormant the way they would up north; they keep feeding underground all year. Because homeowners insurance almost never pays for termite damage, keeping protection current costs far less than repairing the structure later.",
+        "Georgia ranks among the highest-pressure termite states in the country, and Gwinnett County sits right in the thick of it. Eastern subterranean termites work the soil across the area — and with Lawrenceville's winters staying mild, those colonies don't go dormant the way they would up north; they keep feeding underground all year. Because homeowners insurance almost never pays for termite damage, keeping protection current costs far less than repairing the structure later.",
         "Termites are just one piece of it. Red imported fire ants infest every one of Georgia's 159 counties, pushing mounds up across Lawrenceville lawns and common areas. Metro Atlanta is also one of the country's worst regions for mosquitoes — it placed in the top five on Orkin's 2025 ranking — and the shaded older yards near the town center hold standing water just as readily as the new-construction drainage out at the edges. Add German roaches indoors, smokybrown 'palmetto bugs' from the mulch, and rats hunting for an attic, and a steady professional barrier makes more sense than chasing one pest at a time.",
       ],
     },
     {
       heading: "<span id=\"termite\"></span>Do Lawrenceville's Older and Newer Homes Both Get Termites?",
       paras: [
-        "Both do, just by slightly different routes — and Lawrenceville has plenty of each. Eastern subterranean termites tunnel up from the soil through mud tubes into sills, joists, and framing, and they don't need much of an opening. Older homes near the historic core have had decades of settling, moisture, and wood-to-ground contact to give them that opening, while new subdivisions sit on freshly disturbed soil with fresh lumber overhead — both make an easy target. Mild Gwinnett winters mean the colonies feed twelve months a year, and aggressive Formosan termites in parts of metro Atlanta raise the stakes further. The first clue is usually a spring swarm: winged swarmers, or small piles of discarded translucent wings on windowsills.",
+        "Both do, just by slightly different routes — and Lawrenceville has plenty of each. Eastern subterranean termites tunnel up from the soil through mud tubes into sills, joists, and framing, and they don't need much of an opening. Older homes near the historic core have had decades of settling, moisture, and wood-to-ground contact to give them that opening, while new subdivisions sit on freshly disturbed soil with fresh lumber overhead — both make an easy target. Mild Gwinnett winters mean the colonies feed twelve months a year. The first clue is usually a spring swarm: winged swarmers, or small piles of discarded translucent wings on windowsills.",
         "A licensed inspector matches termite treatment in Lawrenceville, GA to the house in front of them — a non-repellent liquid termiticide trenched into the soil to form a continuous treated zone, in-ground bait stations that foragers carry back to collapse the colony, or both together for the city's range of slab and crawlspace homes. If you're closing on a property, Georgia deals almost always call for the Official Georgia Wood Infestation Inspection Report — the 'termite letter' — which only a Georgia-licensed operator can issue, typically within 30 days of closing. The pros in our directory inspect, treat, and write that report.",
       ],
     },
@@ -172,7 +173,7 @@ module.exports = {
   // Control (the #general section).
   pests: [
     { emoji: '🐛', name: 'Termite Control', href: '#termite',
-      blurb: "Georgia is one of the country's heaviest termite zones — eastern subterranean termites plus Formosan in parts of metro Atlanta. Older Lawrenceville homes and new-build lots are both targets. Liquid soil barriers, bait stations, and the Georgia termite letter for closings." },
+      blurb: "Georgia is one of the country's heaviest termite zones, with eastern subterranean termites the dominant wood-destroyer. Older Lawrenceville homes and new-build lots are both targets. Liquid soil barriers, bait stations, and the Georgia termite letter for closings." },
     { emoji: '🛏️', name: 'Bed Bug Treatment', href: '#bed-bug',
       blurb: "Travel- and apartment-driven bed bugs spread fast through Lawrenceville homes, rentals, and condos. Whole-room heat or a targeted residual program kills every life stage, with follow-up verification." },
     { emoji: '🪳', name: 'Cockroach Control', href: '#cockroach',

@@ -24,7 +24,7 @@
 // residential neighborhoods with a mature canopy; ZIPs 30338/30346; nearby DeKalb
 // communities Brookhaven, Chamblee, Doraville, Tucker; humid subtropical climate
 // with mild winters; eastern subterranean termites dominant statewide (aggressive
-// Formosan termites established in parts of metro Atlanta); red imported fire ants
+// Formosan termites rare in GA, not established in metro Atlanta); red imported fire ants
 // present; metro Atlanta is a top-five U.S. mosquito metro (Orkin 2025);
 // structural pest control is regulated by the Georgia Dept. of Agriculture's
 // Structural Pest Control Commission. No other local specifics may be added.
@@ -59,7 +59,7 @@ module.exports = {
     {
       heading: 'Why Do Dunwoody Homes & Businesses Need Year-Round Protection?',
       paras: [
-        "Georgia sits inside one of the heaviest termite-pressure zones in the country, and Dunwoody is no exception. Eastern subterranean termites are active across the metro, and aggressive Formosan termites have established in parts of metro Atlanta — both feed underground 12 months a year thanks to Dunwoody's mild winters, so the threat to a building's structure never really pauses. Termite damage typically isn't covered by property insurance, which makes ongoing termite treatment in Dunwoody, GA the cost-effective choice for homes and commercial buildings alike.",
+        "Georgia sits inside one of the heaviest termite-pressure zones in the country, and Dunwoody is no exception. Eastern subterranean termites are active across the metro and feed underground 12 months a year thanks to Dunwoody's mild winters, so the threat to a building's structure never really pauses. Termite damage typically isn't covered by property insurance, which makes ongoing termite treatment in Dunwoody, GA the cost-effective choice for homes and commercial buildings alike.",
         "It isn't only termites. Red imported fire ants are present throughout the Dunwoody area, raising painful mounds across lawns, common areas, and the landscaped grounds of office parks. Metro Atlanta consistently ranks among the worst U.S. metros for mosquitoes — it landed in the top five on Orkin's 2025 list — and Dunwoody's shaded, well-watered yards and mature tree canopy hold exactly the moisture and resting cover mosquitoes need from spring into fall. Add the German roaches, 'palmetto bugs,' and roof rats that thrive in the region's humidity, and most Dunwoody properties benefit from a steady, professional barrier rather than reacting one infestation at a time.",
       ],
     },
@@ -123,7 +123,7 @@ module.exports = {
   // until the matching pestPages entry below is authored (one at a time).
   pests: [
     { emoji: '🐛', name: 'Termite Control', href: '/georgia/dunwoody/termite-control/',
-      blurb: "Georgia is one of the nation's heaviest termite zones — eastern subterranean termites plus Formosan in parts of metro Atlanta. Liquid barriers, bait stations, and the Georgia termite letter for closings." },
+      blurb: "Georgia is one of the nation's heaviest termite zones, with eastern subterranean termites the dominant wood-destroyer. Liquid barriers, bait stations, and the Georgia termite letter for closings." },
     { emoji: '🛏️', name: 'Bed Bug Treatment', href: '/georgia/dunwoody/bed-bug-treatment/',
       blurb: "Travel and the Perimeter's hotels and rentals spread bed bugs fast through Dunwoody homes and apartments. Whole-room heat or targeted residual treatment kills every life stage, with follow-up verification." },
     { emoji: '🪳', name: 'Cockroach Control', href: '/georgia/dunwoody/cockroach-control/',

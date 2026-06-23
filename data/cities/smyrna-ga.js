@@ -37,7 +37,7 @@
 // Vinings, Mableton, Marietta, Austell, Powder Springs, Cumberland (service-area
 // names only). REGIONAL truths: humid subtropical climate with a long warm
 // season; eastern subterranean termite is the dominant Georgia termite (Formosan
-// established in parts of metro Atlanta); red imported fire ants established
+// termites rare in GA, not established in metro Atlanta); red imported fire ants established
 // statewide; metro Atlanta is a top-five U.S. mosquito metro (Orkin 2025); the
 // Georgia Dept. of Agriculture's Structural Pest Control Commission
 // regulates/licenses. Do NOT name parks, schools, subdivisions, streets,
@@ -75,7 +75,7 @@ module.exports = {
     {
       heading: 'Why Smyrna Density and New Construction Drive Pest Pressure',
       paras: [
-        "Metro Atlanta sits in one of the heaviest termite-pressure regions in the country, and Smyrna is right in the thick of it. Eastern subterranean termites — Georgia's dominant termite — forage up through the soil into sill plates, joists, and framing, and the aggressive Formosan termite has established in parts of metro Atlanta. Smyrna's wave of new and rebuilt construction is a particular draw: graded, disturbed soil and fresh framing give subterranean colonies an easy foothold, and because the region's winters are mild, those colonies keep feeding underground all year instead of going dormant. Termite damage usually isn't covered by homeowners insurance, so steady protection is the cost-effective call.",
+        "Metro Atlanta sits in one of the heaviest termite-pressure regions in the country, and Smyrna is right in the thick of it. Eastern subterranean termites — Georgia's dominant termite — forage up through the soil into sill plates, joists, and framing. Smyrna's wave of new and rebuilt construction is a particular draw: graded, disturbed soil and fresh framing give subterranean colonies an easy foothold, and because the region's winters are mild, those colonies keep feeding underground all year instead of going dormant. Termite damage usually isn't covered by homeowners insurance, so steady protection is the cost-effective call.",
         "Density does the rest. Red imported fire ants are established statewide and push up mounds wherever construction churns the ground. Metro Atlanta sits among the nation's worst metros for mosquitoes — top five on Orkin's 2025 ranking — and the catch basins, retention ponds, and shaded breezeways of closely-built communities give larvae endless places to develop. Most telling for Smyrna: in attached townhomes, condos, and apartments, German roaches, bed bugs, and rodents spread along shared walls, plumbing chases, and utility runs, so treating a single unit in isolation rarely holds. A steady professional program from a licensed Smyrna exterminator is far more reliable than chasing each flare-up alone.",
       ],
     },
@@ -85,7 +85,7 @@ module.exports = {
         "A dense, fast-building inner-ring suburb has its own signature lineup of pests. These are the ones the licensed pros in our directory get called for most across Smyrna:",
       ],
       cards: [
-        { name: 'Termites', text: "Eastern subterranean termites are Georgia's dominant species and a real risk to Smyrna's newer wood-framed townhomes and homes built on graded fill, with Formosan termites established in parts of metro Atlanta. Liquid soil barriers, in-ground bait systems, and the Georgia termite letter for closings — termite treatment Smyrna GA owners can count on, backed by a renewable bond." },
+        { name: 'Termites', text: "Eastern subterranean termites are Georgia's dominant species and a real risk to Smyrna's newer wood-framed townhomes and homes built on graded fill. Liquid soil barriers, in-ground bait systems, and the Georgia termite letter for closings — termite treatment Smyrna GA owners can count on, backed by a renewable bond." },
         { name: 'Fire Ants', text: "Red imported fire ants are established statewide, and freshly graded yards and common areas are exactly where their mounds appear. A broadcast bait carried underground to the queen, plus spot mound treatment and a perimeter barrier, keeps lawns and shared green space usable for kids and pets." },
         { name: 'Mosquitoes', text: "Metro Atlanta lands in the top five U.S. mosquito metros, and the catch basins, retention areas, and shaded breezeways of Smyrna's built-up communities hold the standing water larvae need. Yard barrier treatments and larviciding of standing water — mosquito control Smyrna GA residents use to take patios and balconies back from spring through fall." },
         { name: 'Cockroaches', text: "Two separate fights: German roaches that breed indoors in kitchens and baths and ride shared walls between attached units, and the big outdoor 'palmetto bugs' (smokybrown and American roaches) that live in mulch and drains near mixed-use blocks and wander in. Indoor gel baiting plus an exterior barrier and crack-and-crevice work shut down both." },
@@ -163,7 +163,7 @@ module.exports = {
   // city hubs).
   pests: [
     { emoji: '🐛', name: 'Termite Control', href: '#pests-detail',
-      blurb: "Eastern subterranean termites — Georgia's dominant species — settle into the graded fill and fresh framing of Smyrna's newer construction, with Formosan in parts of metro Atlanta. Liquid soil barriers, in-ground baiting, and the Georgia termite letter." },
+      blurb: "Eastern subterranean termites — Georgia's dominant species — settle into the graded fill and fresh framing of Smyrna's newer construction. Liquid soil barriers, in-ground baiting, and the Georgia termite letter." },
     { emoji: '🛏️', name: 'Bed Bug Treatment', href: '#pests-detail',
       blurb: "Travel-borne bed bugs spread fast — and in Smyrna's attached condos and apartments they can move between units. Whole-room heat or a focused residual program wipes out every life stage, then confirms it with follow-ups." },
     { emoji: '🪳', name: 'Cockroach Control', href: '#pests-detail',

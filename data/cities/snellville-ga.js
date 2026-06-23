@@ -36,8 +36,9 @@
 // character is settled and residential — mature single-family subdivisions with
 // grown-in landscaping rather than the high-growth/commercial profile of its
 // siblings; ZIPs 30039/30078; area codes 770/678/470; humid subtropical climate;
-// eastern subterranean termites dominant in GA (Formosan in parts of metro
-// Atlanta); red imported fire ants present in all 159 GA counties; metro Atlanta
+// eastern subterranean termites dominant in GA (Formosan termites rare in GA, not
+// established in metro Atlanta); red imported fire ants present in all 159 GA
+// counties; metro Atlanta
 // is a top-five U.S. mosquito metro (Orkin 2025); structural pest control is
 // regulated/licensed by the Georgia Dept. of Agriculture's Structural Pest
 // Control Commission. Nearby Gwinnett communities served: Grayson, Lilburn,
@@ -77,14 +78,14 @@ module.exports = {
     {
       heading: 'What Pest Pressure Should Snellville, GA Homeowners Plan For?',
       paras: [
-        "Georgia is one of the toughest termite states in the nation, and Gwinnett County feels every bit of it. Eastern subterranean termites move through the soil all over the area, and aggressive Formosan termites have gained a foothold in parts of metro Atlanta — and because Snellville's winters stay mild, those colonies never shut down for the season; they keep feeding underground right through January. Homeowners insurance almost never covers termite damage, so staying protected is far cheaper than rebuilding what they eat.",
+        "Georgia is one of the toughest termite states in the nation, and Gwinnett County feels every bit of it. Eastern subterranean termites move through the soil all over the area — and because Snellville's winters stay mild, those colonies never shut down for the season; they keep feeding underground right through January. Homeowners insurance almost never covers termite damage, so staying protected is far cheaper than rebuilding what they eat.",
         "And termites are only the headline. Red imported fire ants occupy all 159 of Georgia's counties, pushing mounds up across Snellville's established lawns. Metro Atlanta ranks among the country's worst regions for mosquitoes — fifth on Orkin's 2025 list — and the deep shade and settled landscaping that make older Snellville yards so pleasant also give mosquitoes somewhere to rest and breed. Layer on the German roaches that set up indoors, the smokybrown 'palmetto bugs' that drift in from the mulch, and the rats and mice that test every aging seal, and a steady professional barrier simply makes more sense than swatting at one problem at a time.",
       ],
     },
     {
       heading: "<span id=\"termite\"></span>Are Snellville's Mature Subdivisions at Risk for Termites?",
       paras: [
-        "Very much so — and in some ways an established home is exactly what subterranean termites are looking for. Eastern subterranean termites rise out of the soil through mud tubes and work their way into sills, joists, and framing, and they only need the smallest point of contact. Snellville's older subdivisions have had decades of settling, ground moisture, and mulch beds and mature trees pressed up near the foundation to create that contact, and mild Gwinnett winters keep the colonies eating all twelve months. Aggressive Formosan termites in parts of metro Atlanta raise the danger further. The tip-off most owners notice is a springtime swarm — winged swarmers, or tiny heaps of shed translucent wings collecting on a windowsill.",
+        "Very much so — and in some ways an established home is exactly what subterranean termites are looking for. Eastern subterranean termites rise out of the soil through mud tubes and work their way into sills, joists, and framing, and they only need the smallest point of contact. Snellville's older subdivisions have had decades of settling, ground moisture, and mulch beds and mature trees pressed up near the foundation to create that contact, and mild Gwinnett winters keep the colonies eating all twelve months. The tip-off most owners notice is a springtime swarm — winged swarmers, or tiny heaps of shed translucent wings collecting on a windowsill.",
         "A Georgia-licensed inspector fits termite treatment in Snellville, GA to the specific house — a non-repellent liquid termiticide trenched into the soil to build one continuous treated zone, in-ground bait stations that foraging termites haul back to wipe out the colony, or the two combined for the mix of slab and crawlspace homes around the city. Closing on a property? Georgia transactions nearly always require the Official Georgia Wood Infestation Inspection Report — the 'termite letter' — which only a Georgia-licensed operator can issue, generally within 30 days of the closing date. The pros in our directory inspect, treat, and write that letter.",
       ],
     },

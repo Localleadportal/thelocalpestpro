@@ -18,7 +18,7 @@
 // revitalized historic downtown; ZIPs 30114/30115; area codes 770/470; nearby
 // areas Sixes, Hickory Flat, Holly Springs, Ball Ground, Waleska, Woodstock;
 // humid subtropical climate; Cherokee County is a heavy termite-pressure zone
-// (eastern subterranean active, Formosan in parts of metro Atlanta); red imported
+// (eastern subterranean active; Formosan termites rare in GA, not established in metro Atlanta); red imported
 // fire ants present; metro Atlanta is a top-five U.S. mosquito metro (Orkin 2025);
 // structural pest control is regulated by the Georgia Dept. of Agriculture's
 // Structural Pest Control Commission. No other local specifics may be added.
@@ -53,7 +53,7 @@ module.exports = {
     {
       heading: 'Why Canton Homes Need Year-Round Protection',
       paras: [
-        "Cherokee County sits inside one of the heaviest termite-pressure zones in the United States. Eastern subterranean termites are active across the area, and aggressive Formosan termites have established in parts of metro Atlanta — both feed underground 12 months a year thanks to Canton's mild winters, so the threat to your home's structure never really pauses. Termite damage typically isn't covered by homeowners insurance, which makes ongoing protection the cost-effective choice.",
+        "Cherokee County sits inside one of the heaviest termite-pressure zones in the United States. Eastern subterranean termites are active across the area and feed underground 12 months a year thanks to Canton's mild winters, so the threat to your home's structure never really pauses. Termite damage typically isn't covered by homeowners insurance, which makes ongoing protection the cost-effective choice.",
         "It isn't only termites. Red imported fire ants are present throughout the Canton area, building painful mounds across lawns and common areas. Metro Atlanta consistently ranks among the worst U.S. metros for mosquitoes — it landed in the top five on Orkin's 2025 list — and the standing water and shaded vegetation along the Etowah River valley keep them breeding from spring into fall. Add the German roaches, 'palmetto bugs,' and roof rats that thrive in the region's humidity, and most Canton homes benefit from a steady, professional barrier rather than reacting one infestation at a time.",
       ],
     },
@@ -109,7 +109,7 @@ module.exports = {
   // added next); links resolve once that page's pestPages entry exists below.
   pests: [
     { emoji: '🐛', name: 'Termite Control', href: '/georgia/canton/termite-control/',
-      blurb: "Cherokee County sits in one of the nation's heaviest termite zones — eastern subterranean termites plus Formosan in parts of metro Atlanta. Liquid barriers, bait stations, and the Georgia termite letter for closings." },
+      blurb: "Cherokee County sits in one of the nation's heaviest termite zones, with eastern subterranean termites the dominant wood-destroyer. Liquid barriers, bait stations, and the Georgia termite letter for closings." },
     { emoji: '🛏️', name: 'Bed Bug Treatment', href: '/georgia/canton/bed-bug-treatment/',
       blurb: "Travel-driven bed bugs spread fast through Canton homes, apartments, and rentals. Whole-room heat or targeted residual treatment kills every life stage, with follow-up verification." },
     { emoji: '🪳', name: 'Cockroach Control', href: '/georgia/canton/cockroach-control/',
@@ -127,7 +127,7 @@ module.exports = {
   // fresh for Canton — no copy reused from the Georgia, national, or Woodstock pages.
   pestPages: {
     'termite-control': {
-      cardBlurb: "Cherokee County is a heavy termite zone — eastern subterranean termites plus Formosan in parts of metro Atlanta. Liquid barriers, bait stations, and the Georgia termite letter for closings.",
+      cardBlurb: "Cherokee County is a heavy termite zone, with eastern subterranean termites the dominant wood-destroyer. Liquid barriers, bait stations, and the Georgia termite letter for closings.",
       metaTitle: 'Termite Control in Canton, GA | The Local Pest Pro',
       metaDesc: "Termite control in Canton, GA — Cherokee County is a heavy termite zone. Liquid barriers, bait systems & the Georgia termite letter. Free inspection.",
       h1: 'Termite Control in Canton, GA',
@@ -138,7 +138,7 @@ module.exports = {
           heading: 'Why Termites Never Take a Season Off in Canton',
           paras: [
             "Termites need warmth, moisture, and wood, and Canton supplies all three nearly year-round. Cherokee County falls inside one of the heaviest termite-pressure regions in the United States: eastern subterranean termites are active across the area, foraging through the soil and building mud tubes up into sills, floor joists, and framing. Because winters here are mild, those colonies keep feeding 12 months a year instead of going dormant — so the slow, hidden damage never really pauses.",
-            "Canton's setting makes it worse. Humidity rolling off the Etowah River valley and moisture held against foundations create exactly the damp soil line termites forage along, and the area's rapid growth means fresh, graded lots and new framing — prime targets for a foraging colony — sit alongside decades-old homes near the historic downtown that have had plenty of time for termites to find a way in. Aggressive Formosan termites have also established in parts of metro Atlanta, raising the stakes region-wide.",
+            "Canton's setting makes it worse. Humidity rolling off the Etowah River valley and moisture held against foundations create exactly the damp soil line termites forage along, and the area's rapid growth means fresh, graded lots and new framing — prime targets for a foraging colony — sit alongside decades-old homes near the historic downtown that have had plenty of time for termites to find a way in.",
           ],
         },
         {

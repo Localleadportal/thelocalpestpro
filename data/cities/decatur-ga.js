@@ -48,8 +48,8 @@
 // homes under a mature tree canopy; ZIP 30030 (with 30033 covering postal
 // Decatur/North Decatur); nearby DeKalb communities Avondale Estates, Druid Hills,
 // Scottdale, Clarkston; humid subtropical climate with long summers and mild
-// winters; eastern subterranean termites dominant statewide (aggressive Formosan
-// termites established in parts of metro Atlanta); red imported fire ants present
+// winters; eastern subterranean termites dominant statewide (Formosan termites
+// rare in GA, not established in metro Atlanta); red imported fire ants present
 // statewide; metro Atlanta is a top-five U.S. mosquito metro (Orkin 2025);
 // structural pest control is regulated and licensed by the Georgia Dept. of
 // Agriculture's Structural Pest Control Commission. Trust signals are
@@ -88,7 +88,7 @@ module.exports = {
       heading: "What Makes Decatur's Historic Homes a Magnet for Pests?",
       paras: [
         "Decatur's early-20th-century bungalows are part of the city's charm, but age changes the pest equation. Decades of settling open hairline gaps in old brick foundations, around aging utility penetrations, and along worn sills and door thresholds — the exact entry points ants, roaches, and rodents use to slip inside. Many of these homes sit over vented crawlspaces rather than slabs, and the cool, damp space underneath is prime habitat for moisture pests and a highway subterranean termites follow straight up into the floor joists. On a historic house, sealing those routes matters as much as anything sprayed on.",
-        "Georgia also sits in one of the heaviest termite-pressure zones in the country, and Decatur is squarely in it. Eastern subterranean termites forage underground statewide, pushing mud tubes into framing, and because the city's mild winters never force the colonies dormant they keep feeding all twelve months; aggressive Formosan termites have established in parts of metro Atlanta as well. Since termite damage rarely falls under a homeowners policy, steady protection costs a fraction of repairing a century-old home's structure. Add the German roaches and outdoor 'palmetto bugs' that flourish in the humidity, the roof rats and mice that exploit a bungalow's gaps as nights cool, and the bed bugs that ride home from travel, and most older Decatur homes do better with a maintained barrier than with reacting one problem at a time.",
+        "Georgia also sits in one of the heaviest termite-pressure zones in the country, and Decatur is squarely in it. Eastern subterranean termites forage underground statewide, pushing mud tubes into framing, and because the city's mild winters never force the colonies dormant they keep feeding all twelve months. Since termite damage rarely falls under a homeowners policy, steady protection costs a fraction of repairing a century-old home's structure. Add the German roaches and outdoor 'palmetto bugs' that flourish in the humidity, the roof rats and mice that exploit a bungalow's gaps as nights cool, and the bed bugs that ride home from travel, and most older Decatur homes do better with a maintained barrier than with reacting one problem at a time.",
       ],
     },
     {
@@ -155,7 +155,7 @@ module.exports = {
   // are written fresh for Decatur.
   pests: [
     { emoji: '🐛', name: 'Termite Control', href: '/georgia/decatur/termite-control/',
-      blurb: "Georgia is one of the nation's heaviest termite zones, and Decatur's century-old foundations and crawlspaces give eastern subterranean termites easy access — with Formosan termites established in parts of metro Atlanta. Liquid soil barriers, in-ground bait systems, and the Georgia termite letter for closings." },
+      blurb: "Georgia is one of the nation's heaviest termite zones, and Decatur's century-old foundations and crawlspaces give eastern subterranean termites easy access. Liquid soil barriers, in-ground bait systems, and the Georgia termite letter for closings." },
     { emoji: '🛏️', name: 'Bed Bug Treatment', href: '/georgia/decatur/bed-bug-treatment/',
       blurb: "Bed bugs hitchhike home from travel and secondhand furniture and spread fast through Decatur's apartments, rentals, and the shared walls of older buildings. Whole-room heat or a targeted residual program kills every life stage, with follow-up verification." },
     { emoji: '🪳', name: 'Cockroach Control', href: '/georgia/decatur/cockroach-control/',
