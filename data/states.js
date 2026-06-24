@@ -9,22 +9,29 @@ const lawrencevilleGa = require('./cities/lawrenceville-ga');
 const snellvilleGa = require('./cities/snellville-ga');
 const norcrossGa = require('./cities/norcross-ga');
 const suwaneeGa = require('./cities/suwanee-ga');
+const lilburnGa = require('./cities/lilburn-ga');
+const bufordGa = require('./cities/buford-ga');
 const dunwoodyGa = require('./cities/dunwoody-ga');
 const mariettaGa = require('./cities/marietta-ga');
 const smyrnaGa = require('./cities/smyrna-ga');
 const kennesawGa = require('./cities/kennesaw-ga');
 const acworthGa = require('./cities/acworth-ga');
 const powderSpringsGa = require('./cities/powder-springs-ga');
+const mabletonGa = require('./cities/mableton-ga');
 const roswellGa = require('./cities/roswell-ga');
 const dallasGa = require('./cities/dallas-ga');
+const hiramGa = require('./cities/hiram-ga');
 const alpharettaGa = require('./cities/alpharetta-ga');
 const sandySpringsGa = require('./cities/sandy-springs-ga');
 const johnsCreekGa = require('./cities/johns-creek-ga');
 const miltonGa = require('./cities/milton-ga');
+const eastPointGa = require('./cities/east-point-ga');
+const atlantaGa = require('./cities/atlanta-ga');
 const brookhavenGa = require('./cities/brookhaven-ga');
 const decaturGa = require('./cities/decatur-ga');
 const tuckerGa = require('./cities/tucker-ga');
 const stoneMountainGa = require('./cities/stone-mountain-ga');
+const chambleeGa = require('./cities/chamblee-ga');
 
 // ── State landing pages ──────────────────────────────────────────────────────
 // Each state hub is a single, consumer-focused, SEO page that covers every pest
@@ -614,22 +621,29 @@ const GEORGIA = {
     { name: 'Snellville', slug: 'snellville', href: '/georgia/snellville/' },
     { name: 'Norcross', slug: 'norcross', href: '/georgia/norcross/' },
     { name: 'Suwanee', slug: 'suwanee', href: '/georgia/suwanee/' },
+    { name: 'Lilburn', slug: 'lilburn', href: '/georgia/lilburn/' },
+    { name: 'Buford', slug: 'buford', href: '/georgia/buford/' },
     { name: 'Dunwoody', slug: 'dunwoody', href: '/georgia/dunwoody/' },
     { name: 'Marietta', slug: 'marietta', href: '/georgia/marietta/' },
     { name: 'Smyrna', slug: 'smyrna', href: '/georgia/smyrna/' },
     { name: 'Kennesaw', slug: 'kennesaw', href: '/georgia/kennesaw/' },
     { name: 'Acworth', slug: 'acworth', href: '/georgia/acworth/' },
     { name: 'Powder Springs', slug: 'powder-springs', href: '/georgia/powder-springs/' },
+    { name: 'Mableton', slug: 'mableton', href: '/georgia/mableton/' },
     { name: 'Roswell', slug: 'roswell', href: '/georgia/roswell/' },
     { name: 'Alpharetta', slug: 'alpharetta', href: '/georgia/alpharetta/' },
     { name: 'Sandy Springs', slug: 'sandy-springs', href: '/georgia/sandy-springs/' },
     { name: 'Johns Creek', slug: 'johns-creek', href: '/georgia/johns-creek/' },
     { name: 'Milton', slug: 'milton', href: '/georgia/milton/' },
+    { name: 'East Point', slug: 'east-point', href: '/georgia/east-point/' },
+    { name: 'Atlanta', slug: 'atlanta', href: '/georgia/atlanta/' },
     { name: 'Brookhaven', slug: 'brookhaven', href: '/georgia/brookhaven/' },
     { name: 'Decatur', slug: 'decatur', href: '/georgia/decatur/' },
     { name: 'Tucker', slug: 'tucker', href: '/georgia/tucker/' },
     { name: 'Stone Mountain', slug: 'stone-mountain', href: '/georgia/stone-mountain/' },
+    { name: 'Chamblee', slug: 'chamblee', href: '/georgia/chamblee/' },
     { name: 'Dallas', slug: 'dallas', href: '/georgia/dallas/' },
+    { name: 'Hiram', slug: 'hiram', href: '/georgia/hiram/' },
   ],
 
   // City pages (hub + per-pest), keyed by city slug. Rendered by views/city.ejs
@@ -644,22 +658,29 @@ const GEORGIA = {
     [snellvilleGa.slug]: snellvilleGa,
     [norcrossGa.slug]: norcrossGa,
     [suwaneeGa.slug]: suwaneeGa,
+    [lilburnGa.slug]: lilburnGa,
+    [bufordGa.slug]: bufordGa,
     [dunwoodyGa.slug]: dunwoodyGa,
     [mariettaGa.slug]: mariettaGa,
     [smyrnaGa.slug]: smyrnaGa,
     [kennesawGa.slug]: kennesawGa,
     [acworthGa.slug]: acworthGa,
     [powderSpringsGa.slug]: powderSpringsGa,
+    [mabletonGa.slug]: mabletonGa,
     [roswellGa.slug]: roswellGa,
     [alpharettaGa.slug]: alpharettaGa,
     [sandySpringsGa.slug]: sandySpringsGa,
     [johnsCreekGa.slug]: johnsCreekGa,
     [miltonGa.slug]: miltonGa,
+    [eastPointGa.slug]: eastPointGa,
+    [atlantaGa.slug]: atlantaGa,
     [brookhavenGa.slug]: brookhavenGa,
     [decaturGa.slug]: decaturGa,
     [tuckerGa.slug]: tuckerGa,
     [stoneMountainGa.slug]: stoneMountainGa,
+    [chambleeGa.slug]: chambleeGa,
     [dallasGa.slug]: dallasGa,
+    [hiramGa.slug]: hiramGa,
   },
 
   // ── FAQ (GA-specific, SEO + FAQPage schema) ──
