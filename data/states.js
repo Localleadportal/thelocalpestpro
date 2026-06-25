@@ -3,6 +3,9 @@
 const woodstockGa = require('./cities/woodstock-ga');
 const cantonGa = require('./cities/canton-ga');
 const hollySpringsGa = require('./cities/holly-springs-ga');
+const ballGroundGa = require('./cities/ball-ground-ga');
+const waleskaGa = require('./cities/waleska-ga');
+const mountainParkGa = require('./cities/mountain-park-ga');
 const cummingGa = require('./cities/cumming-ga');
 const duluthGa = require('./cities/duluth-ga');
 const lawrencevilleGa = require('./cities/lawrenceville-ga');
@@ -21,6 +24,9 @@ const mabletonGa = require('./cities/mableton-ga');
 const roswellGa = require('./cities/roswell-ga');
 const dallasGa = require('./cities/dallas-ga');
 const hiramGa = require('./cities/hiram-ga');
+const jasperGa = require('./cities/jasper-ga');
+const talkingRockGa = require('./cities/talking-rock-ga');
+const nelsonGa = require('./cities/nelson-ga');
 const alpharettaGa = require('./cities/alpharetta-ga');
 const sandySpringsGa = require('./cities/sandy-springs-ga');
 const johnsCreekGa = require('./cities/johns-creek-ga');
@@ -615,6 +621,9 @@ const GEORGIA = {
     { name: 'Woodstock', slug: 'woodstock', href: '/georgia/woodstock/' },
     { name: 'Canton', slug: 'canton', href: '/georgia/canton/' },
     { name: 'Holly Springs', slug: 'holly-springs', href: '/georgia/holly-springs/' },
+    { name: 'Ball Ground', slug: 'ball-ground', href: '/georgia/ball-ground/' },
+    { name: 'Waleska', slug: 'waleska', href: '/georgia/waleska/' },
+    { name: 'Mountain Park', slug: 'mountain-park', href: '/georgia/mountain-park/' },
     { name: 'Cumming', slug: 'cumming', href: '/georgia/cumming/' },
     { name: 'Duluth', slug: 'duluth', href: '/georgia/duluth/' },
     { name: 'Lawrenceville', slug: 'lawrenceville', href: '/georgia/lawrenceville/' },
@@ -644,6 +653,9 @@ const GEORGIA = {
     { name: 'Chamblee', slug: 'chamblee', href: '/georgia/chamblee/' },
     { name: 'Dallas', slug: 'dallas', href: '/georgia/dallas/' },
     { name: 'Hiram', slug: 'hiram', href: '/georgia/hiram/' },
+    { name: 'Jasper', slug: 'jasper', href: '/georgia/jasper/' },
+    { name: 'Talking Rock', slug: 'talking-rock', href: '/georgia/talking-rock/' },
+    { name: 'Nelson', slug: 'nelson', href: '/georgia/nelson/' },
   ],
 
   // City pages (hub + per-pest), keyed by city slug. Rendered by views/city.ejs
@@ -652,6 +664,9 @@ const GEORGIA = {
     [woodstockGa.slug]: woodstockGa,
     [cantonGa.slug]: cantonGa,
     [hollySpringsGa.slug]: hollySpringsGa,
+    [ballGroundGa.slug]: ballGroundGa,
+    [waleskaGa.slug]: waleskaGa,
+    [mountainParkGa.slug]: mountainParkGa,
     [cummingGa.slug]: cummingGa,
     [duluthGa.slug]: duluthGa,
     [lawrencevilleGa.slug]: lawrencevilleGa,
@@ -681,6 +696,9 @@ const GEORGIA = {
     [chambleeGa.slug]: chambleeGa,
     [dallasGa.slug]: dallasGa,
     [hiramGa.slug]: hiramGa,
+    [jasperGa.slug]: jasperGa,
+    [talkingRockGa.slug]: talkingRockGa,
+    [nelsonGa.slug]: nelsonGa,
   },
 
   // ── FAQ (GA-specific, SEO + FAQPage schema) ──
