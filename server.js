@@ -24,6 +24,8 @@ const { SERVICES, getService } = require('./data/services');
 const { STATES, getStatePage, DEFAULT_PESTS } = require('./data/states');
 const { getContractor } = require('./lib/contractor');
 const { formatPhone, toTitleCase, normalizeStateRegion, normalizeUrl } = require('./lib/format');
+const spam = require('./lib/spam');
+const { createLeadHandler } = require('./lib/leadForm');
 
 const app = express();
 // Strict routing so "/path" and "/path/" are distinct: the canonical form is
@@ -90,8 +92,36 @@ app.use((req, res, next) => {
 });
 
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: '1y', immutable: true }));
-app.use((req, res, next) => { res.set('Cache-Control', 'no-cache'); next(); });
+app.use((req, res, next) => {
+  res.set('Cache-Control', 'no-cache');
+  // Fresh signed timestamp for the "text or call me back" form on this page.
+  res.locals.formToken = spam.issueToken();
+  next();
+});
 app.use(express.urlencoded({ extended: true }));
+
+// ── "Text or call me back" form ──────────────────────────────────────────────
+// Every city hub and city pest page carries the form (views/_lead-form.ejs).
+// The lead is handed to LeadPortal, which routes it to this county's
+// contractor. Needs WEB_LEAD_KEY (this site's key in LeadPortal's WEB_LEAD_KEYS).
+const leadRateLimit = spam.createRateLimiter({ max: Number(process.env.FORM_RATE_MAX) || 5 });
+app.post('/request-callback/', createLeadHandler({
+  getStatePage,
+  serviceType: SITE.SERVICE_TYPE,
+  base: SITE.DOMAIN,
+  spamGuard: (req, v) => {
+    for (const check of [
+      () => spam.checkOrigin(req, [CANONICAL_HOST, APEX_HOST, req.get('host')]),
+      () => spam.checkToken(req.body.form_token),
+      () => spam.checkContent(v),
+      () => leadRateLimit(req.ip)
+    ]) {
+      const r = check();
+      if (!r.ok) return r;
+    }
+    return { ok: true };
+  }
+}));
 
 // ── Map data endpoint — TopoJSON + FIPS→slug mapping for the D3 homepage map ──
 const topoJson = JSON.parse(fs.readFileSync(require.resolve('us-atlas/states-10m.json'), 'utf8'));
@@ -104,7 +134,7 @@ app.get('/api/states-map', (req, res) => {
 // robots.txt
 app.get('/robots.txt', (req, res) => {
   res.type('text/plain');
-  res.send(`User-agent: *\nAllow: /\nSitemap: ${SITE.DOMAIN}/sitemap.xml\n`);
+  res.send(`User-agent: *\nAllow: /\nDisallow: /request-callback/\nSitemap: ${SITE.DOMAIN}/sitemap.xml\n`);
 });
 
 // ── sitemap.xml ──────────────────────────────────────────────────────────────

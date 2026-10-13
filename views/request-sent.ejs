@@ -1,0 +1,31 @@
+<%
+  // Result page for the "text or call me back" form when JavaScript is off
+  // (with it, the form swaps to the same message in place). noindex: it is a
+  // POST response, never a page anyone should land on from search.
+  const title = sent ? `Request received | ${SITE.NAME}` : `Request not sent | ${SITE.NAME}`;
+  const how = contactPref === 'call' ? 'give you a call' : 'send you a text';
+  const safeName = String(firstName || '').replace(/[&<>"']/g, '');
+  const body = `
+<section class="page-hero">
+  <div class="container">
+    ${sent ? `
+    <p class="lead-done-check">✓</p>
+    <h1>Thanks${safeName ? ', ' + safeName : ''}! We got your request.</h1>
+    <p>We'll get back with you shortly. Watch your phone, we'll ${how}.</p>` : `
+    <h1>Your request didn't go through</h1>
+    <p>${error}</p>`}
+    <div class="hero-actions" style="justify-content:center;margin-top:24px;">
+      <a href="${backUrl}" class="btn-ghost">← Back to the page you were on</a>
+    </div>
+  </div>
+</section>`;
+%>
+<%- include('layout', {
+  title,
+  metaDesc: 'Your request to be texted or called back by a local pest control pro.',
+  canonical: '/request-callback/',
+  noindex: true,
+  schema: '',
+  extraHead: '',
+  body
+}) %>

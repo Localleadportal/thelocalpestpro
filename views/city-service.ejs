@@ -168,6 +168,10 @@
   </div>
 </section>`;
 
+  // "Text or call me back" form, high and to the right in the hero. Only the
+  // page's slugs go in it; the server resolves the county from data/states.js.
+  const leadForm = include('_lead-form', { stateSlug: st.slug, citySlug: city.slug, pestSlug: serviceSlug, formToken });
+
   const body = `
 <nav class="breadcrumb">
   <div class="container">
@@ -175,14 +179,17 @@
   </div>
 </nav>
 
-<section class="page-hero">
-  <div class="container">
+<section class="page-hero page-hero-split">
+  <div class="container page-hero-grid">
+    <div class="page-hero-copy">
     <h1>${pg.h1}</h1>
     <p>${pg.heroSub}</p>
-    <div class="hero-actions" style="justify-content:center;margin-top:24px;">
+    <div class="hero-actions" style="margin-top:24px;">
       <a href="tel:${coTel}" class="btn-primary">📞 ${coDisp}</a>
       <a href="#faq" class="btn-ghost">Common Questions</a>
     </div>
+    </div>
+    ${leadForm}
   </div>
 </section>
 ${ctaBox}
@@ -201,7 +208,7 @@ ${relatedHtml}${faqHtml}
   </div>
 </section>
 
-<div class="mobile-call-cta-wrap">
+<div class="mobile-call-cta-wrap has-form">
   <a class="mobile-call-cta" href="tel:${coTel}">
     <span class="mobile-call-cta-icon">
       <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
@@ -211,6 +218,7 @@ ${relatedHtml}${faqHtml}
       <span class="mobile-call-cta-number">${coDisp}</span>
     </span>
   </a>
+  <a class="mobile-text-cta" href="#request">💬 Text me back</a>
 </div>`;
 %>
 <%- include('layout', { title, metaDesc, canonical, schema, extraHead, body }) %>
