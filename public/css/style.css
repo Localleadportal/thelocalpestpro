@@ -31,12 +31,12 @@ body {
 }
 
 /* ── HEADER ── */
+/* Header is NOT sticky: it scrolls away so page text gets the full screen
+   (same cleanup as the tree/plumbing sites). Only the slim mobile call bar
+   at the bottom of the page stays fixed. */
 header {
   background: var(--white);
   border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 100;
   box-shadow: 0 1px 6px rgba(0,0,0,0.06);
 }
 .header-inner {
@@ -692,11 +692,12 @@ footer a:hover { color: #fff; }
   .cta-box { padding: 32px 20px; }
   .states-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
   .header-nav { display: none; }
+  .trust-bar { padding: 8px 0; }
   .trust-bar-inner { gap: 20px; }
   .trust-item:nth-child(n+2) { display: none; }
-  .header-inner { height: 68px; }
+  .header-inner { height: 56px; }
   .logo { font-size: 1.25rem; }
-  .header-phone { font-size: 0.95rem; padding: 10px 20px; }
+  .header-phone { font-size: 0.9rem; padding: 8px 16px; }
 }
 
 /* ── SPLIT HERO + "TEXT OR CALL ME BACK" FORM ──
@@ -747,6 +748,13 @@ footer a:hover { color: #fff; }
   .page-hero-copy { padding-top: 0; }
 }
 @media (max-width: 340px) { .lead-row { grid-template-columns: 1fr; } }
+
+/* Per-page photo slot (parent supplies real binary photos later; the tag
+   must not break the page if the file is missing — see the onerror fallback
+   in the templates that render .page-photo). */
+.page-photo { margin: 18px 0; }
+.page-photo img { width: 100%; border-radius: 14px; object-fit: cover; max-height: 420px; }
+.page-photo figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 8px; }
 
 /* Second pill in the sticky mobile bar on pages with the form. */
 .mobile-text-cta { display: none; }

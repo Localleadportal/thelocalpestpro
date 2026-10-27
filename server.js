@@ -22,6 +22,8 @@ const { SITE } = require('./data/site');
 const { statesAndCounties, stateSlugToName, countySlugToName, toSlug } = require('./data/locations');
 const { SERVICES, getService } = require('./data/services');
 const { STATES, getStatePage, DEFAULT_PESTS } = require('./data/states');
+const { GEORGIA_COUNTIES } = require('./data/counties');
+if (STATES.georgia) STATES.georgia.counties = GEORGIA_COUNTIES;
 const { getContractor } = require('./lib/contractor');
 const { formatPhone, toTitleCase, normalizeStateRegion, normalizeUrl } = require('./lib/format');
 const spam = require('./lib/spam');
@@ -141,7 +143,7 @@ app.get('/robots.txt', (req, res) => {
 // Generated dynamically from the live data on every request, so newly added
 // pages appear automatically with zero manual upkeep. It walks exactly what the
 // routes serve: the homepage, each national service page, each built state hub,
-// its state pest pages, its city hubs, and each city's per-pest pages. Anything
+// its state pest pages, its county pages, its city hubs, and each city's per-pest pages. Anything
 // flagged `noindex` is skipped, so the sitemap never contradicts a page's robots
 // meta. `lastmod` is the modified date (W3C YYYY-MM-DD) of the data file backing
 // each URL, giving Search Console an accurate, per-page freshness signal that
@@ -165,6 +167,7 @@ app.get('/sitemap.xml', (req, res) => {
   Object.values(SERVICES).forEach(s => { if (!s.noindex) add(`/${s.slug}/`, SERVICES_FILE); });
   Object.values(STATES).forEach(st => {
     add(`/${st.slug}/`, STATES_FILE);
+    Object.values(st.counties || {}).forEach(c => add(`/${st.slug}/${c.slug}/`, path.join(__dirname, 'data', 'counties.js')));
     Object.keys(st.pestPages || {}).forEach(ps => add(`/${st.slug}/${ps}/`, STATES_FILE));
     Object.values(st.cityPages || {}).forEach(city => {
       const cf = cityFile(city.slug, st.abbr);
@@ -190,11 +193,10 @@ app.get('/', (req, res) => {
 
 // ── Dedicated service pages ──────────────────────────────────────────────────
 // /pest-control/, /termite-control/, /bed-bug-treatment/, /cockroach-control/,
-// /mosquito-control/, /rodent-control/. Held at noindex and kept out of any
-// sitemap until full content is authored (see data/services.js). The routes
-// exist only so the homepage category links resolve. Unknown single segments
-// fall through to the 404 handler (state / city pages are added later, and no
-// state slug collides with a service slug).
+// /mosquito-control/, /rodent-control/. These pages ARE indexable: no service
+// entry sets noindex, service.ejs emits "index, follow", and the sitemap
+// includes them. (An older comment here claimed they were held at noindex;
+// that was wrong — no indexation was changed to correct it, only this comment.)
 app.get('/:serviceSlug/', (req, res, next) => {
   const service = getService(req.params.serviceSlug);
   if (!service) return next();
@@ -217,13 +219,17 @@ app.get('/:serviceSlug', (req, res, next) => {
 // safely after the service routes above.
 app.get('/:stateSlug/', (req, res, next) => {
   const state = getStatePage(req.params.stateSlug);
-  if (!state) return next();
-  res.render('state', { state });
+  if (state) return res.render('state', { state });
+  // Valid US state that is not built yet: coming-soon page (noindex), not a 404.
+  const unbuiltName = stateSlugToName(req.params.stateSlug);
+  if (unbuiltName) return res.render('coming-soon', { stateName: unbuiltName, stateSlug: req.params.stateSlug });
+  return next();
 });
-// Trailing-slash redirect — only for built states, so unknown slugs still 404.
+// Trailing-slash redirect — for built states and valid unbuilt states, so
+// unknown slugs still 404.
 app.get('/:stateSlug', (req, res, next) => {
-  if (!getStatePage(req.params.stateSlug)) return next();
-  res.redirect(301, `/${req.params.stateSlug}/`);
+  if (getStatePage(req.params.stateSlug) || stateSlugToName(req.params.stateSlug)) return res.redirect(301, `/${req.params.stateSlug}/`);
+  return next();
 });
 
 // ── /:state/:slug/ — state pest page OR city hub ─────────────────────────────
@@ -237,6 +243,11 @@ app.get('/:stateSlug/:slug/', async (req, res, next) => {
   const state = getStatePage(req.params.stateSlug);
   if (!state) return next();
   const { slug } = req.params;
+  if (state.counties && state.counties[slug]) {
+    const county = state.counties[slug];
+    const contractor = await getContractor(state.name, county.name, SITE.SERVICE_TYPE);
+    return res.render('county', { state, county, contractor });
+  }
   if (state.pestPages && state.pestPages[slug]) {
     return res.render('state-service', { state, page: state.pestPages[slug], serviceSlug: slug });
   }
@@ -252,7 +263,7 @@ app.get('/:stateSlug/:slug', (req, res, next) => {
   const state = getStatePage(req.params.stateSlug);
   if (!state) return next();
   const { slug } = req.params;
-  const exists = (state.pestPages && state.pestPages[slug]) || (state.cityPages && state.cityPages[slug]);
+  const exists = (state.pestPages && state.pestPages[slug]) || (state.cityPages && state.cityPages[slug]) || (state.counties && state.counties[slug]);
   if (!exists) return next();
   res.redirect(301, `/${req.params.stateSlug}/${slug}/`);
 });
