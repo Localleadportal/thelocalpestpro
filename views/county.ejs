@@ -1,0 +1,159 @@
+<%
+  // County landing page — e.g. /georgia/forsyth/. Modelled on city.ejs:
+  // service-first hero with tel: CTA, contractor CTA box (assigned contractor
+  // name/number, or the shared (844) line with "No contractor assigned yet"
+  // when unassigned), unique photo slot, county-wide content, pest cards
+  // linking to the national service pages, communities grid, FAQs, final CTA.
+  // The page stays live at the same URL whether or not a contractor is
+  // assigned — only the name and number change when one is assigned.
+  const st = state;
+  const stateName = st.name;
+  const countyName = county.name;
+  const pageUrl = `${SITE.DOMAIN}/${st.slug}/${county.slug}/`;
+  const stateUrl = `${SITE.DOMAIN}/${st.slug}/`;
+  const assigned = !!(contractor && contractor.assigned && contractor.name && contractor.telephone);
+  const coName = assigned ? contractor.name : SITE.NAME;
+  const coTel = assigned ? contractor.telephone : SITE.PHONE_TEL;
+  const coDisp = assigned ? formatPhone(contractor.telephone) : SITE.PHONE_DISPLAY;
+  const title = county.metaTitle || `${countyName} Pest Control | ${SITE.NAME}`;
+  const metaDesc = county.metaDesc;
+  const canonical = `/${st.slug}/${county.slug}/`;
+  const pestList = (typeof DEFAULT_PESTS !== 'undefined' && DEFAULT_PESTS) ? DEFAULT_PESTS : [];
+  const pestCardsHtml = pestList.map(p => `
+    <a class="service-card" href="/${p.slug}/">
+      <span class="service-card-emoji">${p.emoji}</span>
+      <h3>${p.name}</h3>
+      <p>${p.blurb}</p>
+      <span class="service-card-link">Learn more →</span>
+    </a>`).join('');
+  const overviewHtml = (county.overview || []).map(p => `<p>${p}</p>`).join('\n    ');
+  const sectionsHtml = (county.sections || []).map((s, i) => {
+    const bg = i % 2 === 0 ? 'county-content' : 'state-content';
+    const paras = (s.paras || []).map(p => `<p>${p}</p>`).join('\n    ');
+    return `\n<section class="${bg}">\n  <div class="container">\n    <h2>${s.heading}</h2>\n    ${paras}\n  </div>\n</section>`;
+  }).join('');
+  const faqHtml = (county.faqs && county.faqs.length) ? `
+<section class="county-content">
+  <div class="container">
+    <h2>Frequently Asked Questions — Pest Control in ${countyName}</h2>
+    <div style="display:flex;flex-direction:column;gap:16px;margin-top:16px;">
+      ${county.faqs.map((f, i) => `<details style="border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;"${i === 0 ? ' open' : ''}><summary style="padding:16px 20px;font-weight:600;cursor:pointer;font-size:0.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;">${f.q}<span style="font-size:1.2rem;flex-shrink:0;margin-left:12px;">+</span></summary><div style="padding:0 20px 16px;color:#374151;line-height:1.7;font-size:0.93rem;border-top:1px solid #f3f4f6;">${f.a}</div></details>`).join('')}
+    </div>
+  </div>
+</section>` : '';
+  const communitiesHtml = (county.communities && county.communities.length) ? `
+<section class="counties-section" style="background:var(--green-light);border-top:1px solid var(--green-border);">
+  <div class="container">
+    <div class="section-header">
+      <h2>Towns and Communities in ${countyName}</h2>
+      <p>The county contractor covers the whole county, including these communities.</p>
+    </div>
+    <ul class="counties-grid">
+      ${county.communities.map(c => c === county.seat
+        ? `<li><a href="/${st.slug}/${county.seatSlug}/">${c} Pest Control</a></li>`
+        : `<li><span>${c}</span></li>`).join('\n      ')}
+    </ul>
+  </div>
+</section>` : '';
+  const ctaBox = `
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box">
+      <h2>${assigned ? `Call Your Local ${countyName} Pest Pro` : `Call for ${countyName} Pest Control`}</h2>
+      ${assigned ? `<p class="company-name">${coName}</p>` : `<p class="cta-sub">No contractor assigned yet in this county — call the directory line and we can help.</p>`}
+      <p class="cta-sub">${assigned ? `Serving ${countyName}, ${stateName}. Ask about pricing and availability when you call.` : `Connect with a local pro who knows ${countyName} pests. Ask about licensing, pricing, and availability when you call.`}</p>
+      <div class="phone-wrap">
+        <a class="phone-cta" href="tel:${coTel}">📞 ${coDisp}</a>
+      </div>
+      <p class="cta-note">Call to ask about availability and pricing</p>
+      <div class="cta-badges">
+        <span class="cta-badge">Ask About Licensing</span>
+        <span class="cta-badge">Ask About Treatment Options</span>
+        <span class="cta-badge">Local ${countyName} Pros</span>
+      </div>
+    </div>
+  </div>
+</section>`;
+  const graph = [
+    { "@type": "WebPage", "@id": pageUrl + "#webpage", "url": pageUrl, "name": title, "description": metaDesc, "inLanguage": "en-US", "isPartOf": { "@id": `${SITE.DOMAIN}/#website` },
+      "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE.DOMAIN}/` },
+        { "@type": "ListItem", "position": 2, "name": stateName, "item": stateUrl },
+        { "@type": "ListItem", "position": 3, "name": countyName, "item": pageUrl } ] } },
+    { "@type": "Service", "@id": pageUrl + "#service", "name": `${countyName} Pest Control`, "serviceType": "Pest Control", "areaServed": { "@type": "AdministrativeArea", "name": `${countyName}, ${stateName}` },
+      "provider": assigned
+        ? { "@type": "PestControlService", "name": coName, "telephone": coTel, ...(contractor.address ? { "address": contractor.address } : {}), ...(contractor.licenseNumber ? { "identifier": contractor.licenseNumber } : {}) }
+        : { "@type": "Organization", "name": SITE.NAME, "telephone": SITE.PHONE_TEL } },
+  ];
+  const faqSchema = (county.faqs && county.faqs.length) ? { "@type": "FAQPage", "mainEntity": county.faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) } : null;
+  const schema = { "@context": "https://schema.org", "@graph": faqSchema ? [...graph, faqSchema] : graph };
+  const body = `
+<nav class="breadcrumb">
+  <div class="container">
+    <a href="/">Home</a> &rsaquo; <a href="/${st.slug}/">${stateName}</a> &rsaquo; <span>${countyName}</span>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>${county.h1}</h1>
+    <p>${county.heroSub}</p>
+    <div class="hero-actions" style="margin-top:24px;">
+      <a href="tel:${coTel}" class="btn-primary">📞 ${coDisp}</a>
+      <a href="#pests" class="btn-ghost">Pests We Treat</a>
+    </div>
+  </div>
+</section>
+${ctaBox}
+
+${county.photo ? `
+<section class="page-hero-photo">
+  <div class="container">
+    <figure class="page-photo">
+      <img src="${county.photo}" alt="Pest control work in ${countyName}" loading="lazy" onerror="this.closest('figure').style.display='none'">
+      <figcaption>Pest control work in ${countyName} — illustrative photo, not a photo of a specific assigned contractor.</figcaption>
+    </figure>
+  </div>
+</section>` : ''}
+
+<section class="services-section" id="pests">
+  <div class="container">
+    <h2>Pest Control Services in ${countyName}</h2>
+    <p class="section-sub">Local treatment for the pests ${countyName} homeowners deal with most — tap any for details.</p>
+    <div class="service-cards">${pestCardsHtml}
+    </div>
+  </div>
+</section>
+
+<section class="state-content" style="border-top:none;">
+  <div class="container">
+    <h2>Pest Control Across ${countyName}</h2>
+    ${overviewHtml}
+  </div>
+</section>
+${sectionsHtml}
+${communitiesHtml}
+${faqHtml}
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box">
+      <h2>${county.finalCtaHeading || `Get Pest Control in ${countyName}`}</h2>
+      <p class="cta-sub">Call for a quote · Ask about availability and licensing</p>
+      <div class="phone-wrap">
+        <a class="phone-cta" href="tel:${coTel}">📞 ${coDisp}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="mobile-call-cta-wrap">
+  <a class="mobile-call-cta" href="tel:${coTel}">
+    <span class="mobile-call-cta-text">
+      <span class="mobile-call-cta-label">${assigned ? 'Tap to Call — ' + coName : 'Tap to Call'}</span>
+      <span class="mobile-call-cta-number">${coDisp}</span>
+    </span>
+  </a>
+</div>`;
+%>
+<%- include('layout', { title, metaDesc, canonical, schema, body, headerTel: coTel, headerDisp: coDisp }) %>

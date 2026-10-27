@@ -19,6 +19,13 @@
   <link rel="icon" href="/favicon.png" sizes="180x180" type="image/png">
 </head>
 <body>
+  <% /* Header number: the page's assigned contractor number when one exists
+        (passed as headerTel/headerDisp by city, city-service and county
+        pages), otherwise the shared (844) directory line. Previously the
+        header always showed (844) even on assigned pages, so two different
+        numbers appeared on one page. */ %>
+  <% const headerTel = (typeof locals.headerTel !== 'undefined' && locals.headerTel) ? locals.headerTel : SITE.PHONE_TEL; %>
+  <% const headerDisp = (typeof locals.headerDisp !== 'undefined' && locals.headerDisp) ? locals.headerDisp : SITE.PHONE_DISPLAY; %>
   <header>
     <div class="container header-inner">
       <a href="/" class="logo"><%= SITE.NAME_PARTS[0] %><span><%= SITE.NAME_PARTS[1] %></span></a>
@@ -27,9 +34,9 @@
         <a href="/#map-section">Find by State</a>
         <a href="/#services">Services</a>
       </nav>
-      <a class="llp-phone header-phone" href="tel:<%= SITE.PHONE_TEL %>">
+      <a class="llp-phone header-phone" href="tel:<%= headerTel %>">
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        <%= SITE.PHONE_DISPLAY %>
+        <%= headerDisp %>
       </a>
     </div>
   </header>
@@ -38,15 +45,15 @@
     <div class="container trust-bar-inner">
       <div class="trust-item">
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        Same-Day &amp; Emergency Service
+        Call to Ask About Availability
       </div>
       <div class="trust-item">
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Licensed &amp; Insured Exterminators
+        Ask About Licensing &amp; Insurance
       </div>
       <div class="trust-item">
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-        Family &amp; Pet-Safe Treatments
+        Ask About Treatment Options
       </div>
       <div class="trust-item">
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -83,13 +90,13 @@
         </div>
         <div>
           <h4 style="color:#fff;font-size:0.95rem;margin:0 0 12px;text-transform:uppercase;letter-spacing:0.5px;">Get Help Now</h4>
-          <p style="margin:0 0 12px;color:#94a3b8;font-size:0.9rem;line-height:1.5;">Licensed pest control across the United States. Same-day &amp; emergency service.</p>
-          <a class="llp-phone" href="tel:<%= SITE.PHONE_TEL %>" style="color:#fff;font-weight:600;font-size:1.1rem;text-decoration:none;display:inline-block;">📞 <%= SITE.PHONE_DISPLAY %></a>
+          <p style="margin:0 0 12px;color:#94a3b8;font-size:0.9rem;line-height:1.5;">Pest control directory across the United States. Call to ask about availability, licensing, and pricing.</p>
+          <a class="llp-phone" href="tel:<%= headerTel %>" style="color:#fff;font-weight:600;font-size:1.1rem;text-decoration:none;display:inline-block;">📞 <%= SITE.PHONE_DISPLAY %></a>
         </div>
       </div>
       <div style="border-top:1px solid #334155;padding-top:24px;text-align:center;color:#94a3b8;font-size:0.85rem;">
         <p style="margin:0 0 6px;">Pest control company? List your business for exclusive county leads.</p>
-        <p style="margin:0;">&copy; <%= new Date().getFullYear() %> <%= SITE.NAME %> &mdash; Connecting homeowners with licensed pest control professionals nationwide.</p>
+        <p style="margin:0;">&copy; <%= new Date().getFullYear() %> <%= SITE.NAME %> &mdash; Connecting homeowners with local pest control professionals nationwide.</p>
       </div>
     </div>
   </footer>

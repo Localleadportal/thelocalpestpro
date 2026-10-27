@@ -3,13 +3,15 @@
   // descriptive "directory" framing below — it reads better on social cards.
   const title = `Pest Control & Exterminators Near You | The Local Pest Pro`;
   const socialTitle = `Pest Control Directory | Find Local Exterminators Near You`;
-  const metaDesc = 'Nationwide pest control directory. Find licensed local exterminators for ants, roaches, termites, bed bugs, rodents, mosquitoes, and more — same-day, pet-safe service.';
+  const metaDesc = 'Nationwide pest control directory. Find local exterminators for ants, roaches, termites, bed bugs, rodents, mosquitoes, and more. Call to ask about availability, licensing, and pricing.';
   const canonical = '/';
   // No branded 1200x630 social card exists yet, so point og:image / twitter:image
   // at the favicon (a real file that returns 200) instead of a 404. Swap this for
   // a proper Open Graph card when one is designed.
   const ogImage = `${SITE.DOMAIN}/favicon.png`;
   const schemaPhone = SITE.PHONE_TEL.replace(/^\+1(\d{3})(\d{3})(\d{4})$/, '+1-$1-$2-$3');
+  const phoneTel = SITE.PHONE_TEL;
+  const phoneDisplay = SITE.PHONE_DISPLAY;
 
   const schema = JSON.stringify({
     "@context": "https://schema.org",
@@ -34,10 +36,10 @@
         "@type": "FAQPage",
         "@id": `${SITE.DOMAIN}/#faq`,
         "mainEntity": [
-          { "@type": "Question", "name": "How does the pest control directory work?", "acceptedAnswer": { "@type": "Answer", "text": "Click your state on the map, then drill down to your area to find the licensed pest control contractor serving your area. One call connects you directly with a local exterminator who knows your area's pest pressure and the fastest, safest treatment options." } },
-          { "@type": "Question", "name": "How much does pest control cost?", "acceptedAnswer": { "@type": "Answer", "text": "Pest control pricing depends on the pest, how severe the infestation is, the size of your property, and whether you need a one-time treatment or a recurring plan. General pest treatments are usually the most affordable, while specialty work like termite or bed bug remediation costs more because of the equipment and follow-up involved. Every contractor in our directory provides a free, property-specific estimate before any work begins, so you'll know your exact cost up front." } },
-          { "@type": "Question", "name": "How do I find a licensed exterminator near me?", "acceptedAnswer": { "@type": "Answer", "text": "Click your state on the map above, then select your area. The contractor listed is a licensed pest control professional serving your area, verified to operate legally in your service area." } },
-          { "@type": "Question", "name": "Are the treatments safe for kids and pets?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — the contractors in this directory use EPA-registered products applied at label rates, and most offer family- and pet-safe or low-toxicity treatment options. Your technician will advise on any short re-entry intervals after an application." } },
+          { "@type": "Question", "name": "How does the pest control directory work?", "acceptedAnswer": { "@type": "Answer", "text": "Click your state on the map, then drill down to your area to find the pest control contractor serving your area. One call connects you with a local exterminator — ask about licensing, pricing, and availability when you call." } },
+          { "@type": "Question", "name": "How much does pest control cost?", "acceptedAnswer": { "@type": "Answer", "text": "Pest control pricing depends on the pest, how severe the infestation is, the size of your property, and whether you need a one-time treatment or a recurring plan. General pest treatments are usually the most affordable, while specialty work like termite or bed bug remediation costs more because of the equipment and follow-up involved. Ask the assigned contractor for a property-specific quote before any work begins." } },
+          { "@type": "Question", "name": "How do I find a licensed exterminator near me?", "acceptedAnswer": { "@type": "Answer", "text": "Click your state on the map above, then select your area. Ask the contractor listed about licensing and insurance for your service area when you call." } },
+          { "@type": "Question", "name": "Are the treatments safe for kids and pets?", "acceptedAnswer": { "@type": "Answer", "text": "Treatment products, methods, and re-entry intervals vary by contractor. Ask the assigned contractor which products they use and about any re-entry interval after an application." } },
           { "@type": "Question", "name": "What pests do these contractors handle?", "acceptedAnswer": { "@type": "Answer", "text": "The full range of household pests: ants, cockroaches, termites, bed bugs, rodents (mice and rats), mosquitoes, spiders, fleas and ticks, wasps and hornets, silverfish, earwigs, and more — plus recurring prevention plans." } }
         ]
       }
@@ -64,12 +66,17 @@
 <section class="hero">
   <div class="container hero-content">
     <div class="hero-badge">Nationwide Pest Control Directory</div>
-    <h1>Find Licensed Pest Control Near You</h1>
-    <p class="hero-sub">A nationwide directory of licensed local exterminators. Click your state on the map below to find a verified pest control pro in your area. One call, problem solved.</p>
+    <h1>Find Pest Control Near You</h1>
+    <p class="hero-sub">A nationwide directory of local exterminators. Click your state on the map below to find a pest control pro in your area, or call the directory line now. One call, problem solved.</p>
     <div class="hero-actions">
-      <a href="#map-section" class="btn-primary">Find My Area</a>
+      <a href="tel:${phoneTel}" class="btn-primary">📞 Call ${phoneDisplay}</a>
+      <a href="#map-section" class="btn-ghost">Find My Area</a>
       <a href="#services" class="btn-ghost">Browse Services</a>
     </div>
+    <figure class="page-photo">
+      <img src="/images/homepage.webp" alt="Pest control technician inspecting a home for pests" loading="lazy" onerror="this.closest('figure').style.display='none'">
+      <figcaption>Pest control work — illustrative photo, not a photo of a specific assigned contractor.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -81,7 +88,11 @@
     </div>
     <div id="map-tooltip" class="map-tooltip"></div>
     <svg id="us-map"></svg>
-    <p class="map-hint">Click any state to find a licensed local exterminator</p>
+    <p class="map-hint">Click any state to find a local exterminator</p>
+    <div id="coming-soon-panel" style="display:none;margin-top:16px;padding:16px 20px;background:var(--green-light);border:1px solid var(--green-border);border-radius:12px;text-align:center;">
+      <p style="margin:0 0 8px;"><strong id="coming-soon-state">That state</strong> is coming soon — it is not built yet on this site.</p>
+      <p style="margin:0;">Call the directory line and we can help: <a href="tel:${phoneTel}" style="font-weight:700;color:var(--green);">${phoneDisplay}</a></p>
+    </div>
   </div>
 </section>
 
@@ -89,7 +100,7 @@
   <div class="container">
     <div class="section-header">
       <h2>Pest Control Services Nationwide</h2>
-      <p>Every contractor in our directory handles the full range of household pests. Find a local pro for any of these in your area.</p>
+      <p>Contractors in our directory handle a range of household pests. Find a local pro for any of these in your area, and ask about services, licensing, and pricing when you call.</p>
     </div>
     <ul class="counties-grid">
       <li><a href="/termite-control/">🐛 Termite Treatment</a></li>
@@ -112,17 +123,17 @@
       <div class="feature">
         <span class="feature-icon">📍</span>
         <h3>Find Your Area</h3>
-        <p>Click your state on the map above, then select your area to find the licensed exterminator serving your area.</p>
+        <p>Click your state on the map above, then select your area to find the exterminator serving your area.</p>
       </div>
       <div class="feature">
         <span class="feature-icon">📞</span>
         <h3>Call a Local Pro</h3>
-        <p>Get connected directly with a contractor who knows your local pests, the safest treatments, and the fastest solutions.</p>
+        <p>Get connected directly with a contractor who knows your local pests. Ask about treatments, pricing, and availability when you call.</p>
       </div>
       <div class="feature">
         <span class="feature-icon">✅</span>
         <h3>Problem Solved</h3>
-        <p>Licensed, insured professionals handle treatment, exclusion, and prevention — and many back their work with a guarantee.</p>
+        <p>Professionals handle treatment, exclusion, and prevention. Ask about any guarantee when you call.</p>
       </div>
     </div>
   </div>
@@ -134,19 +145,19 @@
     <div style="display:flex;flex-direction:column;gap:16px;margin-top:16px;">
       <details style="border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;" open>
         <summary style="padding:16px 20px;font-weight:600;cursor:pointer;font-size:0.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;">How does the pest control directory work?<span style="font-size:1.2rem;flex-shrink:0;margin-left:12px;">+</span></summary>
-        <div style="padding:0 20px 16px;color:#374151;line-height:1.7;font-size:0.93rem;border-top:1px solid #f3f4f6;">Click your state on the map, then drill down to your area to find the licensed pest control contractor serving your area. One call connects you directly with a local exterminator who knows your area's pest pressure and the fastest, safest treatment options.</div>
+        <div style="padding:0 20px 16px;color:#374151;line-height:1.7;font-size:0.93rem;border-top:1px solid #f3f4f6;">Click your state on the map, then drill down to your area to find the pest control contractor serving your area. One call connects you with a local exterminator — ask about licensing, pricing, and availability when you call.</div>
       </details>
       <details style="border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;">
         <summary style="padding:16px 20px;font-weight:600;cursor:pointer;font-size:0.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;">How much does pest control cost?<span style="font-size:1.2rem;flex-shrink:0;margin-left:12px;">+</span></summary>
-        <div style="padding:0 20px 16px;color:#374151;line-height:1.7;font-size:0.93rem;border-top:1px solid #f3f4f6;">Pest control pricing depends on the pest, how severe the infestation is, the size of your property, and whether you need a one-time treatment or a recurring plan. General pest treatments are usually the most affordable, while specialty work like termite or bed bug remediation costs more because of the equipment and follow-up involved. Every contractor in our directory provides a free, property-specific estimate before any work begins, so you'll know your exact cost up front.</div>
+        <div style="padding:0 20px 16px;color:#374151;line-height:1.7;font-size:0.93rem;border-top:1px solid #f3f4f6;">Pest control pricing depends on the pest, how severe the infestation is, the size of your property, and whether you need a one-time treatment or a recurring plan. General pest treatments are usually the most affordable, while specialty work like termite or bed bug remediation costs more because of the equipment and follow-up involved. Ask the assigned contractor for a property-specific quote before any work begins.</div>
       </details>
       <details style="border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;">
         <summary style="padding:16px 20px;font-weight:600;cursor:pointer;font-size:0.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;">How do I find a licensed exterminator near me?<span style="font-size:1.2rem;flex-shrink:0;margin-left:12px;">+</span></summary>
-        <div style="padding:0 20px 16px;color:#374151;line-height:1.7;font-size:0.93rem;border-top:1px solid #f3f4f6;">Click your state on the map above, then select your area. The contractor listed is a licensed pest control professional serving your area, verified to operate legally in your service area.</div>
+        <div style="padding:0 20px 16px;color:#374151;line-height:1.7;font-size:0.93rem;border-top:1px solid #f3f4f6;">Click your state on the map above, then select your area. Ask the contractor listed about licensing and insurance for your service area when you call.</div>
       </details>
       <details style="border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;">
         <summary style="padding:16px 20px;font-weight:600;cursor:pointer;font-size:0.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;">Are the treatments safe for kids and pets?<span style="font-size:1.2rem;flex-shrink:0;margin-left:12px;">+</span></summary>
-        <div style="padding:0 20px 16px;color:#374151;line-height:1.7;font-size:0.93rem;border-top:1px solid #f3f4f6;">Yes — the contractors in this directory use EPA-registered products applied at label rates, and most offer family- and pet-safe or low-toxicity treatment options. Your technician will advise on any short re-entry intervals after an application.</div>
+        <div style="padding:0 20px 16px;color:#374151;line-height:1.7;font-size:0.93rem;border-top:1px solid #f3f4f6;">Treatment products, methods, and re-entry intervals vary by contractor. Ask the assigned contractor which products they use and about any re-entry interval after an application.</div>
       </details>
       <details style="border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;">
         <summary style="padding:16px 20px;font-weight:600;cursor:pointer;font-size:0.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;">What pests do these contractors handle?<span style="font-size:1.2rem;flex-shrink:0;margin-left:12px;">+</span></summary>
@@ -155,6 +166,15 @@
     </div>
   </div>
 </section>
+
+<div class="mobile-call-cta-wrap">
+  <a class="mobile-call-cta" href="tel:${phoneTel}">
+    <span class="mobile-call-cta-text">
+      <span class="mobile-call-cta-label">Tap to Call</span>
+      <span class="mobile-call-cta-number">${phoneDisplay}</span>
+    </span>
+  </a>
+</div>
 
 <script>
   // Defer the interactive US map (d3 + topojson) until the map section nears the
@@ -209,7 +229,18 @@
           .on('mouseleave', () => tooltip.style.display = 'none')
           .on('click', (event, d) => {
             const slug = fips[d.id]?.slug;
-            if (slug) window.location.href = '/' + slug + '/';
+            const name = fips[d.id]?.name;
+            if (!slug) return;
+            // Only Georgia and Colorado are built. Every other state shows
+            // the coming-soon panel instead of a 404.
+            if (slug === 'georgia' || slug === 'colorado') {
+              window.location.href = '/' + slug + '/';
+            } else {
+              var panel = document.getElementById('coming-soon-panel');
+              var label = document.getElementById('coming-soon-state');
+              if (label && name) label.textContent = name;
+              if (panel) { panel.style.display = 'block'; panel.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+            }
           });
 
       svg.append('path')

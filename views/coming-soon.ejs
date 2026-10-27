@@ -1,0 +1,51 @@
+<%
+  // Coming-soon page for a valid US state that is not built yet.
+  // Rendered with noindex so 48 near-identical pages never become thin
+  // indexed content. The directory line is the call to action.
+  const title = `Pest Control in ${stateName} — Coming Soon | ${SITE.NAME}`;
+  const metaDesc = `Pest control in ${stateName} is coming soon to ${SITE.NAME}. Call the directory line at ${SITE.PHONE_DISPLAY} and we can help.`;
+  const canonical = `/${stateSlug}/`;
+  const body = `
+<section class="page-hero">
+  <div class="container">
+    <h1>Pest Control in ${stateName} — Coming Soon</h1>
+    <p class="hero-sub">We have not built the ${stateName} pages yet. Call the directory line and we can help in the meantime.</p>
+    <div class="hero-actions">
+      <a href="tel:${SITE.PHONE_TEL}" class="btn-primary">📞 Call ${SITE.PHONE_DISPLAY}</a>
+      <a href="/georgia/" class="btn-ghost">Georgia</a>
+      <a href="/colorado/" class="btn-ghost">Colorado</a>
+    </div>
+  </div>
+</section>
+
+<section class="services-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Built States So Far</h2>
+      <p>Georgia and Colorado are live today. More states are added one at a time, only when a contractor is there.</p>
+    </div>
+    <ul class="states-grid">
+      <li><a href="/georgia/">Georgia Pest Control</a></li>
+      <li><a href="/colorado/">Colorado Pest Control</a></li>
+    </ul>
+  </div>
+</section>
+
+<div class="mobile-call-cta-wrap">
+  <a class="mobile-call-cta" href="tel:${SITE.PHONE_TEL}">
+    <span class="mobile-call-cta-text">
+      <span class="mobile-call-cta-label">Tap to Call</span>
+      <span class="mobile-call-cta-number">${SITE.PHONE_DISPLAY}</span>
+    </span>
+  </a>
+</div>`;
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": title,
+    "description": metaDesc,
+    "url": `${SITE.DOMAIN}${canonical}`,
+    "inLanguage": "en-US"
+  };
+%>
+<%- include('layout', { title, metaDesc, canonical, schema, body, noindex: true }) %>
