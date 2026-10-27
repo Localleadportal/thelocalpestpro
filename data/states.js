@@ -114,21 +114,21 @@ const GEORGIA = {
   // ── SEO ──
   metaTitle: 'Pest Control in Georgia | Local Exterminators Near You',
   metaDesc:
-    "Licensed pest control across Georgia — termites, fire ants, roaches, mosquitoes, bed bugs, rodents & more. Georgia's warm, humid climate means year-round pressure. Call for a free local quote.",
+    "Pest control across Georgia — termites, fire ants, roaches, mosquitoes, bed bugs, rodents & more. Georgia's warm, humid climate means year-round pressure. Call for a a local quote — ask about pricing when you call.",
 
   heroSub:
-    "Georgia's warm, humid climate keeps pests active nearly year-round — from termite swarms in spring to mosquitoes all summer and rodents seeking shelter each fall. Connect with a licensed local exterminator who knows Georgia pests and treats them fast.",
+    "Georgia's warm, humid climate keeps pests active nearly year-round — from termite swarms in spring to mosquitoes all summer and rodents seeking shelter each fall. Connect with a local exterminator who knows Georgia pests and treats them fast.",
 
   // Multi-paragraph overview (consumer + SEO). Each string is one <p>.
   overview: [
     "Few states give pests a better home than Georgia. The humid subtropical climate — long, hot summers, mild winters, and abundant rainfall from the mountains to the coast — means most pests here never get a true off-season. Where colder states get a winter reprieve, Georgia homeowners face termites, ants, roaches, and rodents close to year-round, which is why a recurring pest-control plan usually beats one-off treatments in this state.",
     "Georgia also sits in one of the highest termite-pressure zones in the country. Eastern subterranean termites are active statewide, and aggressive Formosan termites have established along the coast and in parts of metro Atlanta. Combine that with red imported fire ants in nearly every county, German and smokybrown cockroaches, and some of the worst urban mosquito pressure in the nation — Atlanta routinely lands on national 'worst for mosquitoes' lists — and most Georgia homes benefit from professional protection.",
-    "Every pro in our directory is a licensed, insured Georgia exterminator who provides a free, property-specific quote before any work begins. One call connects you with someone who knows your area's pest pressure and the fastest, safest way to deal with it.",
+    "Ask the assigned contractor about licensing and insurance when you call who provides a property-specific quote — ask about pricing before any work begins. One call connects you with someone who knows your area's pest pressure and the fastest, safest way to deal with it.",
   ],
 
   // Regulatory trust signal (authority + accuracy).
   regulationNote:
-    "Pest control in Georgia is licensed and regulated by the <strong>Georgia Department of Agriculture</strong> through the Structural Pest Control Commission. Every contractor in this directory is licensed to operate in the state and applies EPA-registered products at label rates.",
+    "Pest control in Georgia is licensed and regulated by the <strong>Georgia Department of Agriculture</strong> through the Structural Pest Control Commission. Ask the assigned contractor about licensing for your state when you call and applies EPA-registered products at label rates.",
 
   // The canonical six pests (see DEFAULT_PESTS), with Georgia-localized blurbs.
   // Keep the same six categories / order as DEFAULT_PESTS (and the homepage) —
@@ -190,7 +190,7 @@ const GEORGIA = {
       metaDesc: "Georgia sits in the nation's heaviest termite zone. Get a free local inspection, liquid or bait treatment, and your Official Georgia termite letter. Call now.",
       h1: 'Termite Treatment in Georgia',
       breadcrumbName: 'Termite Treatment',
-      heroSub: "Georgia is prime termite country — humid, mild, and home to both Eastern subterranean and aggressive Formosan termites. Get a licensed local exterminator to inspect, treat, and protect your home — plus the Official Georgia Wood Infestation Report when you're buying or selling.",
+      heroSub: "Georgia is prime termite country — humid, mild, and home to both Eastern subterranean and aggressive Formosan termites. Get a local exterminator to inspect, treat, and protect your home — plus the Official Georgia Wood Infestation Report when you're buying or selling.",
       sections: [
         {
           heading: 'Why Georgia Is One of the Worst States for Termites',
@@ -210,7 +210,7 @@ const GEORGIA = {
           heading: 'The Georgia Termite Letter (Official Wood Infestation Inspection Report)',
           paras: [
             "If you're buying or selling a home in Georgia, you'll run into the 'termite letter.' Its official name is the Official Georgia Wood Infestation Inspection Report (WIIR), and most lenders and closing attorneys require it. It documents evidence of active or previous infestation by five wood-destroying organisms: subterranean termites, drywood termites, powderpost beetles, other wood-boring beetles, and wood-decay fungi.",
-            "Only a pest control operator licensed by the Georgia Department of Agriculture's Structural Pest Control program can issue the official report. The inspection generally must be performed within 30 days of closing, and the report carries a 90-day guarantee — if a covered infestation that was certified clear turns up within 90 days, the issuing company provides a minimum adequate treatment at no charge. Every pro in our directory is licensed to perform Georgia termite inspections and issue the WIIR.",
+            "Only a pest control operator licensed by the Georgia Department of Agriculture's Structural Pest Control program can issue the official report. The inspection generally must be performed within 30 days of closing, and the report carries a 90-day guarantee — if a covered infestation that was certified clear turns up within 90 days, the issuing company provides a minimum adequate treatment at no charge. Ask the assigned contractor about termite inspection licensing and the WIIR when you call.",
           ],
         },
         {
@@ -247,7 +247,7 @@ const GEORGIA = {
 
     'mosquito-control': {
       metaTitle: 'Georgia Mosquito Control | Reclaim Your Backyard',
-      metaDesc: "Atlanta led the nation's mosquito list six years straight. Reclaim your yard with licensed Georgia mosquito control — barrier sprays & larvicide. Free quote, call now.",
+      metaDesc: "Atlanta led the nation's mosquito list six years straight. Reclaim your yard with Georgia mosquito control — barrier sprays & larvicide. Call for a quote.",
       h1: 'Mosquito Control in Georgia',
       breadcrumbName: 'Mosquito Control',
       heroSub: "Hot, humid, and rainy for half the year, Georgia is one of the most mosquito-plagued states in the country — metro Atlanta led Orkin's national mosquito-cities list six years in a row. Licensed local mosquito control can give your yard back from spring through fall.",
@@ -316,7 +316,7 @@ const GEORGIA = {
 
     'cockroach-control': {
       metaTitle: 'Cockroach & Palmetto Bug Control in Georgia | Guaranteed',
-      metaDesc: "German roaches inside, palmetto bugs out — Georgia's humidity feeds roaches year-round. Get licensed, guaranteed cockroach control. Pet-safe. Free quote — call now.",
+      metaDesc: "German roaches inside, palmetto bugs out — Georgia's humidity feeds roaches year-round. Get cockroach control. Ask about guarantees and treatment options. Call for a quote.",
       h1: 'Cockroach Control in Georgia',
       breadcrumbName: 'Cockroach Control',
       heroSub: "Georgia's heat and humidity make it roach paradise — from German cockroaches breeding in kitchens to the big 'palmetto bugs' that wander in from outside. A licensed local pro can clear an infestation and keep it from coming back, usually with a guarantee.",
@@ -524,7 +524,7 @@ const GEORGIA = {
 
     'pest-control': {
       metaTitle: 'General Pest Control in Georgia | Quarterly Plans',
-      metaDesc: "One recurring plan for Georgia's everyday pests — fire ants, spiders, wasps, ants, fleas & ticks. Licensed, pet-safe, guaranteed. Free quote — call now.",
+      metaDesc: "One recurring plan for Georgia's everyday pests — fire ants, spiders, wasps, ants, fleas & ticks. Ask about guarantees and treatment options. Call for a quote.",
       h1: 'General Pest Control in Georgia',
       breadcrumbName: 'General Pest Control',
       heroSub: "Ants, spiders, wasps, fire ants, silverfish, fleas, ticks — Georgia's warm, humid climate keeps household pests active nearly year-round. One recurring quarterly plan from a licensed local pro treats what's bugging you now and keeps the rest from getting in.",
@@ -705,7 +705,7 @@ const GEORGIA = {
   faqs: [
     {
       q: 'How much does pest control cost in Georgia?',
-      a: "It depends on the pest, the severity of the problem, and your property size. General recurring pest control is the most affordable option, while specialty work like termite treatment or bed bug remediation costs more because of the equipment and follow-up involved. Every contractor in our directory gives a free, property-specific quote before any work starts, so you'll know your exact price up front.",
+      a: "It depends on the pest, the severity of the problem, and your property size. General recurring pest control is the most affordable option, while specialty work like termite treatment or bed bug remediation costs more because of the equipment and follow-up involved. Every contractor in our directory gives a property-specific quote before any work starts — ask about pricing when you call, so you'll know your exact price up front.",
     },
     {
       q: 'Do I really need termite protection in Georgia?',
@@ -721,11 +721,11 @@ const GEORGIA = {
     },
     {
       q: 'Are pest control treatments safe for kids and pets?',
-      a: "Yes. The contractors in this directory use EPA-registered products applied at label rates, and most offer family- and pet-safe or low-toxicity options. Your technician will let you know about any short re-entry interval after an application — usually just until the product dries.",
+      a: "Treatment products, methods, and re-entry intervals vary by contractor. Ask the assigned contractor which products they use and about any re-entry interval after an application.",
     },
     {
       q: 'Are Georgia pest control companies licensed?',
-      a: "They should be. Structural pest control in Georgia is regulated by the Georgia Department of Agriculture, which licenses companies and certifies applicators. Every pro listed in our directory is a licensed, insured Georgia exterminator.",
+      a: "They should be. Structural pest control in Georgia is regulated by the Georgia Department of Agriculture, which licenses companies and certifies applicators. Ask the assigned contractor about licensing and insurance when you call.",
     },
     {
       q: "What's the best time of year for pest control in Georgia?",
@@ -742,21 +742,21 @@ const COLORADO = {
   // ── SEO ──
   metaTitle: 'Pest Control in Colorado | Local Exterminators Near You',
   metaDesc:
-    "Licensed pest control across Colorado — mosquitoes & West Nile, mice & hantavirus, bed bugs, roaches, carpenter ants, wasps, miller moths & more. Free local quote — call now.",
+    "Pest control across Colorado — mosquitoes & West Nile, mice & hantavirus, bed bugs, roaches, carpenter ants, wasps, miller moths & more. Call for a local quote — call now.",
 
   heroSub:
-    "Colorado's high, dry climate gives homeowners a real winter break — but heated homes keep mice and roaches active year-round, and the warm months bring fast, intense pressure: West Nile mosquitoes, wasps, carpenter ants, and the Front Range's seasonal miller moths and boxelder bugs. Connect with a licensed local exterminator who knows Colorado pests.",
+    "Colorado's high, dry climate gives homeowners a real winter break — but heated homes keep mice and roaches active year-round, and the warm months bring fast, intense pressure: West Nile mosquitoes, wasps, carpenter ants, and the Front Range's seasonal miller moths and boxelder bugs. Connect with a local exterminator who knows Colorado pests.",
 
   // Multi-paragraph overview (consumer + SEO). Each string is one <p>.
   overview: [
     "Colorado's pest problems look nothing like the humid Southeast's. The state is high, semi-arid, and sunny, with cold winters and big day-to-night temperature swings — conditions that give homeowners a genuine off-season from most outdoor pests. The trade-off is a short, intense warm season: along the Front Range and out on the eastern plains, pests cram a year's worth of activity into the months from spring snowmelt through the first hard freeze. Indoors it's a different story — heated, climate-controlled homes let German cockroaches and house mice stay active all twelve months.",
     "A few Colorado pest issues stand out nationally. The state is consistently among those hardest hit by West Nile virus, carried by Culex mosquitoes that breed in irrigation water and the South Platte drainage. Deer mice across rural and foothill Colorado are the carrier of hantavirus, which makes a mouse problem here a genuine health concern, not just a nuisance. Denver also lands on the country's worst-cities lists for bed bugs year after year. And the Front Range has its own signature nuisance calendar — spring miller-moth migrations, summer wasps, and fall invasions of boxelder bugs and elm seed bugs clustering on warm walls.",
-    "Termite pressure here is real but much lower than in the South — Colorado sits in a 'slight to moderate' termite zone, with arid-land and eastern subterranean termites mostly along the Front Range and plains, while carpenter ants are the more common wood-destroyer. Every pro in our directory is a licensed, insured Colorado exterminator who gives a free, property-specific quote before any work begins — one call connects you with someone who knows your area's pest pressure and the fastest, safest way to handle it.",
+    "Termite pressure here is real but much lower than in the South — Colorado sits in a 'slight to moderate' termite zone, with arid-land and eastern subterranean termites mostly along the Front Range and plains, while carpenter ants are the more common wood-destroyer. Ask the assigned contractor about licensing and insurance when you call who gives a property-specific quote — ask about pricing when you call before any work begins — one call connects you with someone who knows your area's pest pressure and the fastest, safest way to handle it.",
   ],
 
   // Regulatory trust signal (authority + accuracy).
   regulationNote:
-    "Pest control in Colorado is licensed and regulated by the <strong>Colorado Department of Agriculture</strong> under the Pesticide Applicators' Act, which licenses commercial applicators and pest-control businesses statewide. Every contractor in this directory is licensed to operate in Colorado and applies EPA-registered products at label rates, following Colorado State University Extension's integrated pest management guidance.",
+    "Pest control in Colorado is licensed and regulated by the <strong>Colorado Department of Agriculture</strong> under the Pesticide Applicators' Act, which licenses commercial applicators and pest-control businesses statewide. Ask the assigned contractor about licensing in Colorado when you call and applies EPA-registered products at label rates, following Colorado State University Extension's integrated pest management guidance.",
 
   // The canonical six pests (see DEFAULT_PESTS), with Colorado-localized blurbs.
   // Keep the same six categories / order as DEFAULT_PESTS (and the homepage) —
@@ -814,7 +814,7 @@ const COLORADO = {
   pestPages: {
     'mosquito-control': {
       metaTitle: 'Colorado Mosquito Control | West Nile Protection',
-      metaDesc: "Colorado is among the states hit hardest by West Nile virus. Take back your yard with licensed mosquito control — barrier sprays & larvicide. Free quote, call now.",
+      metaDesc: "Colorado is among the states hit hardest by West Nile virus. Take back your yard with mosquito control — barrier sprays & larvicide. Call for a quote.",
       h1: 'Mosquito Control in Colorado',
       breadcrumbName: 'Mosquito Control',
       heroSub: "Colorado's mosquito season is short but serious — the state ranks among the nation's hardest hit by West Nile virus nearly every year. Licensed local mosquito control knocks down the Culex mosquitoes that carry it and gives your yard back from late spring through early fall.",
@@ -1033,7 +1033,7 @@ const COLORADO = {
 
     'pest-control': {
       metaTitle: 'General Pest Control in Colorado | Recurring Plans',
-      metaDesc: "One recurring plan for Colorado's pests — carpenter ants, spiders, wasps, miller moths, boxelder & elm seed bugs. Licensed, pet-safe, guaranteed. Free quote — call now.",
+      metaDesc: "One recurring plan for Colorado's pests — carpenter ants, spiders, wasps, miller moths, boxelder & elm seed bugs. Ask about guarantees and treatment options. Call for a quote.",
       h1: 'General Pest Control in Colorado',
       breadcrumbName: 'General Pest Control',
       heroSub: "Ants, spiders, wasps, miller moths, boxelder bugs, elm seed bugs — Colorado's short, intense warm season packs a lot of pests into a few months, and overwintering invaders push back indoors each fall and spring. One recurring plan from a licensed local pro keeps the barrier fresh as each pest's season comes around.",
@@ -1104,7 +1104,7 @@ const COLORADO = {
 
     'cockroach-control': {
       metaTitle: 'Cockroach Control in Colorado | German Roaches & Drains',
-      metaDesc: "Colorado's dry air keeps roaches indoors — German roaches in kitchens, American roaches in drains. Get licensed, guaranteed cockroach control. Free quote — call now.",
+      metaDesc: "Colorado's dry air keeps roaches indoors — German roaches in kitchens, American roaches in drains. Get cockroach control. Ask about guarantees. Call for a quote.",
       h1: 'Cockroach Control in Colorado',
       breadcrumbName: 'Cockroach Control',
       heroSub: "Colorado's dry climate keeps cockroaches out of the yard — but indoors, where there's warmth and plumbing moisture, German cockroaches breed in kitchens and bathrooms and larger roaches travel up through drains. A licensed local pro can clear an infestation and keep it from coming back, usually with a guarantee.",
@@ -1221,7 +1221,7 @@ const COLORADO = {
           heading: 'Termite Inspections for Buying or Selling a Home',
           paras: [
             "Colorado doesn't have a statewide 'termite letter' law the way some Southern states do, but lenders, buyers, and VA loans often require a wood-destroying organism inspection (a WDO or WDI report) as part of a real-estate transaction. A licensed inspector checks the home for termites, carpenter ants, wood-boring beetles, and wood decay, and documents the findings on the standard report form.",
-            "Because Colorado is a lower-pressure termite state, these inspections often come back clear — but when they do find activity or conducive conditions, catching it at closing is far cheaper than discovering structural damage later. Every pro in our directory is licensed to inspect Colorado homes and provide the report.",
+            "Because Colorado is a lower-pressure termite state, these inspections often come back clear — but when they do find activity or conducive conditions, catching it at closing is far cheaper than discovering structural damage later. Ask the assigned contractor about inspection licensing when you call.",
           ],
         },
         {
@@ -1288,7 +1288,7 @@ const COLORADO = {
   faqs: [
     {
       q: 'How much does pest control cost in Colorado?',
-      a: "It depends on the pest, the severity of the problem, and your property size. General recurring pest control is the most affordable option, while specialty work like bed bug heat treatment or rodent exclusion and cleanup costs more because of the equipment and labor involved. Every contractor in our directory gives a free, property-specific quote before any work starts, so you'll know your exact price up front.",
+      a: "It depends on the pest, the severity of the problem, and your property size. General recurring pest control is the most affordable option, while specialty work like bed bug heat treatment or rodent exclusion and cleanup costs more because of the equipment and labor involved. Every contractor in our directory gives a property-specific quote before any work starts — ask about pricing when you call, so you'll know your exact price up front.",
     },
     {
       q: 'Why is West Nile virus such a concern in Colorado?',
@@ -1308,11 +1308,11 @@ const COLORADO = {
     },
     {
       q: 'Are pest control treatments safe for kids and pets?',
-      a: "Yes. The contractors in this directory use EPA-registered products applied at label rates, and most offer family- and pet-safe or low-toxicity options. Your technician will let you know about any short re-entry interval after an application — usually just until the product dries.",
+      a: "Treatment products, methods, and re-entry intervals vary by contractor. Ask the assigned contractor which products they use and about any re-entry interval after an application.",
     },
     {
       q: 'Are Colorado pest control companies licensed?',
-      a: "They should be. Pesticide application in Colorado is regulated by the Colorado Department of Agriculture under the Pesticide Applicators' Act, which licenses commercial applicators and pest-control businesses. Every pro listed in our directory is a licensed, insured Colorado exterminator.",
+      a: "They should be. Pesticide application in Colorado is regulated by the Colorado Department of Agriculture under the Pesticide Applicators' Act, which licenses commercial applicators and pest-control businesses. Ask the assigned contractor about licensing and insurance when you call.",
     },
     {
       q: "What's the best time of year for pest control in Colorado?",
