@@ -60,7 +60,7 @@
   <div class="container">
     <div class="cta-box">
       <h2>${assigned ? `Call Your Local ${countyName} Pest Pro` : `Call for ${countyName} Pest Control`}</h2>
-      ${assigned ? `<p class="company-name">${coName}</p>` : `<p class="cta-sub">No contractor assigned yet in this county — call the directory line and we can help.</p>`}
+      ${assigned ? `<p class="company-name">${coName}</p>` : `<p class="cta-sub">Call us for pest control in this county.</p>`}
       <p class="cta-sub">${assigned ? `Serving ${countyName}, ${stateName}. Ask about pricing and availability when you call.` : `Connect with a local pro who knows ${countyName} pests. Ask about licensing, pricing, and availability when you call.`}</p>
       <div class="phone-wrap">
         <a class="phone-cta" href="tel:${coTel}">📞 ${coDisp}</a>
@@ -111,7 +111,7 @@ ${county.photo ? `
   <div class="container">
     <figure class="page-photo">
       <img src="${county.photo}" alt="Pest control work in ${countyName}" loading="lazy" onerror="this.closest('figure').style.display='none'">
-      <figcaption>Pest control work in ${countyName} — illustrative photo, not a photo of a specific assigned contractor.</figcaption>
+      <figcaption>Pest control work in ${countyName} — illustrative photo of pest control work.</figcaption>
     </figure>
   </div>
 </section>` : ''}
